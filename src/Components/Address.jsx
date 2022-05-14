@@ -9,21 +9,22 @@ export const Address = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { cart_products } = useSelector((state) => state.cart_products);
+  const { quantity } = useSelector((state) => state.quantity);
 
   const [oldTotal, setoldTotal] = useState(0);
   const [total, settotal] = useState(0);
   const [dis, setdis] = useState(0);
 
   useEffect(() => {
-   let a = 0;
-   let b = 0;
-   cart_products.map((e) => {
-     a = a + Number(e.oldPrice);
-     b = b + (Number(e.oldPrice) - Number(e.newPrice));
-   });
-   // settotal(oldTotal - dis);
-   setoldTotal(a);
-   setdis(b);
+    let a = 0;
+    let b = 0;
+    cart_products.map((e) => {
+      a = a + Number(e.oldPrice);
+      b = b + (Number(e.oldPrice) - Number(e.newPrice));
+    });
+    // settotal(oldTotal - dis);
+    setoldTotal(a * quantity);
+    setdis(b * quantity);
   }, []);
 
   useEffect(() => {
@@ -100,7 +101,7 @@ export const Address = () => {
         </div>
         <div className="checkout_div_right address_price_section">
           <div>
-            <p>PRICE DETAILS ({})</p>
+            <p>PRICE DETAILS </p>
           </div>
           <div class="order_summary" id="priceBlock">
             <div class="base_price_detail price_details">

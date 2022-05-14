@@ -30,8 +30,8 @@ export const Checkout = () => {
       b = b + (Number(e.oldPrice) - Number(e.newPrice));
     });
     // settotal(oldTotal - dis);
-    setoldTotal(a * quant);
-    setdis(b * quant);
+    setoldTotal(a * quantity);
+    setdis(b * quantity);
   }, [quant]);
 
   const decQty = () => {
@@ -40,11 +40,13 @@ export const Checkout = () => {
       q = q - 1;
     }
     setQuant(q);
+    dispatch(getQuantitySuccess(q));
   };
   const incQty = () => {
     let q = quant;
     q = q + 1;
     setQuant(q);
+    dispatch(getQuantitySuccess(q));
   };
 
   return (

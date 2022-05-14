@@ -12,6 +12,7 @@ export const Payment = () => {
   const [toggle1, setToggle1] = useState(true);
   const [toggle2, setToggle2] = useState(false);
   const [toggle3, setToggle3] = useState(false);
+  const { quantity } = useSelector((state) => state.quantity);
   const { cart_products } = useSelector((state) => state.cart_products);
   const [oldTotal, setoldTotal] = useState(0);
   const [total, settotal] = useState(0);
@@ -25,9 +26,9 @@ export const Payment = () => {
       b = b + (Number(e.oldPrice) - Number(e.newPrice));
     });
     // settotal(oldTotal - dis);
-    setoldTotal(a);
-    setdis(b);
-  }, [dispatch]);
+    setoldTotal(a * quantity);
+    setdis(b * quantity);
+  }, []);
 
   useEffect(() => {
     dispatch(getCartProductsData());
