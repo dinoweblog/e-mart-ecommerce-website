@@ -54,7 +54,6 @@ export const CartPageCard = ({
     fetch(`https://all-json-server.herokuapp.com/cart_products/${id}`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(id),
     })
       .then((res) => dispatch(getCartProductsData()))
 
