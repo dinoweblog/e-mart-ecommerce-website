@@ -18,7 +18,7 @@ export const getQuantityError = () => ({
 // export const getQuantityData = () => (dispatch) => {
 //   dispatch(getQuantityLoading());
 
-//   fetch("http://localhost:3000/cart_products")
+//   fetch("https://all-json-server.herokuapp.com/cart_products")
 //     .then((res) => res.json())
 //     .then((res) => {
 //       dispatch(getQuantitySuccess(res));

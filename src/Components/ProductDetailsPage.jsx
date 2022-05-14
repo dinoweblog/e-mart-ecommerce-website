@@ -23,7 +23,7 @@ export const ProductDetailsPage = () => {
   }, []);
 
   const findData = () => {
-    fetch(`http://localhost:3000/woman_products/${id}`)
+    fetch(`https://all-json-server.herokuapp.com/woman_products/${id}`)
       .then((res) => res.json())
       .then((res) => {
         setData({ ...res });
@@ -32,11 +32,14 @@ export const ProductDetailsPage = () => {
   };
 
   const cartHandle = () => {
-    fetch(`http://localhost:3000/cart_products`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...data, quantity }),
-    })
+    fetch(
+      `https://all-json-server.herokuapp.com/cart_products`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...data, quantity }),
+      }
+    )
       .then((res) => dispatch(getCartProductsData()))
 
       .catch((error) => console.log(error));

@@ -18,7 +18,7 @@ export const getProductsError = () => ({
 export const getProductsData = () => (dispatch) => {
   dispatch(getProductsLoading());
 
-  fetch("http://localhost:3000/woman_products")
+  fetch("https://all-json-server.herokuapp.com/woman_products")
     .then((res) => res.json())
     .then((res) => {
       dispatch(getProductsSuccess(res));

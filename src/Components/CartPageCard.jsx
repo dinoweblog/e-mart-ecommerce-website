@@ -31,7 +31,7 @@ export const CartPageCard = ({
     // findData();
   }, []);
   //   const findData = () => {
-  //     fetch(`http://localhost:3000/woman_products/${id}`)
+  //     fetch(`https://all-json-server.herokuapp.com/woman_products/${id}`)
   //       .then((res) => res.json())
   //       .then((res) => {
   //         setData({ ...res });
