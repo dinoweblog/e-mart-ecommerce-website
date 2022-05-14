@@ -51,7 +51,7 @@ export const CartPageCard = ({
   //   };
 
   const cartMoreHandle = () => {
-    fetch(`http://localhost:3000/cart_products/${id}`, {
+    fetch(`https://all-json-server.herokuapp.com/cart_products/${id}`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(id),
@@ -82,7 +82,6 @@ export const CartPageCard = ({
               className="quantity_dec"
               onClick={() => {
                 setQuantity((state) => state - 1);
-                cartMoreHandle();
               }}
             >
               -
@@ -92,7 +91,6 @@ export const CartPageCard = ({
               className="quantity_inc"
               onClick={() => {
                 setQuantity((state) => state + 1);
-                cartMoreHandle();
               }}
             >
               +
