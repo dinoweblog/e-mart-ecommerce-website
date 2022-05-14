@@ -12,6 +12,9 @@ export const CartPageCard = ({
   off,
   category,
   description,
+  incQty,
+  decQty,
+  quant,
   color,
   size,
 }) => {
@@ -79,18 +82,14 @@ export const CartPageCard = ({
           <div className="product_quantity">
             <button
               className="quantity_dec"
-              onClick={() => {
-                setQuantity((state) => state - 1);
-              }}
+              onClick={decQty}
             >
               -
             </button>
-            <input type="text" value={quantity} />
+            <input type="text" value={quant} />
             <button
               className="quantity_inc"
-              onClick={() => {
-                setQuantity((state) => state + 1);
-              }}
+              onClick={incQty}
             >
               +
             </button>

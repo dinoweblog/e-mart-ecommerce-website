@@ -16,6 +16,7 @@ export const Checkout = () => {
   const [oldTotal, setoldTotal] = useState(0);
   const [total, settotal] = useState(0);
   const [dis, setdis] = useState(0);
+  const [quant, setQuant] = useState(1);
   useEffect(() => {
     dispatch(getCartProductsData());
     dispatch(getQuantitySuccess());
@@ -29,9 +30,22 @@ export const Checkout = () => {
       b = b + (Number(e.oldPrice) - Number(e.newPrice));
     });
     // settotal(oldTotal - dis);
-    setoldTotal(a);
-    setdis(b);
-  }, []);
+    setoldTotal(a * quant);
+    setdis(b * quant);
+  }, [quant]);
+
+  const decQty = () => {
+    let q = quant;
+    if (quant > 1) {
+      q = q - 1;
+    }
+    setQuant(q);
+  };
+  const incQty = () => {
+    let q = quant;
+    q = q + 1;
+    setQuant(q);
+  };
 
   return (
     <div>
@@ -79,6 +93,9 @@ export const Checkout = () => {
                 category={e.category}
                 color={e.color}
                 size={e.size}
+                incQty={incQty}
+                decQty={decQty}
+                quant={quant}
               />
             ))}
           </div>
