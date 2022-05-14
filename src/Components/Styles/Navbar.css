@@ -41,7 +41,7 @@ a{
 
 .navbar_menu>li a{
     text-decoration: none;
-    padding: 0 17px 24px;
+    padding: 0 13px 24px;
     margin-right: 3vw;
     /* border: 1px solid green; */
     color: var(--nav_color);
