@@ -1,0 +1,147 @@
+:root{
+    --nav_menu_font: 17px;
+    --nav_color: #282c3f;
+    --theme-color: #ff3e6c;
+}
+a{
+    text-decoration: none;
+    color: var(--nav_color);
+}
+.logo a{
+    color: var(--theme-color);
+    font-size: 24px;
+    font-weight: bold;
+
+}
+
+.header{
+    /* color: #fff; */
+    display: flex;
+    height: 5vw;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    -webkit-box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
+    box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
+    background-color: #fff;
+    /* padding: 1vw; */
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar_menu{
+    display: flex;
+}
+.navbar_menu>li{
+    /* padding: 2.5vw; */
+    list-style: none;
+}
+
+.navbar_menu>li a{
+    text-decoration: none;
+    padding: 0 17px 24px;
+    margin-right: 3vw;
+    /* border: 1px solid green; */
+    color: var(--nav_color);
+    font-size:var(--nav_menu_font);
+    font-weight: 600;
+    border-bottom: 3px solid #ffffff;
+}
+.navbar_menu>li a:hover {
+    border-bottom: 3px solid green;
+}
+.profile_wish_bag  {
+    display: flex;
+}
+
+.profile_wish_bag p{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    font-size: var(--nav_menu_font);
+    font-weight: 600;
+    color: var(--nav_color);
+}
+
+.profile_wish_bag i{
+    color: var(--nav_color);
+    font-size: 20px;
+}
+
+.profile_wish_bag>div {
+    text-align: center;
+    margin-left: 3vw;
+    /* border: 1px solid red; */
+}
+
+
+/* Search box */
+
+.search_field {
+    width: 20%;
+    position: relative;
+    display: flex;
+}
+
+.search_input {
+    width: 100%;
+    padding:  5px ;
+    padding-left: 10px;
+    height: 30px;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid #f5f5f6;
+     border-radius: 4px 0 0 4px;
+    border-left: 0;
+    background: #f5f5f6;
+}
+
+.search_input:focus {
+border: 1px  solid #e4e4e4;
+border-right: none;
+background: #ffffff;
+
+}
+.search_btn:focus {
+    border: 1px solid #e4e4e4;
+    border-left: none;
+    background: #ffffff;
+}
+
+.search_btn {
+    width: 55px;
+    height: 42px;
+    text-align: center;
+    padding: 8px 0 2px;
+    background: #f5f5f6;
+    border: 1px solid #f5f5f6;
+    font-size: 26px;
+    border-radius: 0 4px 4px 0;
+}
+
+.cart_menu_btn{
+    position: absolute;
+}
+
+.profile_wish_bag .cart_count{
+    position: absolute;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    background: #ff3f6c;
+    border-radius: 50%;
+    font-size: 12px;
+    color: #ffffff;
+    top: 6px;
+    right: 80px;
+    margin-right: 20px;
+    font-weight: 700;
+    z-index: 3;
+}
+
+

@@ -1,0 +1,9 @@
+.section .section_title{
+    width: 90%;
+    margin: auto;
+    margin-top: 8%;
+}
+
+.section .section_title>h3 {
+    font-size: 30px;
+}
