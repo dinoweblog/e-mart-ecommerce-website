@@ -41,7 +41,7 @@ a{
 
 .navbar_menu>li a{
     text-decoration: none;
-    padding: 0 13px 24px;
+    padding: 0 17px 20px;
     margin-right: 3vw;
     /* border: 1px solid green; */
     color: var(--nav_color);
@@ -137,8 +137,8 @@ background: #ffffff;
     border-radius: 50%;
     font-size: 12px;
     color: #ffffff;
-    top: 6px;
-    right: -20px;
+    top: 5px;
+    right: 35px;
     margin-right: 20px;
     font-weight: 700;
     z-index: 3;
