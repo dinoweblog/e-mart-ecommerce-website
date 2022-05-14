@@ -156,7 +156,7 @@ export const Checkout = () => {
         <div className="empty_cart">
           <div>
             <img
-              src="https://constant.myntassets.com/checkout/assets/img/empty-bag.webp"
+              src="https://www.freepnglogos.com/uploads/shopping-bag-png/shopping-bag-plaseto-bag-plaseto-bags-manufacturer-west-bengal-17.png"
               alt=""
             />
             <h4>Hey, it feels so light!</h4>
