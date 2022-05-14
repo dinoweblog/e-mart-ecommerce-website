@@ -148,3 +148,9 @@ button{
     line-height: 180%;
     margin-top: 30px;
 }
+
+.similar{
+    width: 90%;
+    margin: auto;
+    margin-top: 80px;
+}

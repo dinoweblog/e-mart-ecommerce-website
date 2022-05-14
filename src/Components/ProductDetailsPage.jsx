@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartProductsData } from "../Redux/Cart/action";
+import { WomenSlider } from "./Slider";
 
 export const ProductDetailsPage = () => {
   const [quantity, setQuantity] = useState(1);
@@ -32,14 +33,11 @@ export const ProductDetailsPage = () => {
   };
 
   const cartHandle = () => {
-    fetch(
-      `https://all-json-server.herokuapp.com/cart_products`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, quantity }),
-      }
-    )
+    fetch(`https://all-json-server.herokuapp.com/cart_products`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...data, quantity }),
+    })
       .then((res) => dispatch(getCartProductsData()))
 
       .catch((error) => console.log(error));
@@ -106,6 +104,10 @@ export const ProductDetailsPage = () => {
           </div>
         </div>
       </div>
+      <div className="similar">
+        <h2>Similar Products</h2>
+      </div>
+      <WomenSlider />
       <Footer />
     </div>
   );
