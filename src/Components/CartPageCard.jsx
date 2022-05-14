@@ -105,7 +105,12 @@ export const CartPageCard = ({
         </p>
       </div>
       <div className="item_delete_btn">
-        <button className="text_btn">
+        <button
+          className="text_btn"
+          onClick={() => {
+            cartMoreHandle();
+          }}
+        >
           <i class="bx bx-trash"></i>
         </button>
       </div>
