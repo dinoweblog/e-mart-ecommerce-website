@@ -17,21 +17,23 @@ export const Checkout = () => {
   const [total, settotal] = useState(0);
   const [dis, setdis] = useState(0);
   const [quant, setQuant] = useState(1);
+
   useEffect(() => {
     dispatch(getCartProductsData());
     dispatch(getQuantitySuccess());
-  }, []);
+  }, [dispatch, quant]);
 
   useEffect(() => {
     let a = 0;
     let b = 0;
+
     cart_products.map((e) => {
       a = a + Number(e.oldPrice);
       b = b + (Number(e.oldPrice) - Number(e.newPrice));
     });
-    // settotal(oldTotal - dis);
-    setoldTotal(a * quantity);
-    setdis(b * quantity);
+
+    setoldTotal(a * quant);
+    setdis(b * quant);
   }, [quant]);
 
   const decQty = () => {

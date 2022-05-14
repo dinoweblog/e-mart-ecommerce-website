@@ -1,15 +1,23 @@
+:root {
+    --font_size: 17px;
+    --font_color: #282c3f;
+    --border-color: #e9e9ed;
+    --hover-color: #f0f0f0;
+}
 .slick-prev,
 .slick-next {
-    background-color: antiquewhite;
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     box-shadow: 0px 16px 32px 0px rgba(233, 238, 242, 0.4);
+    border: 1px solid var(--border-color);
+    z-index: 2;
 }
 
 .slick-prev:hover,
 .slick-next:hover {
-    background-color: antiquewhite;
+    background-color: white;
 }
 
 .slick-prev:before,
