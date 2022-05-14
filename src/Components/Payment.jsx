@@ -9,10 +9,25 @@ export const Payment = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [toggle, setToggle] = useState(false);
-  const [toggle1, setToggle1] = useState(false);
+  const [toggle1, setToggle1] = useState(true);
   const [toggle2, setToggle2] = useState(false);
   const [toggle3, setToggle3] = useState(false);
   const { cart_products } = useSelector((state) => state.cart_products);
+  const [oldTotal, setoldTotal] = useState(0);
+  const [total, settotal] = useState(0);
+  const [dis, setdis] = useState(0);
+
+  useEffect(() => {
+    let a = 0;
+    let b = 0;
+    cart_products.map((e) => {
+      a = a + Number(e.oldPrice);
+      b = b + (Number(e.oldPrice) - Number(e.newPrice));
+    });
+    // settotal(oldTotal - dis);
+    setoldTotal(a);
+    setdis(b);
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(getCartProductsData());
@@ -172,13 +187,15 @@ export const Payment = () => {
             <div className="base_price_detail price_details">
               <span>Total MRP</span>
               <span>
-                <i className="bx bx-rupee"></i>1,350
+                <i className="bx bx-rupee"></i>
+                {oldTotal}
               </span>
             </div>
             <div className="discount_price price_details">
               <span>Discount on MRP</span>
               <span className="text_color_green">
-                <i className="bx bx-rupee"></i>837
+                <i className="bx bx-rupee"></i>
+                {dis}
               </span>
             </div>
             <div className="convenience_fee price_details">
@@ -193,7 +210,8 @@ export const Payment = () => {
             <div className="total_amount price_details">
               <span>Total Amount</span>
               <span>
-                <i className="bx bx-rupee"></i>513
+                <i className="bx bx-rupee"></i>
+                {oldTotal - dis}
               </span>
             </div>
           </div>

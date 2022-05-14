@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { getCartProductsData } from "../Redux/Cart/action";
@@ -9,6 +9,22 @@ export const Address = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { cart_products } = useSelector((state) => state.cart_products);
+
+  const [oldTotal, setoldTotal] = useState(0);
+  const [total, settotal] = useState(0);
+  const [dis, setdis] = useState(0);
+
+  useEffect(() => {
+   let a = 0;
+   let b = 0;
+   cart_products.map((e) => {
+     a = a + Number(e.oldPrice);
+     b = b + (Number(e.oldPrice) - Number(e.newPrice));
+   });
+   // settotal(oldTotal - dis);
+   setoldTotal(a);
+   setdis(b);
+  }, []);
 
   useEffect(() => {
     dispatch(getCartProductsData());
@@ -90,13 +106,15 @@ export const Address = () => {
             <div class="base_price_detail price_details">
               <span>Total MRP</span>
               <span>
-                <i class="bx bx-rupee"></i>1,350
+                <i class="bx bx-rupee"></i>
+                {oldTotal}
               </span>
             </div>
             <div class="discount_price price_details">
               <span>Discount on MRP</span>
               <span className="text_color_green">
-                <i class="bx bx-rupee"></i>837
+                <i class="bx bx-rupee"></i>
+                {dis}
               </span>
             </div>
             <div class="convenience_fee price_details">
@@ -111,7 +129,8 @@ export const Address = () => {
             <div class="total_amount price_details">
               <span>Total Amount</span>
               <span>
-                <i class="bx bx-rupee"></i>513
+                <i class="bx bx-rupee"></i>
+                {oldTotal - dis}
               </span>
             </div>
           </div>

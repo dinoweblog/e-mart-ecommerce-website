@@ -22,11 +22,15 @@ export const Checkout = () => {
   }, []);
 
   useEffect(() => {
+    let a = 0;
+    let b = 0;
     cart_products.map((e) => {
-      setoldTotal((state) => state + Number(e.oldPrice));
-      setdis((state) => state + (Number(e.oldPrice) - Number(e.newPrice)));
+      a = a + Number(e.oldPrice);
+      b = b + (Number(e.oldPrice) - Number(e.newPrice));
     });
     // settotal(oldTotal - dis);
+    setoldTotal(a);
+    setdis(b);
   }, []);
 
   return (

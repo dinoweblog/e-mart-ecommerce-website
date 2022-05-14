@@ -12,7 +12,7 @@ export const Navbar = () => {
 
   useEffect(() => {
     dispatch(getCartProductsData());
-    dispatch(getQuantitySuccess(cart_products.length))
+    dispatch(getQuantitySuccess(cart_products.length));
   }, []);
 
   return (
@@ -66,7 +66,9 @@ export const Navbar = () => {
               <p>Cart</p>
             </Link>
           </div>
-          <span className="cart_count">{cart_products.length}</span>
+          {cart_products.length > 0 ? (
+            <span className="cart_count">{cart_products.length}</span>
+          ) : null}
         </div>
       </div>
     </div>
