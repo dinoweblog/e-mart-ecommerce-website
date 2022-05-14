@@ -50,11 +50,10 @@ export const CartPageCard = ({
   //       .catch((error) => console.log(error));
   //   };
 
-  const cartMoreHandle = () => {
+  const cartMoreHandle = (id) => {
     fetch(`http://localhost:3000/cart_products/${id}`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...data, quantity }),
     })
       .then((res) => dispatch(getCartProductsData()))
 
@@ -92,7 +91,7 @@ export const CartPageCard = ({
               className="quantity_inc"
               onClick={() => {
                 setQuantity((state) => state + 1);
-                cartMoreHandle();
+                cartMoreHandle(id);
               }}
             >
               +
