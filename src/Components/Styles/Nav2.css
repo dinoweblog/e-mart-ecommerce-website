@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100&display=swap");
+
+:root {
+    --nav_menu_font: 1.8rem;
+      --res_nav_menu_font:  1.5rem;
+    --nav_color: #282c3f;
+    --theme-color: #ff3e6c;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* 
+ 
+/* navbar style start  */
+
+.main_nav {
+  /* width: 100%; */
+  padding: 0 5%;
+  height: 10rem;
+  display: grid;
+  grid-template-columns: 10% 40% 20% 20%;
+  justify-content: space-between;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.main_nav .logo {
+display: flex;
+  justify-content: start;
+  align-items: center;
+  border-bottom: white 3px solid;
+  font-size: 30px;
+}
+
+.main_nav .logo a{
+  font-size: 3rem;
+}
+
+/* -------------Desktop menu----------------- */
+.menu_link>ul{
+  display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    font-size: var(--nav_menu_font);
+}
+
+.mobile_menu_link{
+  display: none;
+  width: 80%;
+}
+
+ .menu_link>ul>li {
+   border-bottom: white 3px solid;
+
+ }
+
+ .menu_link ul li :hover {
+   border-bottom: var(--theme-color) 3px solid;
+
+ }
+
+
+/* search box css ------------------ */
+
+.search_field{
+  /* position: relative; */
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+#search_input  {
+  width: 100%;
+  padding: 5px;
+  padding-left: 10px;
+  height: 42px;
+  font-size: 14px;
+  outline: none;
+  border: 1px solid #f5f5f6;
+  border-radius: 4px 0 0 4px;
+  border-left: 0;
+  background: #f5f5f6;
+}
+
+#search_input:focus {
+  border: 1px solid #e4e4e4;
+  border-right: none;
+  background: #ffffff;
+
+}
+
+#search_btn:focus {
+  border: 1px solid #e4e4e4;
+  border-left: none;
+  background: #ffffff;
+}
+
+#search_btn {
+  width: 55px;
+  height: 42px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 2px  2px;
+  background: #f5f5f6;
+  border: 1px solid #f5f5f6;
+  font-size: 26px;
+  border-radius: 0 4px 4px 0;
+}
+
+/* -------------------------- */
+#second_menu_section>ul{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  font-size: var(--nav_menu_font);
+}
+#second_menu_section>ul #cart_btn{
+  display: flex;
+  align-items: center;
+}
+
+#second_menu_section>ul>li {
+  border-bottom: white 3px solid;
+}
+
+#second_menu_section>ul>li:hover{
+  border-bottom: var(--theme-color) 3px solid;
+}
+
+
+ .cart_count {
+  position: absolute;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  background: #ff3f6c;
+  border-radius: 50%;
+  font-size: 10px;
+  color: #ffffff;
+  top: 20px;
+  right: 23px;
+  margin-right: 20px;
+  font-weight: 700;
+  z-index: 3;
+}
+
+
+
+.responsive_btn{
+  display: none;
+}
+
+
+
+/* responsive css style  */
+@media (max-width: 1080px) {
+ 
+}
+
+/* responsive css style  */
+@media (max-width: 998px) {
+  .main_nav .logo a {
+      font-size: 2.2rem;
+    }
+    .main_nav .menu_link {
+        display: none;
+      }
+  .main_nav {
+      width: 100%;
+      padding: 0 1%;
+      height: 10rem;
+      display: grid;
+      grid-template-columns: 16% 35% 35% 6%;
+      justify-content: space-between;
+      box-sizing: border-box;
+    }
+
+  .mobile_menu_link{
+    display: flex;
+    position: absolute;
+    width: 98%;
+    box-sizing: border-box;
+    top: 11rem;
+    z-index: 99;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  .mobile_menu_link ul{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 10px;
+    
+    text-align: left;
+    font-size: var(--nav_menu_font);
+    border: none;
+
+  }
+   .mobile_menu_link>ul>li {
+      border-bottom: white 3px solid;
+  
+    }
+     .mobile_menu_link ul li :hover {
+       border-bottom: var(--theme-color) 3px solid;
+  
+     }
+
+    .responsive_btn {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      font-size: 2rem;
+    }
+    #second_menu_section ul{
+      font-size: var(--res_nav_menu_font);
+    }
+
+}
+
+@media (max-width: 798px) {
+  .menu_link {
+      display: flex;
+      flex-direction: column;
+  
+    }
+}
+
+@media (max-width: 520px) {
+.menu_link {
+    display: flex;
+    flex-direction: column;
+
+  }
+}

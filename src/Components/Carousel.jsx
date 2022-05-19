@@ -32,7 +32,6 @@ export const Carousel = () => {
 
   return (
     <div>
-      <h2> Single Item</h2>
       <SliderDiv {...settings}>
         <div>
           <img src={image3} alt="" />

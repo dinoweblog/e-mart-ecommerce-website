@@ -34,7 +34,7 @@ export const Checkout = () => {
 
     setoldTotal(a * quant);
     setdis(b * quant);
-  }, [quant]);
+  }, [quant, cart_products]);
 
   const decQty = () => {
     let q = quant;
@@ -112,7 +112,7 @@ export const Checkout = () => {
                 <span>Total MRP</span>
                 <span>
                   <i class="bx bx-rupee"></i>
-                  {oldTotal}
+                  {Intl.NumberFormat("en-IN").format(oldTotal)}
                 </span>
               </div>
               <div class="discount_price price_details">

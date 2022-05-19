@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { getCartProductsData } from "../Redux/Cart/action";
+import PaymentsOutlinedIcon from "@mui/icons-material/PaymentsOutlined";
+import AccountBalanceOutlinedIcon from "@mui/icons-material/AccountBalanceOutlined";
+import CreditCardOutlinedIcon from "@mui/icons-material/CreditCardOutlined";
 import { Navbar2 } from "./Navbar2";
 import "./Styles/Checkout.css";
 
@@ -112,7 +115,8 @@ export const Payment = () => {
                 setToggle1(!toggle1);
               }}
             >
-              Cash On Delivery (Cash/Card/UPI)
+              <PaymentsOutlinedIcon style={{ marginRight: 5 }} /> Cash On
+              Delivery (Cash/Card/UPI)
             </button>
             {toggle1 ? (
               <div className="payment_content">
@@ -146,7 +150,8 @@ export const Payment = () => {
                 setToggle2(!toggle2);
               }}
             >
-              <i className="bx bx-credit-card"></i> Credit/Debit Card
+              <CreditCardOutlinedIcon style={{ marginRight: 5 }} /> Credit/Debit
+              Card
             </button>
             {toggle2 ? (
               <div className="payment_content">
@@ -165,7 +170,8 @@ export const Payment = () => {
                 setToggle3(!toggle3);
               }}
             >
-              <i className="bx bxs-bank"></i> Net Banking
+              <AccountBalanceOutlinedIcon style={{ marginRight: 5 }} /> Net
+              Banking
             </button>
             {toggle3 ? (
               <div className="payment_content">
