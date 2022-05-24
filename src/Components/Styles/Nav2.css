@@ -190,7 +190,7 @@ display: flex;
 /* responsive css style  */
 @media (max-width: 998px) {
   .main_nav .logo a {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
     }
     .main_nav .menu_link {
         display: none;
@@ -252,6 +252,27 @@ display: flex;
 }
 
 @media (max-width: 798px) {
+  .main_nav .logo a {
+      font-size: 2rem;
+    }
+
+        #search_input{
+          height: 33px;
+        }
+
+        #search_btn{
+          height: 34px;
+          font-size: 20px;
+          width: 42px;
+        }
+
+        #second_menu_section ul {
+          font-size: 1.7rem;
+        }
+    
+        #second_menu_section>ul li i {
+          font-size: 16px;
+        }
   .menu_link {
       display: flex;
       flex-direction: column;
@@ -260,6 +281,32 @@ display: flex;
 }
 
 @media (max-width: 520px) {
+  .main_nav {
+      display: grid;
+      grid-template-columns: 15% 33% 40% 6%;
+      
+    }
+  .main_nav .logo a {
+      font-size: 1.7rem;
+    }
+    
+        #search_input {
+          height: 30px;
+        }
+    
+        #search_btn {
+          height: 31px;
+          font-size: 18px;
+          width: 40px;
+        }
+    
+    #second_menu_section ul {
+       font-size: 1.2rem;
+     }
+    
+     #second_menu_section>ul li i {
+       font-size: 15px;
+     }
 .menu_link {
     display: flex;
     flex-direction: column;
