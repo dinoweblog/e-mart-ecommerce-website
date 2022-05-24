@@ -283,8 +283,8 @@ display: flex;
 @media (max-width: 520px) {
   .main_nav {
       display: grid;
-      grid-template-columns: 15% 33% 40% 6%;
-      
+      grid-template-columns: 15% 33% 38% 7%;
+      padding: 0 3%;
     }
   .main_nav .logo a {
       font-size: 1.7rem;
@@ -295,7 +295,7 @@ display: flex;
         }
     
         #search_btn {
-          height: 31px;
+          height: 30px;
           font-size: 18px;
           width: 40px;
         }
