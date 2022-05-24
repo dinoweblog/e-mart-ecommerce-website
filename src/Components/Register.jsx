@@ -80,7 +80,7 @@ export const Register = () => {
           />
           <input type="submit" />
 
-          <div class="midLinks">
+          <div className="midLinks">
             By continuing, I agree to the <a href="#">Terms of Use</a> &amp;{" "}
             <a href="#">Privacy Policy</a>
           </div>

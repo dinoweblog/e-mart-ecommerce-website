@@ -8,6 +8,7 @@ import { Footer } from "./Footer";
 
 export const WomenPage = () => {
   const dispatch = useDispatch();
+  const [clearFilter, setClearFilter] = useState(false);
   const [sortVal, setSortVal] = useState("");
   const [filterCatVal, setFilterCatVal] = useState("");
   const [filterDisVal, setFilterDisVal] = useState();
@@ -26,6 +27,7 @@ export const WomenPage = () => {
   const filterByCategory = (e) => {
     const type = e.target.value;
     setFilterCatVal(type);
+    setClearFilter(true);
 
     const items = products.filter(
       (el) => el.category.toLowerCase() === type.toLowerCase()
@@ -37,8 +39,7 @@ export const WomenPage = () => {
   const filterByDiscount = (e) => {
     const type = e.target.value;
     setFilterDisVal(type);
-    console.log(type);
-
+    setClearFilter(true);
     const items = products.filter((el) => Number(el.off) >= type);
 
     setWomenProduct([...items]);
@@ -59,7 +60,6 @@ export const WomenPage = () => {
     setWomenProduct([...t]);
   };
 
-
   return (
     <div>
       <Navbar />
@@ -67,8 +67,18 @@ export const WomenPage = () => {
       <div className="products_container">
         <div className="filter_section">
           <div className="top_title">
-            FILTERS
-            <span className="clear_filter">CLEAR ALL</span>
+            <p>FILTERS</p>
+            <span
+              onClick={() => {
+                dispatch(getProductsData());
+                setClearFilter(false);
+                setFilterCatVal("");
+                setFilterDisVal("");
+              }}
+              className={!clearFilter ? "clear_btn" : ""}
+            >
+              CLEAR ALL
+            </span>
           </div>
           <div className="filter_by">
             <div className="filter_types categories_container">
@@ -80,7 +90,7 @@ export const WomenPage = () => {
                       type="checkbox"
                       value="western"
                       checked={filterCatVal === "western"}
-                      onChange={filterByCategory}
+                      onClick={filterByCategory}
                     />
                     Western Wear
                     <div className="common_checkboxIndicator"></div>
@@ -92,7 +102,7 @@ export const WomenPage = () => {
                       type="checkbox"
                       value="indian"
                       checked={filterCatVal === "indian"}
-                      onChange={filterByCategory}
+                      onClick={filterByCategory}
                     />
                     Indian Wear
                   </label>
@@ -108,7 +118,7 @@ export const WomenPage = () => {
                       type="checkbox"
                       value={70}
                       checked={filterDisVal == 70}
-                      onChange={filterByDiscount}
+                      onClick={filterByDiscount}
                     />
                     70% and above
                     <div className="common_checkboxIndicator"></div>
@@ -120,7 +130,7 @@ export const WomenPage = () => {
                       type="checkbox"
                       value={60}
                       checked={filterDisVal == 60}
-                      onChange={filterByDiscount}
+                      onClick={filterByDiscount}
                     />
                     60% and above
                   </label>
@@ -131,7 +141,7 @@ export const WomenPage = () => {
                       type="checkbox"
                       value={50}
                       checked={filterDisVal == 50}
-                      onChange={filterByDiscount}
+                      onClick={filterByDiscount}
                     />
                     50% and above
                   </label>
@@ -142,7 +152,7 @@ export const WomenPage = () => {
                       type="checkbox"
                       value={40}
                       checked={filterDisVal == 40}
-                      onChange={filterByDiscount}
+                      onClick={filterByDiscount}
                     />
                     40% and above
                   </label>
@@ -153,7 +163,7 @@ export const WomenPage = () => {
                       type="checkbox"
                       value={30}
                       checked={filterDisVal == 30}
-                      onChange={filterByDiscount}
+                      onClick={filterByDiscount}
                     />
                     30% and above
                   </label>
@@ -172,7 +182,7 @@ export const WomenPage = () => {
                     <input
                       type="radio"
                       onChange={SortByCost}
-                      checked={sortVal == "price_desc"}
+                      checked={sortVal === "price_desc"}
                       value="price_desc"
                     />
                     Price: High to Low
@@ -183,10 +193,20 @@ export const WomenPage = () => {
                     <input
                       type="radio"
                       onChange={SortByCost}
-                      checked={sortVal == "price_asc"}
+                      checked={sortVal === "price_asc"}
                       value="price_asc"
                     />
                     Price: Low to High
+                  </label>
+                </li>
+                <li>
+                  <label
+                    className="sort_label"
+                    onClick={() => {
+                      dispatch(getProductsData());
+                    }}
+                  >
+                    Show All Products
                   </label>
                 </li>
               </ul>

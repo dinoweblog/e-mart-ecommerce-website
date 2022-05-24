@@ -32,8 +32,6 @@ export const CartPageCard = ({
     cartHandle();
   }, [incQty]);
 
-  console.log("itemQty", itemQty, cartId, index);
-
   const cartHandle = () => {
     fetch(`https://emart-server.herokuapp.com/cart/items/update/${cartId}`, {
       method: "PATCH",
@@ -59,6 +57,7 @@ export const CartPageCard = ({
     })
       .then((res) => {
         dispatch(getCartProductsData(userId, token));
+        dispatch(getCartProductsSuccess());
       })
 
       .catch((error) => console.log(error));

@@ -43,13 +43,13 @@ export const Footer = () => {
             <h3>FOLLOW US</h3>
             <div className="social_icon">
               <a href="">
-                <i class="bx bxl-instagram-alt"></i>
+                <i className="bx bxl-instagram-alt"></i>
               </a>
               <a href="">
-                <i class="bx bxl-twitter"></i>
+                <i className="bx bxl-twitter"></i>
               </a>
               <a href="">
-                <i class="bx bxl-facebook-circle"></i>
+                <i className="bx bxl-facebook-circle"></i>
               </a>
             </div>
           </div>

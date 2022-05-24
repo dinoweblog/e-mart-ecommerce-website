@@ -20,7 +20,7 @@ export const Checkout = () => {
   useEffect(() => {
     // dispatch(getCartProductsData(userId, token));
   }, []);
-  console.log(cart_products, quantity, itemQty);
+
   useEffect(() => {
     if (quantity > 0) {
       let x = 0;
@@ -81,8 +81,7 @@ export const Checkout = () => {
             </div>
             {cart_products.map((e, index) => (
               <CartPageCard
-                key={e.id}
-                id={e.id}
+                key={index}
                 imageURL={e.imageURL}
                 name={e.name}
                 description={e.desc}

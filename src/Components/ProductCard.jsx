@@ -18,7 +18,7 @@ export const ProductCard = ({
         <div className="product_img_sec">
           <img src={imageURL} alt="" />
         </div>
-        <div className="product_title_sec">
+        <div className="product_details_sec">
           <h2 className="product_title">{name}</h2>
           <p className="product_price">
             <span className="new_price">

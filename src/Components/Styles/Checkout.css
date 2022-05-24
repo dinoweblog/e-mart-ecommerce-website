@@ -272,7 +272,6 @@ color: #03a685;
     font-size: 12px;
     padding: 5px 10px;
     background-color: transparent;
-    border: 1px solid var(--font_color);
     border-radius: 4px;
 }
 .input_title>p {

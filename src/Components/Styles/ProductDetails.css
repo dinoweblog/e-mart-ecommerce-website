@@ -15,8 +15,7 @@ button{
     grid-template-columns: 48% 48%;
     justify-content: space-between;
 }
-.inner_container>div{
-}
+
 
 .details_div>div{
     margin-top: 30px;
@@ -27,8 +26,9 @@ button{
     margin-bottom: 20px;
 }
 
-.product_title{
-    margin-bottom: 20px;
+.details_div>h2{
+    margin-bottom: 10px;
+    font-size: 24px;
 }
 
 .products_price .old_price {
@@ -56,9 +56,11 @@ button{
 
 .product_size{
     display: flex;
+    gap: 5px;
+    margin-top: 10px;
 }
 
-.product_size>div{
+.single_size_class{
     width: 50px;
     height: 50px;
     border: 1px solid #bfc0c6;
@@ -71,6 +73,10 @@ button{
 
 .product_size>div:hover{
     border: 1px solid  var(--theme-color);
+}
+
+.select_active_class{
+    border: 1px solid var(--theme-color);
 }
 
 .product_quantity{
@@ -156,3 +162,54 @@ button{
     margin: auto;
     margin-top: 80px;
 }
+
+
+/* ------------Small Image css-------------- */
+
+.img_div{
+    display: grid;
+    grid-template-columns: 15% 83%;
+    justify-content: space-between;
+}
+
+.small_img>div{
+    border: 1px solid var(--gray-font-color);
+    padding: 3px;
+    margin-bottom: 3px;
+}
+
+.big_img{
+    border: 1px solid var(--gray-font-color);
+        padding: 3px;
+        margin-bottom: 3px;
+}
+
+.img_div img{
+    width: 100%;
+}
+
+/* -------------Responsive Css---------------- */
+
+@media (max-width: 998px) {
+    .outer_container {
+        width: 90%;
+        margin: auto;
+        margin-top: 8%;
+    }
+
+    .inner_container {
+        display: block;
+        /* grid-template-rows: 95%;
+        justify-content: space-between; */
+    }
+
+
+    .details_div {
+        margin-top: 40px;
+    }
+    .product_size>div {
+        width: 40px;
+        height: 40px;
+    }
+}
+

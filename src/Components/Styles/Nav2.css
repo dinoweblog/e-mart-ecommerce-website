@@ -38,8 +38,7 @@ li {
   display: grid;
   grid-template-columns: 10% 40% 20% 20%;
   justify-content: space-between;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 20px -10px;
     background-color: white;
 }
 

@@ -48,7 +48,6 @@ export const Address = () => {
     setoldTotal(x);
   }, []);
 
-  console.log("addressss", address);
   const addressData = {
     userName,
     mobile,

@@ -82,7 +82,7 @@ export const Navbar = () => {
             placeholder="Search for products"
           />
           <button id="search_btn">
-            <i class="bx bx-search"></i>
+            <i className="bx bx-search"></i>
           </button>
         </div>
 
@@ -103,7 +103,7 @@ export const Navbar = () => {
             </li>
             <li id="cart_btn">
               <Link to={"/checkout/cart"}>
-                <i class="bx bx-cart-add"></i>
+                <i className="bx bx-cart-add"></i>
                 <p>Cart</p>
               </Link>
               {quantity > 0 ? (

@@ -8,6 +8,8 @@ import { Footer } from "./Footer";
 import "./Styles/Home.css";
 import { getCartProductsData } from "../Redux/Cart/action";
 
+let count = 1;
+
 export const Home = () => {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
@@ -16,7 +18,7 @@ export const Home = () => {
 
   useEffect(() => {
     dispatch(getProductsData());
-    if (isAuthenticated === "true") {
+    if (isAuthenticated === "true" && count === 1) {
       setShow(true);
     }
   }, []);
@@ -24,6 +26,7 @@ export const Home = () => {
   useEffect(() => {
     setTimeout(() => {
       setShow(false);
+      count = 2;
     }, 3000);
   }, []);
   return (

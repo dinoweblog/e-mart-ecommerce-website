@@ -8,7 +8,11 @@ import { getCartProductsData } from "../Redux/Cart/action";
 import { WomenSlider } from "./Slider";
 
 export const ProductDetailsPage = () => {
-  const [quantity, setQuantity] = useState(1);
+  const [img, setImg] = useState();
+  const [size, setSize] = useState([]);
+  const [sizeSelect, setSizeSelect] = useState(true);
+  const [selectClass, setSelectClass] = useState("");
+  const [cartAdd, setCartAdd] = useState(false);
   const [data, setData] = useState({});
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -25,22 +29,28 @@ export const ProductDetailsPage = () => {
       .then((res) => res.json())
       .then((res) => {
         setData({ ...res.product });
+        setImg(res.product.imageURL);
+        setSize([...res.product.size]);
       })
       .catch((error) => console.log(error));
   };
 
   const cartHandle = () => {
-    fetch(`https://emart-server.herokuapp.com/cart/items`, {
-      method: "POST",
-      body: JSON.stringify({ productId: id, userId, quantity: 1 }),
-      headers: {
-        "Content-Type": "Application/json",
-        Authorization: "Bearer " + token,
-      },
-    })
-      .then((res) => dispatch(getCartProductsData(userId, token)))
+    if (cartAdd) {
+      fetch(`https://emart-server.herokuapp.com/cart/items`, {
+        method: "POST",
+        body: JSON.stringify({ productId: id, userId, quantity: 1 }),
+        headers: {
+          "Content-Type": "Application/json",
+          Authorization: "Bearer " + token,
+        },
+      })
+        .then((res) => dispatch(getCartProductsData(userId, token)))
 
-      .catch((error) => console.log(error));
+        .catch((error) => console.log(error));
+    } else {
+      setSizeSelect(false);
+    }
   };
 
   return (
@@ -49,8 +59,45 @@ export const ProductDetailsPage = () => {
       <div className="outer_container">
         <div className="inner_container">
           <div className="img_div">
-            <div>
-              <img src={data.imageURL} alt="" />
+            <div className="small_img">
+              <div
+                onClick={() => {
+                  setImg(data.imageURL);
+                }}
+              >
+                <img src={data.imageURL} alt="" />
+              </div>
+              <div
+                onClick={() => {
+                  setImg(data.img1);
+                }}
+              >
+                <img src={data.img1} alt="" />
+              </div>
+              <div
+                onClick={() => {
+                  setImg(data.img2);
+                }}
+              >
+                <img src={data.img2} alt="" />
+              </div>
+              <div
+                onClick={() => {
+                  setImg(data.img3);
+                }}
+              >
+                <img src={data.img3} alt="" />
+              </div>
+              <div
+                onClick={() => {
+                  setImg(data.img4);
+                }}
+              >
+                <img src={data.img4} alt="" />
+              </div>
+            </div>
+            <div className="big_img">
+              <img src={img} alt="" />
             </div>
           </div>
           <div className="details_div">
@@ -65,10 +112,24 @@ export const ProductDetailsPage = () => {
             <div>
               <h3>SELECT SIZE</h3>
               <div className="product_size">
-                {/* {data.size.split(", ").map((e) => {
-                  return <div>{e}</div>;
-                })} */}
+                {size.map((e) => (
+                  <div
+                    className={`single_size_class ${selectClass}`}
+                    onClick={() => {
+                      setSizeSelect(true);
+                      setCartAdd(true);
+                      setSelectClass("select_active_class");
+                    }}
+                  >
+                    {e}
+                  </div>
+                ))}
               </div>
+              {sizeSelect ? (
+                <p></p>
+              ) : (
+                <p style={{ color: "red" }}>Please select product size</p>
+              )}
             </div>
 
             <div>
@@ -89,7 +150,7 @@ export const ProductDetailsPage = () => {
                 placeholder="Enter pincode"
               />
               <button className="pincode_check_btn">Check</button>
-              <p>
+              <p style={{ marginTop: "6px" }}>
                 Please enter PIN code to check delivery time & Pay on Delivery
                 Availability
               </p>
@@ -105,7 +166,7 @@ export const ProductDetailsPage = () => {
         </div>
       </div>
       <div className="similar">
-        <h2>Similar Products</h2>
+        <h2>SIMILAR PRODUCTS</h2>
       </div>
       <WomenSlider />
       <Footer />
