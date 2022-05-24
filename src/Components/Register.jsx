@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Navbar } from "./Navbar";
 import "./Styles/RegisterLogin.css";
 
@@ -9,7 +9,7 @@ export const Register = () => {
   const [mobile, setMobile] = useState("");
   const [password, setPassword] = useState("");
   const [repassword, setRepassword] = useState("");
-
+  const navigate = useNavigate();
   const userDetails = {
     name,
     email,
@@ -18,11 +18,29 @@ export const Register = () => {
     repassword,
   };
 
+  const getRegister = (event) => {
+    event.preventDefault();
+
+    fetch(`https://emart-server.herokuapp.com/register`, {
+      method: "POST",
+      body: JSON.stringify(userDetails),
+      headers: {
+        "Content-Type": "Application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        navigate("/user/login");
+      })
+
+      .catch((error) => console.log(error));
+  };
+
   return (
     <div className="register_container">
       <Navbar />
       <div>
-        <form className="form" action="">
+        <form onSubmit={getRegister} className="form" action="">
           <h2>Signup</h2>
           <input
             type="text"

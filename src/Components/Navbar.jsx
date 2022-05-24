@@ -11,11 +11,11 @@ export const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   const dispatch = useDispatch();
-
+  const { userId, token } = useSelector((state) => state.login);
   const { quantity } = useSelector((state) => state.cart_products);
 
   useEffect(() => {
-    dispatch(getCartProductsData());
+    dispatch(getCartProductsData(userId, token));
   }, []);
 
   return (
@@ -103,7 +103,7 @@ export const Navbar = () => {
             </li>
             <li id="cart_btn">
               <Link to={"/checkout/cart"}>
-                <i className="bx bx-shopping-bag"></i>
+                <i class="bx bx-cart-add"></i>
                 <p>Cart</p>
               </Link>
               {quantity > 0 ? (
@@ -115,7 +115,7 @@ export const Navbar = () => {
         {/* hamburget menu start  */}
         <div className="responsive_btn">
           <a href="#" onClick={() => setShowMenu(!showMenu)}>
-            <GiHamburgerMenu />
+            <GiHamburgerMenu style={{ fontSize: "2.3rem", color: "#282c3f" }} />
           </a>
         </div>
       </nav>

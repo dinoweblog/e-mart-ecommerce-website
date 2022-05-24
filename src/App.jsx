@@ -10,8 +10,13 @@ import { Payment } from "./Components/Payment";
 import { OrderConfirm } from "./Components/OrderConfirm";
 import { Register } from "./Components/Register";
 import { Login } from "./Components/Login";
+import { useSelector } from "react-redux";
+import { PrivateRoute } from "./Components/Private/PrivateRoute";
 
 function App() {
+  const { isAuthenticated } = useSelector((state) => state.login);
+  const { cart_products } = useSelector((state) => state.cart_products);
+
   return (
     <Routes>
       <Route path="/" element={<Home />} />

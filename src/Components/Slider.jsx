@@ -33,6 +33,7 @@ const SliderDiv = styled(Slider)`
     padding: 0 20% 0 0;
   }
 `;
+
 export const WomenSlider = () => {
   const { products } = useSelector((state) => state.products);
   const dispatch = useDispatch();

@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { getCartProductsData } from "../Redux/Cart/action";
+import {
+  getCartProductsData,
+  getCartProductsSuccess,
+} from "../Redux/Cart/action";
 
 export const CartPageCard = ({
-  id,
   imageURL,
   name,
   oldPrice,
@@ -12,19 +14,13 @@ export const CartPageCard = ({
   off,
   category,
   description,
-  quant,
   itemQty,
   cartId,
-  color,
-  size,
+  index,
 }) => {
-  const [quantity, setQuantity] = useState(1);
-  const [data, setData] = useState([]);
   const [incQty, setIncQty] = useState(itemQty);
-  const [decQty, setDecQty] = useState(itemQty);
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const { userId, token } = useSelector((state) => state.login);
 
@@ -32,7 +28,11 @@ export const CartPageCard = ({
     setIncQty(itemQty + x);
   };
 
-  console.log("itemQty", itemQty);
+  useEffect(() => {
+    cartHandle();
+  }, [incQty]);
+
+  console.log("itemQty", itemQty, cartId, index);
 
   const cartHandle = () => {
     fetch(`https://emart-server.herokuapp.com/cart/items/update/${cartId}`, {
@@ -43,8 +43,9 @@ export const CartPageCard = ({
         Authorization: "Bearer " + token,
       },
     })
-      .then((res) => dispatch(getCartProductsData(userId, token)))
-
+      .then((res) => {
+        dispatch(getCartProductsData(userId, token));
+      })
       .catch((error) => console.log(error));
   };
 
@@ -56,7 +57,9 @@ export const CartPageCard = ({
         Authorization: "Bearer " + token,
       },
     })
-      .then((res) => dispatch(getCartProductsData(userId, token)))
+      .then((res) => {
+        dispatch(getCartProductsData(userId, token));
+      })
 
       .catch((error) => console.log(error));
   };
@@ -86,7 +89,6 @@ export const CartPageCard = ({
               className="quantity_dec"
               onClick={() => {
                 IncDechandle(-1);
-                cartHandle();
               }}
             >
               <i className="bx bx-minus"></i>
@@ -96,7 +98,6 @@ export const CartPageCard = ({
               className="quantity_inc"
               onClick={() => {
                 IncDechandle(1);
-                cartHandle();
               }}
             >
               <i className="bx bx-plus"></i>

@@ -18,26 +18,28 @@ export const Checkout = () => {
   const [dis, setdis] = useState(0);
 
   useEffect(() => {
-    dispatch(getCartProductsData(userId, token));
-  }, [dispatch]);
-
-  useEffect(() => {
-    let x = 0;
-    let d = 0;
-    if (cart_products.length > 1) {
-      for (let i = 0; i < cart_products.length; i++) {
-        x += Number(cart_products[i].oldPrice) * itemQty[i];
-        d += Number(cart_products[i].newPrice) * itemQty[i];
-      }
-      setdis(x - d);
-      setoldTotal(x);
-    } else {
-      x += Number(cart_products[0].oldPrice) * itemQty[0];
-      d += Number(cart_products[0].newPrice) * itemQty[0];
-      setdis(x - d);
-      setoldTotal(x);
-    }
+    // dispatch(getCartProductsData(userId, token));
   }, []);
+  console.log(cart_products, quantity, itemQty);
+  useEffect(() => {
+    if (quantity > 0) {
+      let x = 0;
+      let d = 0;
+      if (cart_products.length > 1) {
+        for (let i = 0; i < cart_products.length; i++) {
+          x += Number(cart_products[i].oldPrice) * itemQty[i];
+          d += Number(cart_products[i].newPrice) * itemQty[i];
+        }
+        setdis(x - d);
+        setoldTotal(x);
+      } else {
+        x += Number(cart_products[0].oldPrice) * itemQty[0];
+        d += Number(cart_products[0].newPrice) * itemQty[0];
+        setdis(x - d);
+        setoldTotal(x);
+      }
+    }
+  }, [quantity, itemQty]);
 
   return (
     <div>
@@ -91,7 +93,10 @@ export const Checkout = () => {
                 color={e.color}
                 size={e.size}
                 itemQty={itemQty[index]}
-                cartId={cart[index]._id}
+                cartId={
+                  cart_products.length === 1 ? cart[0]._id : cart[index]._id
+                }
+                index={index}
               />
             ))}
           </div>
