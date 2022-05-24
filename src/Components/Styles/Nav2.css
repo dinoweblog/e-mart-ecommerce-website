@@ -36,7 +36,7 @@ li {
   padding: 0 5%;
   height: 10rem;
   display: grid;
-  grid-template-columns: 10% 40% 20% 20%;
+  grid-template-columns: 10% 35% 25% 20%;
   justify-content: space-between;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 20px -10px;
     background-color: white;
@@ -75,7 +75,7 @@ display: flex;
 
  }
 
- .menu_link ul li :hover {
+ .menu_link ul li a :hover {
    border-bottom: var(--theme-color) 3px solid;
 
  }
@@ -153,6 +153,20 @@ display: flex;
 
  #second_menu_section>ul li i {
    font-size: 20px;
+ }
+
+ .profile_btn{
+   position: relative;
+ }
+
+ .profile_drop_down{
+   position: absolute;
+   width: 15rem;
+   height: 15rem;
+   margin-top: 30px;
+   z-index: 99;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: white;
  }
 
 
@@ -259,7 +273,7 @@ display: flex;
       padding: 0 3%;
     }
   .main_nav .logo a {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
     }
 
         #search_input{

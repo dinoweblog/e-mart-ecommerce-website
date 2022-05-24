@@ -1,4 +1,13 @@
+:root {
+  --nav_menu_font: 1.8rem;
+  --res_nav_menu_font: 1.5rem;
+  --nav_color: #282c3f;
+  --theme-color: #ff3e6c;
 
+}
+a{
+  color: #282c3f;
+}
 .App {
   text-align: center;
 }

@@ -4,6 +4,7 @@ import { Navbar } from "./Navbar";
 import "./Styles/RegisterLogin.css";
 
 export const Register = () => {
+  const [showPass, setShowPass] = useState(true);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
@@ -56,21 +57,27 @@ export const Register = () => {
           />
 
           <input
-            type="password"
+            type={showPass ? `password` : "text"}
             placeholder="Password"
             autocomplete="new-password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          <span>
+            <input
+              type="checkbox"
+              onClick={() => {
+                setShowPass(!showPass);
+              }}
+            />{" "}
+            <span>Show Password</span>
+          </span>
           <input
             type="password"
             placeholder="Confirm Password"
             value={repassword}
             onChange={(e) => setRepassword(e.target.value)}
           />
-          <span>
-            <input type="checkbox" /> <span>Show Password</span>
-          </span>
 
           <input
             type="number"

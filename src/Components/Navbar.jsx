@@ -9,6 +9,7 @@ import { getCartProductsData } from "../Redux/Cart/action";
 
 export const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [showProDrop, setShowProDrop] = useState(false);
 
   const dispatch = useDispatch();
   const { userId, token } = useSelector((state) => state.login);
@@ -41,12 +42,6 @@ export const Navbar = () => {
             <li>
               <Link to={"/"}>Best Collection</Link>
             </li>
-            <li>
-              <Link to={"/user/register"}>Signup</Link>
-            </li>
-            <li>
-              <Link to={"/user/login"}>Login</Link>
-            </li>
           </ul>
         </div>
 
@@ -64,12 +59,6 @@ export const Navbar = () => {
               </li>
               <li>
                 <Link to={"/"}>Best Collection</Link>
-              </li>
-              <li>
-                <Link to={"/user/register"}>Signup</Link>
-              </li>
-              <li>
-                <Link to={"/user/login"}>Login</Link>
               </li>
             </ul>
           </div>
@@ -89,11 +78,26 @@ export const Navbar = () => {
         {/* 3rd social media links */}
         <div id="second_menu_section">
           <ul className="second_menu_section_desktop">
-            <li>
-              <Link to={"/"}>
+            <li className="profile_btn">
+              <Link
+                to={"#"}
+                onClick={() => {
+                  setShowProDrop(!showProDrop);
+                }}
+              >
                 <i className="bx bx-user"></i>
                 <p>Profile</p>
               </Link>
+              {showProDrop ? (
+                <ul className="profile_drop_down">
+                  <li>
+                    <Link to={"/user/register"}>Signup</Link>
+                  </li>
+                  <li>
+                    <Link to={"/user/login"}>Login</Link>
+                  </li>
+                </ul>
+              ) : null}
             </li>
             <li>
               <Link to={"/"}>

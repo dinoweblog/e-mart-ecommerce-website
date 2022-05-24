@@ -17,7 +17,7 @@ export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const userDetails = {
     email,
     password,
@@ -45,14 +45,15 @@ export const Login = () => {
         );
         dispatch(loginAuthenticated("true"));
         dispatch(getCartProductsData(res.user._id, res.token));
-      }).then((res)=>{
-        navigate("/")
+      })
+      .then((res) => {
+        navigate("/");
       })
       .catch((error) => dispatch(loginError()));
   };
 
   return (
-    <div className="register_container">
+    <div className="register_container ">
       <Navbar />
       <div>
         <form onSubmit={getLogedin} className="form" action="">

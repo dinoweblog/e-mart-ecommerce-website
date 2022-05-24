@@ -231,6 +231,7 @@ h1, h2, h3, h4, p{
 @media (max-width: 1200px) and (min-width: 998px) {
     .product_category {bottom: 28%;margin-left: 3%;}
 }
+
 @media (max-width: 998px) {
     .products_container {
         display: grid;

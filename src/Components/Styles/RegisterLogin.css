@@ -5,6 +5,7 @@
     --font_color: #282c3f;
     --border-color: #e9e9ed;
     --hover-color: #f0f0f0;
+    --theme-color: #ff3e6c;
 }
 input{
     outline: none;
@@ -20,7 +21,7 @@ input{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 30%;
+    width: 35%;
     margin: auto;
     padding: 2% 4%;
     box-sizing: border-box;
@@ -34,13 +35,20 @@ input{
         font-weight: 500;
 }
 
-input[type=number]::-webkit-inner-spin-button,
+.register_container input[type=number]::-webkit-inner-spin-button,
 .no-spin::-webkit-outer-spin-button {
     -webkit-appearance: none !important;
     margin: 0 !important;
 }
-input[type=number] {
+.register_container input[type=number] {
     -moz-appearance: textfield !important;
+}
+
+ .register_container input[type=submit] {
+    border: 1px solid var(--border-color);
+    background-color: var(--theme-color);
+    color: white;
+    padding: 10px 0;
 }
 
 .register_container input {
@@ -68,4 +76,25 @@ input[type=checkbox]{
     font-size: 12px;
 }
 
+@media (max-width: 998px) {
+    .register_container form {
+            width: 50%;
+    
+        }
+    
+}
+
+@media (max-width: 835px) and (min-width: 798px) {
+    .register_container form {
+        width: 70%;
+
+        }
+    }
+@media (max-width: 798px) {
+    .register_container form {
+            width: 80%;
+    
+        }
+    }
+@media (max-width: 520px) {}
 
