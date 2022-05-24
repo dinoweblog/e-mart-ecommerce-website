@@ -2,54 +2,42 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { getCartProductsData } from "../Redux/Cart/action";
-import { getQuantitySuccess } from "../Redux/Quantity/action";
 import { CartPageCard } from "./CartPageCard";
 import { Navbar2 } from "./Navbar2";
 import "./Styles/Checkout.css";
+import { TotalAmount } from "./TotalAmount";
 
 export const Checkout = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { cart_products } = useSelector((state) => state.cart_products);
-  const { quantity } = useSelector((state) => state.quantity);
-  const [qty, setQty] = useState(0);
+  const { cart_products, quantity, itemQty, cart } = useSelector(
+    (state) => state.cart_products
+  );
+  const { userId, token } = useSelector((state) => state.login);
   const [oldTotal, setoldTotal] = useState(0);
-  const [total, settotal] = useState(0);
   const [dis, setdis] = useState(0);
-  const [quant, setQuant] = useState(1);
 
   useEffect(() => {
-    dispatch(getCartProductsData());
-    dispatch(getQuantitySuccess());
-  }, [dispatch, quant]);
+    dispatch(getCartProductsData(userId, token));
+  }, [dispatch]);
 
   useEffect(() => {
-    let a = 0;
-    let b = 0;
-
-    cart_products.map((e) => {
-      a = a + Number(e.oldPrice);
-      b = b + (Number(e.oldPrice) - Number(e.newPrice));
-    });
-
-    setoldTotal(a * quant);
-    setdis(b * quant);
-  }, [quant, cart_products]);
-
-  const decQty = () => {
-    let q = quant;
-    if (quant > 1) {
-      q = q - 1;
+    let x = 0;
+    let d = 0;
+    if (cart_products.length > 1) {
+      for (let i = 0; i < cart_products.length; i++) {
+        x += Number(cart_products[i].oldPrice) * itemQty[i];
+        d += Number(cart_products[i].newPrice) * itemQty[i];
+      }
+      setdis(x - d);
+      setoldTotal(x);
+    } else {
+      x += Number(cart_products[0].oldPrice) * itemQty[0];
+      d += Number(cart_products[0].newPrice) * itemQty[0];
+      setdis(x - d);
+      setoldTotal(x);
     }
-    setQuant(q);
-    dispatch(getQuantitySuccess(q));
-  };
-  const incQty = () => {
-    let q = quant;
-    q = q + 1;
-    setQuant(q);
-    dispatch(getQuantitySuccess(q));
-  };
+  }, []);
 
   return (
     <div>
@@ -82,9 +70,14 @@ export const Checkout = () => {
               </div>
             </div>
             <div className="checkout_div all_item_remove_btn">
+              <p>
+                <i className="bx bxs-check-square"></i> {quantity} Items
+                Selected
+              </p>
+              <p>- | -</p>
               <button className="text_btn">ALL REMOVE</button>
             </div>
-            {cart_products.map((e) => (
+            {cart_products.map((e, index) => (
               <CartPageCard
                 key={e.id}
                 id={e.id}
@@ -97,63 +90,20 @@ export const Checkout = () => {
                 category={e.category}
                 color={e.color}
                 size={e.size}
-                incQty={incQty}
-                decQty={decQty}
-                quant={quant}
+                itemQty={itemQty[index]}
+                cartId={cart[index]._id}
               />
             ))}
           </div>
           <div className="checkout_div_right">
-            <div>
-              <p>PRICE DETAILS</p>
-            </div>
-            <div class="order_summary" id="priceBlock">
-              <div class="base_price_detail price_details">
-                <span>Total MRP</span>
-                <span>
-                  <i class="bx bx-rupee"></i>
-                  {Intl.NumberFormat("en-IN").format(oldTotal)}
-                </span>
-              </div>
-              <div class="discount_price price_details">
-                <span>Discount on MRP</span>
-                <span className="text_color_green">
-                  <i class="bx bx-rupee"></i>
-                  {dis}
-                </span>
-              </div>
-              {/* <div class="priceDetail-base-row">
-                <span>Coupon Discount</span>
-                <span class="priceDetail-base-value priceDetail-base-action">
-                  Apply Coupon
-                </span>
-              </div> */}
-              <div class="convenience_fee price_details">
-                <span>Convenience Fee</span>
-                <span>
-                  <span style={{ textDecoration: "line-through" }}>
-                    <i class="bx bx-rupee"></i>69
-                  </span>
-                  <span className="text_color_green"> FREE</span>
-                </span>
-              </div>
-              <div class="total_amount price_details">
-                <span>Total Amount</span>
-                <span>
-                  <i class="bx bx-rupee"></i>
-                  {oldTotal - dis}
-                </span>
-              </div>
-            </div>
-            <div className="place_order_btn">
-              <button
-                onClick={() => {
-                  navigate("/checkout/address");
-                }}
-              >
-                PLACE ORDER
-              </button>
-            </div>
+            <TotalAmount
+              totalQty={quantity}
+              oldTotal={oldTotal}
+              dis={dis}
+              redirectLink={"/checkout/address"}
+              btnText={"CONTINUE"}
+              btn={true}
+            />
           </div>
         </div>
       ) : (

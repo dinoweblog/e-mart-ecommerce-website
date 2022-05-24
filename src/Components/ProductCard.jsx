@@ -21,8 +21,12 @@ export const ProductCard = ({
         <div className="product_title_sec">
           <h2 className="product_title">{name}</h2>
           <p className="product_price">
-            <span className="new_price">Rs. {newPrice}</span>
-            <span className="old_price">Rs. {oldPrice}</span>
+            <span className="new_price">
+              Rs. {Intl.NumberFormat("en-IN").format(newPrice)}
+            </span>
+            <span className="old_price">
+              Rs. {Intl.NumberFormat("en-IN").format(oldPrice)}
+            </span>
             <span className="off">({off}% OFF)</span>
           </p>
 

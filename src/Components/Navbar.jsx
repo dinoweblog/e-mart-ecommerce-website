@@ -6,18 +6,16 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { Link, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartProductsData } from "../Redux/Cart/action";
-import { getQuantitySuccess } from "../Redux/Quantity/action";
 
 export const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   const dispatch = useDispatch();
 
-  const { cart_products } = useSelector((state) => state.cart_products);
+  const { quantity } = useSelector((state) => state.cart_products);
 
   useEffect(() => {
     dispatch(getCartProductsData());
-    dispatch(getQuantitySuccess(cart_products.length));
   }, []);
 
   return (
@@ -43,6 +41,12 @@ export const Navbar = () => {
             <li>
               <Link to={"/"}>Best Collection</Link>
             </li>
+            <li>
+              <Link to={"/user/register"}>Signup</Link>
+            </li>
+            <li>
+              <Link to={"/user/login"}>Login</Link>
+            </li>
           </ul>
         </div>
 
@@ -60,6 +64,12 @@ export const Navbar = () => {
               </li>
               <li>
                 <Link to={"/"}>Best Collection</Link>
+              </li>
+              <li>
+                <Link to={"/user/register"}>Signup</Link>
+              </li>
+              <li>
+                <Link to={"/user/login"}>Login</Link>
               </li>
             </ul>
           </div>
@@ -96,8 +106,8 @@ export const Navbar = () => {
                 <i className="bx bx-shopping-bag"></i>
                 <p>Cart</p>
               </Link>
-              {cart_products.length > 0 ? (
-                <span className="cart_count">{cart_products.length}</span>
+              {quantity > 0 ? (
+                <span className="cart_count">{quantity}</span>
               ) : null}
             </li>
           </ul>

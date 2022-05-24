@@ -4,6 +4,7 @@ const initialState = {
   loading: false,
   error: false,
   products: [],
+  totalPages: 0,
 };
 
 export const productsReducer = (store = initialState, { type, payload }) => {
@@ -12,7 +13,13 @@ export const productsReducer = (store = initialState, { type, payload }) => {
       return { ...store, loading: true };
 
     case PRODUCTS_SUCCESS:
-      return { ...store, loading: false, error: false, products: [...payload] };
+      return {
+        ...store,
+        loading: false,
+        error: false,
+        products: [...payload.products],
+        totalPages: payload.totalPages,
+      };
 
     case PRODUCTS_ERROR:
       return { ...store, loading: false, error: true };

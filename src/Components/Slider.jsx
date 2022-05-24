@@ -83,8 +83,8 @@ export const WomenSlider = () => {
       <SliderDiv {...settings}>
         {products.map((e) => (
           <ProductCard
-            key={e.id}
-            id={e.id}
+            key={e._id}
+            id={e._id}
             imageURL={e.imageURL}
             name={e.name}
             oldPrice={e.oldPrice}

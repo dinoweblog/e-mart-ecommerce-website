@@ -10,6 +10,11 @@ ul li {
     list-style: none;
     padding: 0px;
     margin: 0px;
+    
+}
+
+.footer a {
+    color:var(--color) ;
 }
 
 .footer ul{
@@ -18,6 +23,7 @@ ul li {
 }
 .footer ul li{
     line-height: 190%;
+    font-size: 15px;
 }
 
 .footer{

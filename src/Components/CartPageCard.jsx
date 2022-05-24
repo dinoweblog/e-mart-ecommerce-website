@@ -12,53 +12,51 @@ export const CartPageCard = ({
   off,
   category,
   description,
-  incQty,
-  decQty,
   quant,
+  itemQty,
+  cartId,
   color,
   size,
 }) => {
   const [quantity, setQuantity] = useState(1);
   const [data, setData] = useState([]);
+  const [incQty, setIncQty] = useState(itemQty);
+  const [decQty, setDecQty] = useState(itemQty);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { cart_products } = useSelector((state) => state.cart_products);
+  const { userId, token } = useSelector((state) => state.login);
 
-  useEffect(() => {
-    dispatch(getCartProductsData());
-  }, [dispatch]);
+  const IncDechandle = (x) => {
+    setIncQty(itemQty + x);
+  };
 
-  useEffect(() => {
-    // findData();
-  }, []);
-  //   const findData = () => {
-  //     fetch(`https://all-json-server.herokuapp.com/woman_products/${id}`)
-  //       .then((res) => res.json())
-  //       .then((res) => {
-  //         setData({ ...res });
-  //       })
-  //       .catch((error) => console.log(error));
-  //   };
+  console.log("itemQty", itemQty);
 
-  //   const cartHandle = () => {
-  //     fetch(`http://localhost:3000/cart_products`, {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify({ ...data, quantity }),
-  //     })
-  //       .then((res) => dispatch(getCartProductsData()))
+  const cartHandle = () => {
+    fetch(`https://emart-server.herokuapp.com/cart/items/update/${cartId}`, {
+      method: "PATCH",
+      body: JSON.stringify({ quantity: incQty }),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
+      },
+    })
+      .then((res) => dispatch(getCartProductsData(userId, token)))
 
-  //       .catch((error) => console.log(error));
-  //   };
+      .catch((error) => console.log(error));
+  };
 
   const cartMoreHandle = () => {
-    fetch(`https://all-json-server.herokuapp.com/cart_products/${id}`, {
+    fetch(`https://emart-server.herokuapp.com/cart/items/delete/${cartId}`, {
       method: "DELETE",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
+      },
     })
-      .then((res) => dispatch(getCartProductsData()))
+      .then((res) => dispatch(getCartProductsData(userId, token)))
 
       .catch((error) => console.log(error));
   };
@@ -72,8 +70,12 @@ export const CartPageCard = ({
         <h2 className="product_title">{name}</h2>
         <p className="product_desc">{description}</p>
         <p className="product_price">
-          <span className="new_price">Rs. {newPrice}</span>
-          <span className="old_price">Rs. {oldPrice}</span>
+          <span className="new_price">
+            Rs. {Intl.NumberFormat("en-IN").format(newPrice)}
+          </span>
+          <span className="old_price">
+            Rs. {Intl.NumberFormat("en-IN").format(oldPrice)}
+          </span>
           <span className="off">({off}% OFF)</span>
         </p>
 
@@ -82,16 +84,22 @@ export const CartPageCard = ({
           <div className="product_quantity">
             <button
               className="quantity_dec"
-              onClick={decQty}
+              onClick={() => {
+                IncDechandle(-1);
+                cartHandle();
+              }}
             >
-              -
+              <i className="bx bx-minus"></i>
             </button>
-            <input type="text" value={quant} />
+            <input type="text" value={itemQty} />
             <button
               className="quantity_inc"
-              onClick={incQty}
+              onClick={() => {
+                IncDechandle(1);
+                cartHandle();
+              }}
             >
-              +
+              <i className="bx bx-plus"></i>
             </button>
           </div>
         </div>
@@ -107,7 +115,7 @@ export const CartPageCard = ({
             cartMoreHandle();
           }}
         >
-          <i class="bx bx-trash"></i>
+          <i className="bx bx-trash"></i>
         </button>
       </div>
     </div>

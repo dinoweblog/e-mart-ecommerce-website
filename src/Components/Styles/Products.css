@@ -16,7 +16,7 @@ h1, h2, h3, h4, p{
 .products_container{
     display: grid;
     grid-template-columns: 18% 82%;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .products_container .top_title{
@@ -67,7 +67,7 @@ h1, h2, h3, h4, p{
 }
 
 .sort_list{
-    font-size: 14px;
+    font-size: 18px;
     color: #282c3f;
     cursor: pointer;
     list-style: none;
@@ -127,7 +127,8 @@ h1, h2, h3, h4, p{
     margin: 0 16px 0 0;
 }
 .filter_by ul li {
-    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 16px;
 }
 /* .common_checkboxIndicator{
     box-sizing: border-box;

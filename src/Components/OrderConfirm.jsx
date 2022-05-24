@@ -10,10 +10,6 @@ export const OrderConfirm = () => {
   const navigate = useNavigate();
   const { cart_products } = useSelector((state) => state.cart_products);
 
-  useEffect(() => {
-    dispatch(getCartProductsData());
-  }, []);
-
   return (
     <div>
       <Navbar2 />

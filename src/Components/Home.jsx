@@ -15,7 +15,6 @@ export const Home = () => {
 
   useEffect(() => {
     dispatch(getProductsData());
-    dispatch(getCartProductsData());
   }, []);
   return (
     <div>

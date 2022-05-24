@@ -9,36 +9,36 @@ import { WomenSlider } from "./Slider";
 
 export const ProductDetailsPage = () => {
   const [quantity, setQuantity] = useState(1);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
   const dispatch = useDispatch();
   const { id } = useParams();
 
   const { cart_products } = useSelector((state) => state.cart_products);
-
-  useEffect(() => {
-    dispatch(getCartProductsData());
-  }, [dispatch]);
+  const { userId, token } = useSelector((state) => state.login);
 
   useEffect(() => {
     findData();
   }, []);
 
   const findData = () => {
-    fetch(`https://all-json-server.herokuapp.com/woman_products/${id}`)
+    fetch(`https://emart-server.herokuapp.com/products/${id}`)
       .then((res) => res.json())
       .then((res) => {
-        setData({ ...res });
+        setData({ ...res.product });
       })
       .catch((error) => console.log(error));
   };
 
   const cartHandle = () => {
-    fetch(`https://all-json-server.herokuapp.com/cart_products`, {
+    fetch(`https://emart-server.herokuapp.com/cart/items`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...data, quantity }),
+      body: JSON.stringify({ productId: id, userId, quantity: 1 }),
+      headers: {
+        "Content-Type": "Application/json",
+        Authorization: "Bearer " + token,
+      },
     })
-      .then((res) => dispatch(getCartProductsData()))
+      .then((res) => dispatch(getCartProductsData(userId, token)))
 
       .catch((error) => console.log(error));
   };

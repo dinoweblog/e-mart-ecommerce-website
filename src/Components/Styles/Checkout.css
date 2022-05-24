@@ -134,8 +134,20 @@ margin-top: 30px;
 
 .all_item_remove_btn{
     border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-
+.all_item_remove_btn p{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+.all_item_remove_btn p i{
+    font-size: 18px;
+    color: var(--theme-color);
+    margin-right: 5px;
+}
 .text_btn{
     border: none;
     background-color: transparent;
@@ -236,6 +248,33 @@ color: #03a685;
     padding: 5%;
     box-sizing: border-box;
 }
+
+.address_details_div{
+    width: 95%;
+        border: 1px solid var(--border-color);
+        padding: 5%;
+        box-sizing: border-box;
+        margin-top: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    line-height: 25px;
+}
+
+.address_details_div p{
+    font-size: 14px;
+}
+.remove_edit_btn{
+    display: flex;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.add_btn{
+    font-size: 12px;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: 1px solid var(--font_color);
+    border-radius: 4px;
+}
 .input_title>p {
    font-size: 15px;
    font-weight: 500;
@@ -276,7 +315,7 @@ color: #03a685;
 
 .save_address{
     margin-top: 30px;
-    width: 102%;
+    width: 100%;
 }
 
 .address_price_section{

@@ -7,6 +7,7 @@ import AccountBalanceOutlinedIcon from "@mui/icons-material/AccountBalanceOutlin
 import CreditCardOutlinedIcon from "@mui/icons-material/CreditCardOutlined";
 import { Navbar2 } from "./Navbar2";
 import "./Styles/Checkout.css";
+import { TotalAmount } from "./TotalAmount";
 
 export const Payment = () => {
   const dispatch = useDispatch();
@@ -15,29 +16,23 @@ export const Payment = () => {
   const [toggle1, setToggle1] = useState(true);
   const [toggle2, setToggle2] = useState(false);
   const [toggle3, setToggle3] = useState(false);
-  const { quantity } = useSelector((state) => state.quantity);
-  const { cart_products } = useSelector((state) => state.cart_products);
+
+  const { cart_products, quantity, itemQty, cart } = useSelector(
+    (state) => state.cart_products
+  );
   const [oldTotal, setoldTotal] = useState(0);
-  const [total, settotal] = useState(0);
   const [dis, setdis] = useState(0);
 
   useEffect(() => {
-    let a = 0;
-    let b = 0;
-    cart_products.map((e) => {
-      a = a + Number(e.oldPrice);
-      b = b + (Number(e.oldPrice) - Number(e.newPrice));
-    });
-    // settotal(oldTotal - dis);
-    setoldTotal(a * quantity);
-    setdis(b * quantity);
+    let x = 0;
+    let d = 0;
+    for (let i = 0; i < cart_products.length; i++) {
+      x += Number(cart_products[i].oldPrice) * itemQty[i];
+      d += Number(cart_products[i].newPrice) * itemQty[i];
+    }
+    setdis(x - d);
+    setoldTotal(x);
   }, []);
-
-  useEffect(() => {
-    dispatch(getCartProductsData());
-  }, []);
-
-  console.log(toggle);
 
   return (
     <div>
@@ -187,41 +182,12 @@ export const Payment = () => {
         </div>
 
         <div className="checkout_div_right">
-          <div>
-            <p>PRICE DETAILS ({})</p>
-          </div>
-          <div className="order_summary" id="priceBlock">
-            <div className="base_price_detail price_details">
-              <span>Total MRP</span>
-              <span>
-                <i className="bx bx-rupee"></i>
-                {oldTotal}
-              </span>
-            </div>
-            <div className="discount_price price_details">
-              <span>Discount on MRP</span>
-              <span className="text_color_green">
-                <i className="bx bx-rupee"></i>
-                {dis}
-              </span>
-            </div>
-            <div className="convenience_fee price_details">
-              <span>Convenience Fee</span>
-              <span>
-                <span style={{ textDecoration: "line-through" }}>
-                  <i className="bx bx-rupee"></i>69
-                </span>
-                <span className="text_color_green"> FREE</span>
-              </span>
-            </div>
-            <div className="total_amount price_details">
-              <span>Total Amount</span>
-              <span>
-                <i className="bx bx-rupee"></i>
-                {oldTotal - dis}
-              </span>
-            </div>
-          </div>
+          <TotalAmount
+            totalQty={quantity}
+            oldTotal={oldTotal}
+            dis={dis}
+            btn={false}
+          />
         </div>
       </div>
     </div>

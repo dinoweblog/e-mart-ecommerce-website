@@ -18,9 +18,10 @@ export const getProductsError = () => ({
 export const getProductsData = () => (dispatch) => {
   dispatch(getProductsLoading());
 
-  fetch("https://all-json-server.herokuapp.com/woman_products")
+  fetch("https://emart-server.herokuapp.com/products/women")
     .then((res) => res.json())
     .then((res) => {
+      console.log("res", res);
       dispatch(getProductsSuccess(res));
     })
     .catch((error) => dispatch(getProductsError()));

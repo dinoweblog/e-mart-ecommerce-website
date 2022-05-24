@@ -15,10 +15,16 @@ export const getCartProductsError = () => ({
   type: CART_PRODUCTS_ERROR,
 });
 
-export const getCartProductsData = () => (dispatch) => {
+export const getCartProductsData = (userId, token) => (dispatch) => {
   dispatch(getCartProductsLoading());
 
-  fetch("https://all-json-server.herokuapp.com/cart_products")
+  fetch(`https://emart-server.herokuapp.com/cart/items/${userId}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "Application/json",
+      Authorization: "Bearer " + token,
+    },
+  })
     .then((res) => res.json())
     .then((res) => {
       dispatch(getCartProductsSuccess(res));

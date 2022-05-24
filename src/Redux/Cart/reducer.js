@@ -8,6 +8,9 @@ const initialState = {
   loading: false,
   error: false,
   cart_products: [],
+  cart: [],
+  quantity: 0,
+  itemQty: [],
 };
 
 export const cartProductsReducer = (
@@ -23,7 +26,10 @@ export const cartProductsReducer = (
         ...store,
         loading: false,
         error: false,
-        cart_products: [...payload],
+        cart_products: [...payload.cartitems],
+        cart: [...payload.cart],
+        quantity: payload.qty,
+        itemQty: [...payload.itemQty],
       };
 
     case CART_PRODUCTS_ERROR:

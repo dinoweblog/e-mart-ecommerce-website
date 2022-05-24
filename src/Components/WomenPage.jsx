@@ -196,8 +196,8 @@ export const WomenPage = () => {
           <div className="all_products">
             {womenProduct.map((e) => (
               <ProductCard
-                key={e.id}
-                id={e.id}
+                key={e._id}
+                id={e._id}
                 imageURL={e.imageURL}
                 name={e.name}
                 oldPrice={e.oldPrice}

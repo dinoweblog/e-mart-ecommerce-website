@@ -1,5 +1,4 @@
-{
-  "woman_products": [
+[
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/f/a/fablestreet_dr529whit_1_1d0d6579.jpg?rnd=20200526195200",
       "img1": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-160,/pub/media/catalog/product/f/a/fablestreet_dr529whit_2_bde13ad2.jpg?rnd=20200526195200",
@@ -13,14 +12,9 @@
       "off": "10",
       "category": "western",
       "color": "white",
-      "size": [
-        "M",
-        "L",
-        "XL",
-        "2XL"
-      ],
-      "id": 1
+     "size": ["M", "L", "XL", "2XL"]
     },
+
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/j/k/jkpat3906_1.jpg?rnd=20200526195200",
       "img1": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-160,/pub/media/catalog/product/j/k/jkpat3906_2.jpg?rnd=20200526195200",
@@ -34,8 +28,7 @@
       "off": "63",
       "category": "indian",
       "color": "yellow",
-      "size": "XS, S, M, L, XL, 2XL",
-      "id": 2
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/y/u/yufekset636bl-1.jpg?rnd=20200526195200",
@@ -50,8 +43,7 @@
       "off": "50",
       "category": "indian",
       "color": "blue",
-      "size": "XS, S, M, L, XL, 2XL",
-      "id": 3
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/1/9/19aua10784-700501_1.jpg?rnd=20200526195200",
@@ -66,8 +58,7 @@
       "off": "50",
       "category": "indian",
       "color": "blue",
-      "size": "XS, S, M, L, XL, 2XL",
-      "id": 4
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/m/m/mm-716_1.jpg?rnd=20200526195200",
@@ -82,8 +73,7 @@
       "off": "40",
       "category": "western",
       "color": "white",
-      "size": "M, L, XL, 2XL",
-      "id": 5
+      "size": ["M", "L", "XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/d/b/dbnset1667blk_1.jpg?rnd=20200526195200",
@@ -98,7 +88,7 @@
       "off": "50",
       "category": "indian",
       "color": "black",
-      "size": "XS, S, M, L, XL, 2XL",
+      "size": ["XS", "S", "M", "L","XL", "2XL"],
       "id": 6
     },
     {
@@ -114,7 +104,7 @@
       "off": "73",
       "category": "indian",
       "color": "grey",
-      "size": "XS, S, M, L, XL, 2XL",
+      "size": ["XS", "S", "M", "L","XL", "2XL"],
       "id": 7
     },
     {
@@ -130,7 +120,7 @@
       "off": "48",
       "category": "western",
       "color": "blue",
-      "size": "XS, S, M, L, XL, 2XL",
+      "size": ["XS", "S", "M", "L","XL", "2XL"],
       "id": 8
     },
     {
@@ -146,8 +136,12 @@
       "off": "20",
       "category": "western",
       "color": "white",
-      "size": "M, L, XL, 2XL",
-      "id": 9
+      "size": [
+        "M",
+        "L",
+        "XL",
+        "2XL"
+      ]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/d/r/drs04110_1_36fdbaf1.jpg?rnd=20200526195200",
@@ -162,8 +156,7 @@
       "off": "50",
       "category": "western",
       "color": "blue",
-      "size": "XS, S, M, L, XL, 2XL",
-      "id": 10
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/l/a/lavanyathelabel_lbl101ks70_1_68a0294f.jpg?rnd=20200526195200",
@@ -178,7 +171,7 @@
       "off": "10",
       "category": "indian",
       "color": "blue",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/l/a/lavanyathelabel_lbl101ks107_01_857f2b4d.jpg?rnd=20200526195200",
@@ -193,7 +186,7 @@
       "off": "10",
       "category": "indian",
       "color": "red",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/o/n/onedp0001_1_b0a7e4e1.jpg?rnd=20200526195200",
@@ -208,7 +201,7 @@
       "off": "10",
       "category": "indian",
       "color": "white",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/p/o/powder-blue-floral-a-line-fit-and-flare-short-dress-with-back-bow-tie_1_cdc7c0c7.jpg?rnd=20200526195200",
@@ -223,7 +216,7 @@
       "off": "20",
       "category": "western",
       "color": "blue",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/i/n/indoera-ie27kt0bl1670_0d47794a.jpg?rnd=20200526195200",
@@ -238,7 +231,7 @@
       "off": "37",
       "category": "indian",
       "color": "blue",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/f/e/festive16130aw20yel_1.jpg?rnd=20200526195200",
@@ -253,7 +246,12 @@
       "off": "30",
       "category": "indian",
       "color": "yellow",
-      "size": "S, M, L, XL"
+      "size": [
+        "M",
+        "L",
+        "XL",
+        "2XL"
+      ]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/m/n/mnmfestive14102aw21yel_1_baf9ae78.jpg?rnd=20200526195200",
@@ -268,7 +266,12 @@
       "off": "70",
       "category": "indian",
       "color": "yellow",
-      "size": "S, M, L, XL"
+      "size": [
+        "M",
+        "L",
+        "XL",
+        "2XL"
+      ]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/j/n/jne3294-kr.jpg?rnd=20200526195200",
@@ -283,7 +286,12 @@
       "off": "75",
       "category": "indian",
       "color": "yellow",
-      "size": "S, M, L, XL"
+      "size": [
+        "M",
+        "L",
+        "XL",
+        "2XL"
+      ]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/s/a/sai1-20160514_1.jpg?rnd=20200526195200",
@@ -298,7 +306,7 @@
       "off": "50",
       "category": "western",
       "color": "blue",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/f/a/fashor_ka077b-2155391907_1_787f335e.jpg?rnd=20200526195200",
@@ -313,7 +321,12 @@
       "off": "57",
       "category": "indian",
       "color": "yellow",
-      "size": "S, M, L, XL"
+      "size": [
+        "M",
+        "L",
+        "XL",
+        "2XL"
+      ]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/s/u/summere15562ss20wht_1.jpg?rnd=20200526195200",
@@ -328,7 +341,7 @@
       "off": "50",
       "category": "indian",
       "color": "white",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/z/_/z_zikury3458_1_a0bd282a.jpg?rnd=20200526195200",
@@ -343,7 +356,7 @@
       "off": "55",
       "category": "indian",
       "color": "white",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/k/s/ksut12321001_1.jpg?rnd=20200526195200",
@@ -358,7 +371,7 @@
       "off": "56",
       "category": "indian",
       "color": "white",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/s/h/sh007re_1.jpg?rnd=20200526195200",
@@ -373,7 +386,7 @@
       "off": "78",
       "category": "indian",
       "color": "white",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/d/0/d01437_1_37a0885e.jpg?rnd=20200526195200",
@@ -388,7 +401,7 @@
       "off": "50",
       "category": "western",
       "color": "blue",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/d/r/drf501963_1_44cb0348.jpg?rnd=20200526195200",
@@ -403,7 +416,7 @@
       "off": "55",
       "category": "western",
       "color": "blue",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/k/a/kaajh-k_216_1_d6728cf6.jpg?rnd=20200526195200",
@@ -418,7 +431,7 @@
       "off": "60",
       "category": "indian",
       "color": "yellow",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/g/s/gs397_1.jpg?rnd=20200526195200",
@@ -433,7 +446,7 @@
       "off": "60",
       "category": "indian",
       "color": "yellow",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/d/b/dbk0235_1.jpg?rnd=20200526195200",
@@ -448,7 +461,7 @@
       "off": "51",
       "category": "indian",
       "color": "yellow",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/l/b/lbl101ks33_1.jpg?rnd=20200526195200",
@@ -463,7 +476,7 @@
       "off": "10",
       "category": "indian",
       "color": "yellow",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/k/s/kssl-9047_1_6e030538.jpg?rnd=20200526195200",
@@ -478,7 +491,7 @@
       "off": "10",
       "category": "indian",
       "color": "black",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/7/n752_1_fb81b068.jpg?rnd=20200526195200",
@@ -493,7 +506,7 @@
       "off": "10",
       "category": "indian",
       "color": "black",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/k/p/kpdhvka-7008_1_b7006836.jpg?rnd=20200526195200",
@@ -508,7 +521,7 @@
       "off": "47",
       "category": "indian",
       "color": "black",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/b/l/black-patialla-with-block-print_1_47b650aa.jpg?rnd=20200526195200",
@@ -523,7 +536,7 @@
       "off": "20",
       "category": "indian",
       "color": "black",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/g/r/griffel_18901-black_1.jpg?rnd=20200526195200",
@@ -538,7 +551,7 @@
       "off": "49",
       "category": "sports",
       "color": "black",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/v/a/vanhe00001241_20a_1_0b4dfdab.jpg?rnd=20200526195200",
@@ -553,7 +566,7 @@
       "off": "50",
       "category": "sports",
       "color": "black",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/m/t/mt21-blsb15_1_c19c8634.jpg?rnd=20200526195200",
@@ -568,7 +581,7 @@
       "off": "50",
       "category": "sports",
       "color": "black",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/g/r/griffel_18902-grey_1.jpg?rnd=20200526195200",
@@ -583,7 +596,7 @@
       "off": "49",
       "category": "sports",
       "color": "grey",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/g/r/greybct_1_a9e2881d.jpg?rnd=20200526195200",
@@ -598,7 +611,7 @@
       "off": "58",
       "category": "sports",
       "color": "grey",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/c/s/cssportb03greymilange_1_480f8fc2.jpg?rnd=20200526195200",
@@ -613,7 +626,7 @@
       "off": "36",
       "category": "sports",
       "color": "grey",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/v/a/vanhe00001245_20a_1_db47cc6b.jpg?rnd=20200526195200",
@@ -628,7 +641,7 @@
       "off": "40",
       "category": "sports",
       "color": "red",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/a/t/at0154p09_1_325a9ebe.jpg?rnd=20200526195200",
@@ -643,7 +656,7 @@
       "off": "41",
       "category": "sports",
       "color": "red",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/g/r/griffel_19912-red_1.jpg?rnd=20200526195200",
@@ -658,7 +671,7 @@
       "off": "49",
       "category": "sports",
       "color": "red",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/v/d/vdrf502374_1_236f9e69.jpg?rnd=20200526195200",
@@ -673,7 +686,7 @@
       "off": "35",
       "category": "maternity",
       "color": "white",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/s/1/s19168mabl01_1_a6d2c30c.jpg?rnd=20200526195200",
@@ -688,7 +701,7 @@
       "off": "50",
       "category": "maternity",
       "color": "white",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/m/t/mtaw081_1_84d7a429.jpg?rnd=20200526195200",
@@ -703,7 +716,7 @@
       "off": "45",
       "category": "maternity",
       "color": "white",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/m/t/mtaw077_1_42b8062b.jpg?rnd=20200526195200",
@@ -718,7 +731,7 @@
       "off": "50",
       "category": "maternity",
       "color": "white",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/v/d/vdrf502192_1_61db4bf1.jpg?rnd=20200526195200",
@@ -733,7 +746,7 @@
       "off": "47",
       "category": "maternity",
       "color": "Multi-color",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/m/s/ms-223a_1_09a6ad4f.jpg?rnd=20200526195200",
@@ -748,7 +761,7 @@
       "off": "50",
       "category": "maternity ",
       "color": "Multi-Color",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/m/t/mtaw080_1_519bcb23.jpg?rnd=20200526195200",
@@ -763,7 +776,7 @@
       "off": "45",
       "category": "maternity",
       "color": "orange",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/m/s/ms-155_001_4a3eb906.jpg?rnd=20200526195200",
@@ -778,7 +791,7 @@
       "off": "10",
       "category": "maternity",
       "color": "Multi-Color",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/s/2/s21286madr02_1_bf361c80.jpg?rnd=20200526195200",
@@ -793,7 +806,7 @@
       "off": "50",
       "category": "maternity",
       "color": "Multi-Color",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/e/p/ep-07-107_1_7022f200.jpg?rnd=20200526195200",
@@ -808,7 +821,7 @@
       "off": "10",
       "category": "indian",
       "color": "Red",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/s/w/swtantra_086_1_0e4fd8c8.jpg?rnd=20200526195200",
@@ -823,7 +836,7 @@
       "off": "10",
       "category": "indian",
       "color": "plum",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/b/a/bai_sss_32_1_9cb89e4a.jpg?rnd=20200526195200",
@@ -838,7 +851,7 @@
       "off": "10",
       "category": "indian",
       "color": "green",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/r/t/rtor0020_1_d74bb6f3.jpg?rnd=20200526195200",
@@ -853,7 +866,7 @@
       "off": "10",
       "category": "indian",
       "color": "maroon",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/2/d/2d-tp1671_1_7270eebc.jpg?rnd=20200526195200",
@@ -868,7 +881,7 @@
       "off": "10",
       "category": "western",
       "color": "green",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/m/m/mm-859_1_84d80f74.jpg?rnd=20200526195200",
@@ -883,7 +896,7 @@
       "off": "40",
       "category": "western",
       "color": "red",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/l/b/lbl102ds11_1.jpg?rnd=20200526195200",
@@ -898,7 +911,7 @@
       "off": "10",
       "category": "indian",
       "color": "blue",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/7/n724_1_bad65d5d.jpg?rnd=20200526195200",
@@ -913,7 +926,7 @@
       "off": "10",
       "category": "indian",
       "color": "pink",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/l/a/lavan00000299_1_f581806d.jpg?rnd=20200526195200",
@@ -928,7 +941,7 @@
       "off": "50",
       "category": "indian",
       "color": "green",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/l/b/lbl101ks112_1_574fb31c.jpg?rnd=20200526195200",
@@ -943,7 +956,7 @@
       "off": "50",
       "category": "indian",
       "color": "yellow",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/1/0/1032a-a393_1_b64a43f8.jpg?rnd=20200526195200",
@@ -958,7 +971,7 @@
       "off": "10",
       "category": "western",
       "color": "pink",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/t/l/tlc-229_8f14f324.jpg?rnd=20200526195200",
@@ -973,7 +986,7 @@
       "off": "20",
       "category": "sports",
       "color": "pink",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/c/o/combat123_1_c4932172.jpg?rnd=20200526195200",
@@ -988,7 +1001,7 @@
       "off": "54",
       "category": "sports",
       "color": "green",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/y/nyk076-distresstie-dye1a_1_44709223.jpg?rnd=20200526195200",
@@ -1003,7 +1016,7 @@
       "off": "10",
       "category": "sports",
       "color": "pink",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/v/a/vanhe3023_20a_1_ec7a5c57.jpg?rnd=20200526195200",
@@ -1018,7 +1031,7 @@
       "off": "50",
       "category": "sports",
       "color": "pink",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/p/u/puma-51949205_1_861d125f.jpg?rnd=20200526195200",
@@ -1033,7 +1046,7 @@
       "off": "60",
       "category": "sports",
       "color": "Black",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/w/1/w139af_1_935772f1.jpg?rnd=20200526195200",
@@ -1048,7 +1061,7 @@
       "off": "50",
       "category": "sports",
       "color": "blue",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/p/u/puma_52083602_1_e041742d.jpg?rnd=20200526195200",
@@ -1063,7 +1076,7 @@
       "off": "15",
       "category": "sports",
       "color": "white",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/y/nyle_ether_01_291b5a3b.jpg?rnd=20200526195200",
@@ -1078,7 +1091,7 @@
       "off": "40",
       "category": "sports",
       "color": "green",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/a/n/anti-culture-sc-2002-t.green_1_8b38eb15.jpg?rnd=20200526195200",
@@ -1093,7 +1106,7 @@
       "off": "40",
       "category": "sports",
       "color": "green",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/m/p/mpl-02blue-f20_1.jpg?rnd=20200526195200",
@@ -1108,7 +1121,7 @@
       "off": "40",
       "category": "maternity",
       "color": "blue",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/j/njs001-baroquerose-1_e600a89d.jpg?rnd=20200526195200",
@@ -1123,7 +1136,7 @@
       "off": "29",
       "category": "maternity",
       "color": "pink",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/t/h/theka00003412__1_bad9f645.jpg?rnd=20200526195200",
@@ -1138,7 +1151,7 @@
       "off": "50",
       "category": "maternity",
       "color": "white",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/t/h/theka00003413__1_4513177b.jpg?rnd=20200526195200",
@@ -1153,7 +1166,7 @@
       "off": "50",
       "category": "maternity",
       "color": "black",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     },
     {
       "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/t/h/theka00002207__1_0c1cd1fa.jpg?rnd=20200526195200",
@@ -1168,31 +1181,8 @@
       "off": "50",
       "category": "maternity",
       "color": "black",
-      "size": "XS, S, M, L, XL, 2XL"
+      "size": ["XS", "S", "M", "L","XL", "2XL"]
     }
-  ],
-  "cart_products": [
-    {
-      "imageURL": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/f/a/fablestreet_dr529whit_1_1d0d6579.jpg?rnd=20200526195200",
-      "img1": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-160,/pub/media/catalog/product/f/a/fablestreet_dr529whit_2_bde13ad2.jpg?rnd=20200526195200",
-      "img2": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-160,/pub/media/catalog/product/f/a/fablestreet_dr529whit_3_3adc6465.jpg?rnd=20200526195200",
-      "img3": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-160,/pub/media/catalog/product/f/a/fablestreet_dr529whit_4_5fd4b2ee.jpg?rnd=20200526195200",
-      "img4": "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-160,/pub/media/catalog/product/f/a/fablestreet_dr529whit_5_0cf36974.jpg?rnd=20200526195200",
-      "name": "FableStreet",
-      "desc": "Cotton Drop Shoulder Oversized Shirt Dress - White",
-      "oldPrice": "2995",
-      "newPrice": "2696",
-      "off": "10",
-      "category": "western",
-      "color": "white",
-      "size": [
-        "M",
-        "L",
-        "XL",
-        "2XL"
-      ],
-      "id": 1,
-      "quantity": 1
-    }
+
   ]
-}
+ 
