@@ -200,7 +200,8 @@ display: flex;
       padding: 0 1%;
       height: 10rem;
       display: grid;
-      grid-template-columns: 16% 35% 35% 6%;
+      grid-template-columns: 14% 38% 33% 6%;
+      padding: 0 5%;
       justify-content: space-between;
       box-sizing: border-box;
     }
@@ -252,8 +253,13 @@ display: flex;
 }
 
 @media (max-width: 798px) {
+  .main_nav {
+      display: grid;
+        grid-template-columns: 12% 33% 38% 7%;
+      padding: 0 3%;
+    }
   .main_nav .logo a {
-      font-size: 2rem;
+      font-size: 2.2rem;
     }
 
         #search_input{
@@ -261,7 +267,7 @@ display: flex;
         }
 
         #search_btn{
-          height: 34px;
+          height: 33px;
           font-size: 20px;
           width: 42px;
         }
@@ -283,7 +289,7 @@ display: flex;
 @media (max-width: 520px) {
   .main_nav {
       display: grid;
-      grid-template-columns: 15% 33% 38% 7%;
+      grid-template-columns: 16% 32% 38% 7%;
       padding: 0 3%;
     }
   .main_nav .logo a {
