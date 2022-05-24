@@ -1,6 +1,6 @@
 import { Navbar } from "./Navbar";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getProductsData } from "../Redux/Products/action";
 import { WomenSlider } from "./Slider";
 import { Carousel } from "./Carousel";
@@ -10,11 +10,21 @@ import { getCartProductsData } from "../Redux/Cart/action";
 
 export const Home = () => {
   const dispatch = useDispatch();
-
+  const [show, setShow] = useState(false);
   const { products } = useSelector((state) => state.products);
+  const { user, isAuthenticated } = useSelector((state) => state.login);
 
   useEffect(() => {
     dispatch(getProductsData());
+    if (isAuthenticated === "true") {
+      setShow(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShow(false);
+    }, 3000);
   }, []);
   return (
     <div>
@@ -26,6 +36,12 @@ export const Home = () => {
         </div>
         <WomenSlider />
       </div>
+
+      {show ? (
+        <div className="massage_card">
+          <p>Welcome {user.name}</p>
+        </div>
+      ) : null}
 
       <Footer />
     </div>

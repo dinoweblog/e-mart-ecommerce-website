@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getCartProductsData } from "../Redux/Cart/action";
 import {
   getLogedin,
@@ -17,6 +17,7 @@ export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const userDetails = {
     email,
     password,
@@ -44,6 +45,8 @@ export const Login = () => {
         );
         dispatch(loginAuthenticated("true"));
         dispatch(getCartProductsData(res.user._id, res.token));
+      }).then((res)=>{
+        navigate("/")
       })
       .catch((error) => dispatch(loginError()));
   };
