@@ -8,6 +8,7 @@ import CreditCardOutlinedIcon from "@mui/icons-material/CreditCardOutlined";
 import { Navbar2 } from "./Navbar2";
 import "./Styles/Checkout.css";
 import { TotalAmount } from "./TotalAmount";
+import { Footer2 } from "./Footer2";
 
 export const Payment = () => {
   const dispatch = useDispatch();
@@ -36,7 +37,7 @@ export const Payment = () => {
 
   return (
     <div>
-      <Navbar2 />
+      <Navbar2 paytc={"#20BD99"} />
 
       <div className="cart_items_container payment_container">
         <div className="checkout_div_left">
@@ -190,6 +191,7 @@ export const Payment = () => {
           />
         </div>
       </div>
+      <Footer2 />
     </div>
   );
 };

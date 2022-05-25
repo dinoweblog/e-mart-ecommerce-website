@@ -8,6 +8,7 @@ import {
   getAddressSuccess,
 } from "../Redux/Address/action";
 import { getCartProductsData } from "../Redux/Cart/action";
+import { Footer2 } from "./Footer2";
 import Modal from "./Modal";
 import { Navbar2 } from "./Navbar2";
 import "./Styles/Checkout.css";
@@ -96,7 +97,7 @@ export const Address = () => {
 
   return (
     <div>
-      <Navbar2 />
+      <Navbar2 atc={"#20BD99"} />
 
       <div className="cart_items_container">
         <div className="checkout_div_left address_container">
@@ -246,6 +247,7 @@ export const Address = () => {
           />
         </div>
       </div>
+      <Footer2 />
     </div>
   );
 };

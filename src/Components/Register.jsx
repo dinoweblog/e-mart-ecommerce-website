@@ -44,12 +44,14 @@ export const Register = () => {
         <form onSubmit={getRegister} className="form" action="">
           <h2>Signup</h2>
           <input
+            required
             type="text"
             placeholder="Full Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
           <input
+            required
             type="email"
             placeholder="Email"
             value={email}
@@ -57,6 +59,7 @@ export const Register = () => {
           />
 
           <input
+            required
             type={showPass ? `password` : "text"}
             placeholder="Password"
             autocomplete="new-password"
@@ -73,6 +76,7 @@ export const Register = () => {
             <span>Show Password</span>
           </span>
           <input
+            required
             type="password"
             placeholder="Confirm Password"
             value={repassword}
@@ -80,6 +84,8 @@ export const Register = () => {
           />
 
           <input
+            className="mobile_input_feild"
+            required
             type="number"
             placeholder="+91 | Mobile Number"
             value={mobile}
@@ -87,12 +93,12 @@ export const Register = () => {
           />
           <input type="submit" />
 
-          <div className="midLinks">
+          <div className="term_privacy">
             By continuing, I agree to the <a href="#">Terms of Use</a> &amp;{" "}
             <a href="#">Privacy Policy</a>
           </div>
 
-          <p>
+          <p className="login_redirect_link">
             Already have an account? <Link to={"/user/login"}>Sign in</Link>{" "}
           </p>
         </form>

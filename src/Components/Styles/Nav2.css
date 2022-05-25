@@ -1,7 +1,7 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100&display=swap"); */
 
 :root {
-    --nav_menu_font: 1.8rem;
+    --nav_menu_font: 1.5rem;
       --res_nav_menu_font:  1.5rem;
     --nav_color: #282c3f;
     --theme-color: #ff3e6c;
@@ -47,11 +47,11 @@ display: flex;
   justify-content: start;
   align-items: center;
   border-bottom: white 3px solid;
-  font-size: 30px;
+  
 }
 
 .main_nav .logo a{
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 /* -------------Desktop menu----------------- */
@@ -75,11 +75,10 @@ display: flex;
 
  }
 
- .menu_link ul li a :hover {
+ .menu_link ul li  :hover {
    border-bottom: var(--theme-color) 3px solid;
 
  }
-
 
 /* search box css ------------------ */
 

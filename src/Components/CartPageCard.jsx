@@ -70,7 +70,7 @@ export const CartPageCard = ({
       </div>
       <div className="product_title_sec">
         <h2 className="product_title">{name}</h2>
-        <p className="product_desc">{description}</p>
+        <p className="product_desc product_desc_card">{description}</p>
         <p className="product_price">
           <span className="new_price">
             Rs. {Intl.NumberFormat("en-IN").format(newPrice)}
@@ -104,7 +104,7 @@ export const CartPageCard = ({
           </div>
         </div>
 
-        <p className="product_category">
+        <p>
           Category : <span>{category}</span>
         </p>
       </div>

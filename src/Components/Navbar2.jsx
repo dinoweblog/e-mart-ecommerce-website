@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Styles/Checkout.css";
 
-export const Navbar2 = () => {
+export const Navbar2 = ({ ctc, atc, paytc }) => {
   return (
     <header className="checkout_header">
       <div>
@@ -12,9 +12,11 @@ export const Navbar2 = () => {
         </div>
         <div className="steps">
           <ul>
-            <li>CART</li>
-            <li>ADDRESS</li>
-            <li>PAYMENT</li>
+            <li style={{ color: `${ctc}`, borderColor: `${ctc}` }}>CART</li>
+            <li style={{ color: `${atc}`, borderColor: `${atc}` }}>ADDRESS</li>
+            <li style={{ color: `${paytc}`, borderColor: `${paytc}` }}>
+              PAYMENT
+            </li>
           </ul>
         </div>
         <div className="secureContainer">

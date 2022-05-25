@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { getCartProductsData } from "../Redux/Cart/action";
 import { CartPageCard } from "./CartPageCard";
+import { Footer2 } from "./Footer2";
 import { Navbar2 } from "./Navbar2";
 import "./Styles/Checkout.css";
 import { TotalAmount } from "./TotalAmount";
@@ -43,88 +44,91 @@ export const Checkout = () => {
 
   return (
     <div>
-      <Navbar2 />
+      <div className="checkout_container">
+        <Navbar2 ctc={"#20BD99"} />
 
-      {cart_products.length != 0 ? (
-        <div className="cart_items_container">
-          <div className="checkout_div_left">
-            <div className="yay checkout_div">
-              <img
-                src="https://constant.myntassets.com/checkout/assets/img/ship-free.webp"
-                alt=""
-              />
-              <p>
-                Yay!
-                <span> No convenience fee </span>
-                on this order.
-              </p>
-            </div>
-            <div className="seller_text checkout_div">
-              <div>
-                <i className="bx bx-user"></i>
+        {cart_products.length != 0 ? (
+          <div className="cart_items_container">
+            <div className="checkout_div_left">
+              <div className="yay checkout_div">
+                <img
+                  src="https://constant.myntassets.com/checkout/assets/img/ship-free.webp"
+                  alt=""
+                />
+                <p>
+                  Yay!
+                  <span> No convenience fee </span>
+                  on this order.
+                </p>
               </div>
-              <div>
-                <h4>Seller has changed</h4>
+              <div className="seller_text checkout_div">
                 <div>
-                  Seller of one or more items in your bag has changed. Please
-                  review them before proceeding.
+                  <i className="bx bx-user"></i>
+                </div>
+                <div>
+                  <h4>Seller has changed</h4>
+                  <div>
+                    Seller of one or more items in your bag has changed. Please
+                    review them before proceeding.
+                  </div>
                 </div>
               </div>
+              <div className="checkout_div all_item_remove_btn">
+                <p>
+                  <i className="bx bxs-check-square"></i> {quantity} Items
+                  Selected
+                </p>
+                <p>- | -</p>
+                <button className="text_btn">ALL REMOVE</button>
+              </div>
+              {cart_products.map((e, index) => (
+                <CartPageCard
+                  key={index}
+                  imageURL={e.imageURL}
+                  name={e.name}
+                  description={e.desc}
+                  oldPrice={e.oldPrice}
+                  newPrice={e.newPrice}
+                  off={e.off}
+                  category={e.category}
+                  color={e.color}
+                  size={e.size}
+                  itemQty={itemQty[index]}
+                  cartId={
+                    cart_products.length === 1 ? cart[0]._id : cart[index]._id
+                  }
+                  index={index}
+                />
+              ))}
             </div>
-            <div className="checkout_div all_item_remove_btn">
-              <p>
-                <i className="bx bxs-check-square"></i> {quantity} Items
-                Selected
-              </p>
-              <p>- | -</p>
-              <button className="text_btn">ALL REMOVE</button>
-            </div>
-            {cart_products.map((e, index) => (
-              <CartPageCard
-                key={index}
-                imageURL={e.imageURL}
-                name={e.name}
-                description={e.desc}
-                oldPrice={e.oldPrice}
-                newPrice={e.newPrice}
-                off={e.off}
-                category={e.category}
-                color={e.color}
-                size={e.size}
-                itemQty={itemQty[index]}
-                cartId={
-                  cart_products.length === 1 ? cart[0]._id : cart[index]._id
-                }
-                index={index}
+            <div className="checkout_div_right">
+              <TotalAmount
+                totalQty={quantity}
+                oldTotal={oldTotal}
+                dis={dis}
+                redirectLink={"/checkout/address"}
+                btnText={"CONTINUE"}
+                btn={true}
               />
-            ))}
-          </div>
-          <div className="checkout_div_right">
-            <TotalAmount
-              totalQty={quantity}
-              oldTotal={oldTotal}
-              dis={dis}
-              redirectLink={"/checkout/address"}
-              btnText={"CONTINUE"}
-              btn={true}
-            />
-          </div>
-        </div>
-      ) : (
-        <div className="empty_cart">
-          <div>
-            <img
-              src="https://www.freepnglogos.com/uploads/shopping-bag-png/shopping-bag-plaseto-bag-plaseto-bags-manufacturer-west-bengal-17.png"
-              alt=""
-            />
-            <h4>Hey, it feels so light!</h4>
-            <p>There is nothing in your bag. Let's add some items.</p>
-            <div className="add_btn">
-              <Link to={"/"}>ADD ITEMS</Link>
             </div>
           </div>
-        </div>
-      )}
+        ) : (
+          <div className="empty_cart">
+            <div>
+              <img
+                src="https://www.freepnglogos.com/uploads/shopping-bag-png/shopping-bag-plaseto-bag-plaseto-bags-manufacturer-west-bengal-17.png"
+                alt=""
+              />
+              <h4>Hey, it feels so light!</h4>
+              <p>There is nothing in your bag. Let's add some items.</p>
+              <div className="add_btn">
+                <Link to={"/"}>ADD ITEMS</Link>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+      <Footer2 />
     </div>
   );
 };

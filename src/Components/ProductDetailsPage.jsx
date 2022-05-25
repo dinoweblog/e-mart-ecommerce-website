@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartProductsData } from "../Redux/Cart/action";
 import { WomenSlider } from "./Slider";
+import { SizeDiv } from "./StyleComponent";
 
 export const ProductDetailsPage = () => {
   const [img, setImg] = useState();
@@ -52,6 +53,8 @@ export const ProductDetailsPage = () => {
       setSizeSelect(false);
     }
   };
+
+  console.log(selectClass);
 
   return (
     <div>
@@ -111,22 +114,26 @@ export const ProductDetailsPage = () => {
             </p>
             <div>
               <h3>SELECT SIZE</h3>
-              <div className="product_size">
-                {size.map((e) => (
+              <SizeDiv className="product_size">
+                {size.map((e, i) => (
                   <div
-                    className={`single_size_class ${selectClass}`}
+                    key={i}
+                    className={`single_size_class ${
+                      selectClass === i ? "active" : ""
+                    }`}
+                    eachDiv={selectClass}
                     onClick={() => {
                       setSizeSelect(true);
                       setCartAdd(true);
-                      setSelectClass("select_active_class");
+                      setSelectClass(i);
                     }}
                   >
                     {e}
                   </div>
                 ))}
-              </div>
+              </SizeDiv>
               {sizeSelect ? (
-                <p></p>
+                <p> </p>
               ) : (
                 <p style={{ color: "red" }}>Please select product size</p>
               )}

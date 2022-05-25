@@ -53,13 +53,14 @@ export const Login = () => {
   };
 
   return (
-    <div className="register_container ">
+    <div className="register_container login_container">
       <Navbar />
       <div>
         <form onSubmit={getLogedin} className="form" action="">
           <h2>Login</h2>
 
           <input
+            required
             type="email"
             placeholder="Email"
             value={email}
@@ -67,6 +68,7 @@ export const Login = () => {
           />
 
           <input
+            required
             type={showPass ? `password` : "text"}
             placeholder="Password"
             autoComplete="new-password"
@@ -86,12 +88,12 @@ export const Login = () => {
 
           <input type="submit" />
 
-          <div className="midLinks">
+          <div className="term_privacy">
             By continuing, I agree to the <a href="#">Terms of Use</a> &amp;{" "}
             <a href="#">Privacy Policy</a>
           </div>
 
-          <p>
+          <p className="login_redirect_link">
             Are you a new user? <Link to={"/user/register"}>Sign up</Link>{" "}
           </p>
         </form>

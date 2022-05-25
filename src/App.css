@@ -5,6 +5,16 @@
   --theme-color: #ff3e6c;
 
 }
+
+html,
+body,
+#app,
+#app>div {
+  height: 100%
+}
+html{
+  overflow-x: hidden;
+}
 a{
   color: #282c3f;
 }
@@ -19,11 +29,3 @@ input[type=submit]{
   cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

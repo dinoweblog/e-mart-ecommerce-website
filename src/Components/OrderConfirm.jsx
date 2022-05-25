@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { getCartProductsData } from "../Redux/Cart/action";
+import { Footer2 } from "./Footer2";
 import { Navbar2 } from "./Navbar2";
 import "./Styles/Checkout.css";
 
@@ -37,6 +38,7 @@ export const OrderConfirm = () => {
           </button>
         </div>
       </div>
+      <Footer2 />
     </div>
   );
 };
