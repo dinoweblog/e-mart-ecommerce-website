@@ -6,13 +6,16 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { Link, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartProductsData } from "../Redux/Cart/action";
+import { getLogout } from "../Redux/Login/action";
 
 export const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [showProDrop, setShowProDrop] = useState(false);
 
   const dispatch = useDispatch();
-  const { userId, token } = useSelector((state) => state.login);
+  const { userId, token, isAuthenticated } = useSelector(
+    (state) => state.login
+  );
   const { quantity } = useSelector((state) => state.cart_products);
 
   useEffect(() => {
@@ -88,15 +91,40 @@ export const Navbar = () => {
                 <i className="bx bx-user"></i>
                 <p>Profile</p>
               </Link>
-              {showProDrop ? (
-                <ul className="profile_drop_down">
-                  <li>
-                    <Link to={"/user/register"}>Signup</Link>
-                  </li>
-                  <li>
-                    <Link to={"/user/login"}>Login</Link>
-                  </li>
-                </ul>
+              {showProDrop && isAuthenticated === "false" ? (
+                <div id="profile_drop_down">
+                  <p>
+                    <span>Welcome</span> <br /> To access account and manage
+                    orders
+                  </p>
+                  <Link to={"/user/register"}>Signup</Link>
+
+                  <Link to={"/user/login"}>Login</Link>
+                  <div>
+                    <Link to={""}>Your Order</Link>
+                  </div>
+                </div>
+              ) : null}
+
+              {showProDrop && isAuthenticated === "true" ? (
+                <div id="profile_drop_down">
+                  <p>
+                    <span>Welcome</span> <br /> To access account and manage
+                    orders
+                  </p>
+                  <div className="your_order_btn">
+                    <Link to={""}>Your Order</Link>
+                  </div>
+                  <Link
+                    to={""}
+                    onClick={() => {
+                      window.reload();
+                      dispatch(getLogout());
+                    }}
+                  >
+                    Logout
+                  </Link>
+                </div>
               ) : null}
             </li>
             <li>

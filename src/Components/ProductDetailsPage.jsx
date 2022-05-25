@@ -1,7 +1,7 @@
 import { Footer } from "./Footer";
 import { Navbar } from "./Navbar";
 import "./Styles/ProductDetails.css";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartProductsData } from "../Redux/Cart/action";
@@ -16,10 +16,13 @@ export const ProductDetailsPage = () => {
   const [cartAdd, setCartAdd] = useState(false);
   const [data, setData] = useState({});
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { id } = useParams();
 
   const { cart_products } = useSelector((state) => state.cart_products);
-  const { userId, token } = useSelector((state) => state.login);
+  const { userId, token, isAuthenticated } = useSelector(
+    (state) => state.login
+  );
 
   useEffect(() => {
     findData();
@@ -143,7 +146,9 @@ export const ProductDetailsPage = () => {
               <button
                 className="add_to_cart_btn"
                 onClick={() => {
-                  cartHandle();
+                  isAuthenticated === "true"
+                    ? cartHandle()
+                    : navigate("/user/login");
                 }}
               >
                 Add to cart

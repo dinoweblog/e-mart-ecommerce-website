@@ -5,6 +5,7 @@
       --res_nav_menu_font:  1.5rem;
     --nav_color: #282c3f;
     --theme-color: #ff3e6c;
+    --border-color: #d1d1d1;
 
 }
 
@@ -75,7 +76,7 @@ display: flex;
 
  }
 
- .menu_link ul li  :hover {
+ .menu_link>ul>li  :hover {
    border-bottom: var(--theme-color) 3px solid;
 
  }
@@ -158,16 +159,50 @@ display: flex;
    position: relative;
  }
 
- .profile_drop_down{
+#profile_drop_down{
+  text-align: left;
    position: absolute;
-   width: 15rem;
+   width: 25rem;
    height: 15rem;
    margin-top: 30px;
+   margin-left: -10rem;
    z-index: 99;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-color: white;
+  padding: 10px;
+ }
+  #profile_drop_down>a{
+   
+    margin-right: 10px;
+    padding: 3px 15px;
+    width: 80%;
+    
+    border: 1px solid var(--border-color);
+    margin-bottom: 10px;
  }
 
+ #profile_drop_down>a:hover {
+   border: 1px solid var(--theme-color);
+ }
+#profile_drop_down>p{
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+#profile_drop_down>p span{
+font-weight: bold;
+}
+
+ #profile_drop_down>div{
+   border-top: 1px solid var(--border-color);
+   margin-top: 20px;
+   padding-top: 10px;
+ }
+
+ .your_order_btn{
+   margin-bottom: 10px;
+   padding-bottom: 10px;
+ }
 
  .cart_count {
   /* position: absolute; */
@@ -244,7 +279,7 @@ display: flex;
       border-bottom: white 3px solid;
   
     }
-     .mobile_menu_link ul li :hover {
+     .mobile_menu_link>ul>li :hover {
        border-bottom: var(--theme-color) 3px solid;
   
      }
@@ -255,7 +290,7 @@ display: flex;
       justify-content: flex-end;
     }
     
-    #second_menu_section ul{
+    #second_menu_section>ul{
       font-size: var(--res_nav_menu_font);
     }
 
