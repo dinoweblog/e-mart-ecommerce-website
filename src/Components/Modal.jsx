@@ -134,7 +134,10 @@ const Modal = ({ address, userId, token, setIsOpen, deleteData }) => {
             </div>
             <div>
               <input type="checkbox" />
-              <span> Make this my default address</span>
+              <span style={{ fontSize: "14px" }}>
+                {" "}
+                Make this my default address
+              </span>
             </div>
             <div className="place_order_btn save_address modal_header">
               <button

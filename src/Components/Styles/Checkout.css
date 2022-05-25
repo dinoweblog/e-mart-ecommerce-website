@@ -114,6 +114,7 @@ margin-top: 30px;
     display: grid;
     width: 70%;
     margin: auto;
+    min-height: 100vh;
     grid-template-columns: 65% 35%;
 }
 .checkout_div{
@@ -141,9 +142,10 @@ margin-top: 30px;
     font-size: 15px;
 }
 
-.order_summary span {
+.base_price_detail, .discount_price, .convenience_fee {
     font-size: 14px;
 }
+
 
 .yay img {
     width:35px;
@@ -254,6 +256,10 @@ margin-top: 5px;
     font-weight: 500;
 }
 
+.total_items_shown span{
+    color: var(--theme-color);
+}
+
 .text_color_green{
 color: #03a685;
 }
@@ -273,10 +279,11 @@ color: #03a685;
 }
 
 /* for address page css ------------------- */
-.address_container {
+.cart_items_container .address_container {
     border: none;
     margin-top: 20px;
 }
+
 
 .address_input{
     width: 90%;
@@ -315,7 +322,6 @@ color: #03a685;
    font-weight: 500;
 }
 .input_wraper{
-    width: 95%;
     margin-bottom: 16px;
 }
 .input_title{
@@ -333,6 +339,16 @@ color: #03a685;
     line-height: 14px;
     outline: 0;
 }
+
+.address_input input[type=number]::-webkit-inner-spin-button,
+.no-spin::-webkit-outer-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+}
+
+.address_input input[type=number] {
+    -moz-appearance: textfield !important;
+}
 .input_label{
     display: -webkit-box;
     display: inline-block;
@@ -346,6 +362,7 @@ color: #03a685;
     -webkit-box-orient: vertical;
     overflow: hidden;
     background-color: white;
+    font-size: 14px;
 }
 
 .save_address{
@@ -367,6 +384,7 @@ color: #03a685;
 .content {
     transition: 1s;
     overflow: hidden;
+    padding-left: 20px;
 }
 
 
@@ -384,10 +402,13 @@ color: #03a685;
     list-style-type: disc;
     line-height: 28px;
 }
+
+.show_more_btn{
+    margin-left: 20px;
+}
 .collapsible_btn{
     color: var(--theme-color);
     margin-top: 10px;
-    margin-left: 32px;
 }
 .first_offer{
     margin-top: 20px;
@@ -428,7 +449,7 @@ color: #03a685;
 .payment_content{
     transition: .5s;
     overflow: hidden;
-    padding: 20px 10%;
+    padding: 20px 2%;
 
 }
 
@@ -501,6 +522,7 @@ color: #03a685;
 
 
 @media (max-width: 998px) {
+    
     .empty_cart>div {
         width: 80%;
         margin: auto;
@@ -547,12 +569,42 @@ color: #03a685;
     }
 }
 
-@media (max-width: 835px) and (min-width: 798px) {
-   
-}
 
 @media (max-width: 798px) {
-   
+    .cart_items_container {
+        display: block;
+        width: 80%;
+        margin: auto;
+    }
+
+   .checkout_div_left {
+       border-right: none;
+       margin-bottom: 40px;
+   }
+.select_text{
+    font-size: 11px;
+    margin-top: 5px;
+    margin-bottom: -5px;
+}
+    
+.product_desc{
+    font-size: 12px;
+}
+    .product_title {
+        font-size: 14px;
+    }
+
+    .product_title_sec p {
+        margin-top: 2px;
+    }
+
+   .checkout_div, .payment_div, .address_details_div, .address_input{
+       width: 100%;
+   }
+
+   .checkout_div_right {
+       padding-left: 0%;
+   }
 }
 
 @media (max-width: 520px) {}

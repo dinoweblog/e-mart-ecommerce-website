@@ -13,7 +13,9 @@ export const TotalAmount = ({
   return (
     <div>
       <div>
-        <p>PRICE DETAILS ({totalQty} items)</p>
+        <p className="total_items_shown">
+          PRICE DETAILS <span>({totalQty} items)</span>
+        </p>
       </div>
       <div className="order_summary" id="priceBlock">
         <div className="base_price_detail price_details">

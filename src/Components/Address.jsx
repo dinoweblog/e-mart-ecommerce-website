@@ -103,7 +103,7 @@ export const Address = () => {
         <div className="checkout_div_left address_container">
           {address.length > 0 ? (
             <div>
-              <h3>Delivery Address</h3>
+              <h3 style={{ fontSize: "2rem" }}>Delivery Address</h3>
               <div className="address_details_div">
                 <h2>{address[0].userName}</h2>
                 <p>{address[0].addressField}</p>
@@ -150,6 +150,7 @@ export const Address = () => {
                       className="input_input "
                       id="name"
                       type="text"
+                      required
                       onChange={(e) => setUserName(e.target.value)}
                     />
                   </div>
@@ -162,6 +163,7 @@ export const Address = () => {
                       className="input_input "
                       id="mobile"
                       type="number"
+                      required
                       onChange={(e) => setMobile(e.target.value)}
                     />
                   </div>
@@ -179,6 +181,7 @@ export const Address = () => {
                       className="input_input "
                       id="pincode"
                       type="number"
+                      required
                       onChange={(e) => setPincode(e.target.value)}
                     />
                   </div>
@@ -191,6 +194,7 @@ export const Address = () => {
                       className="input_input "
                       id="address"
                       type="text"
+                      required
                       onChange={(e) => setAddressField(e.target.value)}
                     />
                   </div>
@@ -203,6 +207,7 @@ export const Address = () => {
                       className="input_input "
                       id="address"
                       type="text"
+                      required
                       onChange={(e) => setTown(e.target.value)}
                     />
                   </div>
@@ -215,6 +220,7 @@ export const Address = () => {
                       className="input_input "
                       id="state"
                       type="text"
+                      required
                       onChange={(e) => setState(e.target.value)}
                     />
                   </div>
@@ -222,7 +228,10 @@ export const Address = () => {
               </div>
               <div>
                 <input type="checkbox" />
-                <span> Make this my default address</span>
+                <span style={{ fontSize: "14px" }}>
+                  {" "}
+                  Make this my default address
+                </span>
               </div>
               <div className="place_order_btn save_address">
                 <button

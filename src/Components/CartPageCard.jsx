@@ -105,7 +105,8 @@ export const CartPageCard = ({
         </div>
 
         <p>
-          Category : <span>{category}</span>
+          Category :{" "}
+          <span style={{ textTransform: "capitalize" }}>{category}</span>
         </p>
       </div>
       <div className="item_delete_btn">

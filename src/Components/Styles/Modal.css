@@ -119,3 +119,26 @@ padding-bottom: 70px;
     border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
 }
+
+/* ---------------Responsive All Product page--------------- */
+
+
+@media (max-width: 998px) {
+    .centered {
+        width: 50%;
+    }
+    
+}
+
+
+@media (max-width: 798px) {
+    .centered {
+        width: 60%;
+    }
+}
+
+@media (max-width: 520px) {
+    .centered {
+        width: 80%;
+    }
+}

@@ -17,6 +17,7 @@ export const Payment = () => {
   const [toggle1, setToggle1] = useState(true);
   const [toggle2, setToggle2] = useState(false);
   const [toggle3, setToggle3] = useState(false);
+  const [showMore, setShowMore] = useState(false);
 
   const { cart_products, quantity, itemQty, cart } = useSelector(
     (state) => state.cart_products
@@ -95,12 +96,13 @@ export const Payment = () => {
               </div>
             ) : null}
             <button
-              className="text_btn collapsible_btn"
+              className="text_btn collapsible_btn show_more_btn"
               onClick={() => {
                 setToggle(!toggle);
+                setShowMore(!showMore);
               }}
             >
-              Show more
+              {showMore ? "Hide More" : "Show More"}
             </button>
           </div>
           <div className="seller_text payment_div payment_method">
