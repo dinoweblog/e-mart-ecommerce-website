@@ -57,7 +57,6 @@ export const CartPageCard = ({
     })
       .then((res) => {
         dispatch(getCartProductsData(userId, token));
-        dispatch(getCartProductsSuccess());
       })
 
       .catch((error) => console.log(error));

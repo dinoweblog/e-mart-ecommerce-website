@@ -518,6 +518,43 @@ color: #03a685;
     margin-top: 10px;
 }
 
+
+/* ------------------Apply Coupon CSS--------------------- */
+.coupon_section{
+    padding: 30px 0;
+    /* border-top: 1px solid var(--border-color); */
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+.coupon_section>div{
+    display: flex;
+    justify-content: space-between;
+}
+.coupon_section>div~div{
+    margin-top: 10px;
+    font-size: 14px;
+}
+.apply_coupon_btn{
+    padding: 5px 10px;
+    background-color: transparent;
+    color: var(--theme-color);
+    border: 1px solid var(--theme-color);
+}
+
+.apply_coupon_btn:hover{
+    background-color: var(--theme-color);
+    color: white;
+}
+
+
+
+
+
+
+
+
+
 /* ---------------Responsive All Product page--------------- */
 
 

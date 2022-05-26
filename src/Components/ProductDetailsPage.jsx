@@ -27,7 +27,7 @@ export const ProductDetailsPage = () => {
 
   useEffect(() => {
     findData();
-  }, []);
+  }, [id]);
 
   const findData = () => {
     fetch(`https://emart-server.herokuapp.com/products/${id}`)

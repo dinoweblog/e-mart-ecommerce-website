@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { getCartProductsData } from "../Redux/Cart/action";
+import {
+  getCartProductsData,
+  getCartProductsError,
+  getCartProductsLoading,
+  getCartProductsSuccess,
+} from "../Redux/Cart/action";
+import ApplyCouponModal from "./ApplyCouponModal";
 import { CartPageCard } from "./CartPageCard";
 import { Footer2 } from "./Footer2";
 import { Navbar2 } from "./Navbar2";
@@ -11,6 +17,10 @@ import { TotalAmount } from "./TotalAmount";
 export const Checkout = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const { address } = useSelector((state) => state.address);
+
   const { cart_products, quantity, itemQty, cart } = useSelector(
     (state) => state.cart_products
   );
@@ -41,6 +51,26 @@ export const Checkout = () => {
       }
     }
   }, [quantity, itemQty]);
+
+  const removeAllCartItems = () => {
+    dispatch(getCartProductsLoading());
+
+    fetch(
+      `https://emart-server.herokuapp.com/cart/items/delete-all/${userId}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "Application/json",
+          Authorization: "Bearer " + token,
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        dispatch(getCartProductsData(userId, token));
+      })
+      .catch((error) => dispatch(getCartProductsError()));
+  };
 
   return (
     <div>
@@ -79,7 +109,14 @@ export const Checkout = () => {
                   Selected
                 </p>
                 <p>- | -</p>
-                <button className="text_btn">ALL REMOVE</button>
+                <button
+                  className="text_btn"
+                  onClick={() => {
+                    removeAllCartItems();
+                  }}
+                >
+                  ALL REMOVE
+                </button>
               </div>
               {cart_products.map((e, index) => (
                 <CartPageCard
@@ -102,6 +139,29 @@ export const Checkout = () => {
               ))}
             </div>
             <div className="checkout_div_right">
+              <div className="coupon_section">
+                <div>COUPONS</div>
+                <div>
+                  <span>
+                    <i class="bx bxs-coupon"></i> <span>Apply Coupons</span>
+                  </span>
+                  <button
+                    className="apply_coupon_btn"
+                    onClick={() => setIsOpen(true)}
+                  >
+                    Apply
+                  </button>
+                  {isOpen && (
+                    <ApplyCouponModal
+                      address={address}
+                      token={token}
+                      userId={userId}
+                      setIsOpen={setIsOpen}
+                    />
+                  )}
+                </div>
+              </div>
+
               <TotalAmount
                 totalQty={quantity}
                 oldTotal={oldTotal}

@@ -14,8 +14,19 @@ export const WomenPage = () => {
   const [filterCatVal, setFilterCatVal] = useState("");
   const [filterDisVal, setFilterDisVal] = useState();
   const [womenProduct, setWomenProduct] = useState([]);
+  const [page, setPage] = useState(1);
+  const [size, setSize] = useState(20);
+  const [isActive, setActive] = useState({ isVisible: false });
+  const [sizeSelect, setSizeSelect] = useState(true);
+  const [selectClass, setSelectClass] = useState(0);
 
-  const { products } = useSelector((state) => state.products);
+  const { products, totalPages } = useSelector((state) => state.products);
+
+  const [btn, setBtn] = useState(new Array(totalPages).fill("a"));
+
+  useEffect(() => {
+    dispatch(getProductsData(page, size));
+  }, [page]);
 
   useEffect(() => {
     dispatch(getProductsData());
@@ -25,25 +36,40 @@ export const WomenPage = () => {
     setWomenProduct([...products]);
   }, [products, dispatch]);
 
+  useEffect(() => {
+    setBtn(new Array(totalPages).fill("btn"));
+  }, [totalPages, dispatch]);
+
   const filterByCategory = (e) => {
     const type = e.target.value;
     setFilterCatVal(type);
     setClearFilter(true);
 
-    const items = products.filter(
-      (el) => el.category.toLowerCase() === type.toLowerCase()
-    );
-
-    setWomenProduct([...items]);
+    fetch(
+      `https://emart-server.herokuapp.com/products/women/filter?category=${type}`
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        setWomenProduct([...res.products]);
+      })
+      .catch((error) => console.log(error));
   };
 
   const filterByDiscount = (e) => {
     const type = e.target.value;
     setFilterDisVal(type);
     setClearFilter(true);
-    const items = products.filter((el) => Number(el.off) >= type);
+    console.log(type);
+    // const items = products.filter((el) => Number(el.off) >= type);
 
-    setWomenProduct([...items]);
+    fetch(
+      `https://emart-server.herokuapp.com/products/women/filter?discount=${type}`
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        setWomenProduct([...res.products]);
+      })
+      .catch((error) => console.log(error));
   };
 
   const SortByCost = (e) => {
@@ -121,6 +147,28 @@ export const WomenPage = () => {
                     Indian Wear
                   </label>
                 </li>
+                <li>
+                  <label className="common_customCheckbox filter_categories_label">
+                    <input
+                      type="checkbox"
+                      value="sports"
+                      checked={filterCatVal === "sports"}
+                      onClick={filterByCategory}
+                    />
+                    Sports
+                  </label>
+                </li>
+                <li>
+                  <label className="common_customCheckbox filter_categories_label">
+                    <input
+                      type="checkbox"
+                      value="maternity"
+                      checked={filterCatVal === "maternity"}
+                      onClick={filterByCategory}
+                    />
+                    Maternity
+                  </label>
+                </li>
               </ul>
             </div>
             <div className="filter_types discount_container">
@@ -180,6 +228,28 @@ export const WomenPage = () => {
                       onClick={filterByDiscount}
                     />
                     30% and above
+                  </label>
+                </li>
+                <li>
+                  <label className="common_customCheckbox filter_discount_label">
+                    <input
+                      type="checkbox"
+                      value={20}
+                      checked={filterDisVal == 20}
+                      onClick={filterByDiscount}
+                    />
+                    20% and above
+                  </label>
+                </li>
+                <li>
+                  <label className="common_customCheckbox filter_discount_label">
+                    <input
+                      type="checkbox"
+                      value={10}
+                      checked={filterDisVal == 10}
+                      onClick={filterByDiscount}
+                    />
+                    10% and above
                   </label>
                 </li>
               </ul>
@@ -254,6 +324,47 @@ export const WomenPage = () => {
                 size={e.size}
               />
             ))}
+          </div>
+
+          <div className="pagination">
+            {page === 1 ? (
+              <button disabled>Prev</button>
+            ) : (
+              <button
+                onClick={() => {
+                  setPage(page - 1);
+                  setSelectClass(selectClass - 1);
+                }}
+              >
+                Prev
+              </button>
+            )}
+
+            {btn.map((e, index) => (
+              <button
+                key={index}
+                className={` ${selectClass === index ? "active" : ""}`}
+                onClick={() => {
+                  setSizeSelect(true);
+                  setSelectClass(index);
+                  setPage(index + 1);
+                }}
+              >
+                {index + 1}
+              </button>
+            ))}
+            {page === totalPages ? (
+              <button disabled>Next</button>
+            ) : (
+              <button
+                onClick={() => {
+                  setPage(page + 1);
+                  setSelectClass(selectClass + 1);
+                }}
+              >
+                Next
+              </button>
+            )}
           </div>
         </div>
       </div>
