@@ -377,6 +377,9 @@ p {
   .sort_list {
     width: 100%
   }
+   .filter_section {
+       width: 55%;
+   }
 }
 @media (max-width: 520px) {
   .product_category {
@@ -395,7 +398,7 @@ p {
   }
   
 .sort_by {
-    width: 40%;
+    width: 50%;
 }
 
 .sort_list {
@@ -408,5 +411,8 @@ p {
   .product_category {
     bottom: 40%;
     margin-left: 3%;
+  }
+  .sort_by {
+      width: 50%;
   }
 }
