@@ -379,6 +379,7 @@ p {
   }
    .filter_section {
        width: 55%;
+    left: -56%;
    }
 }
 @media (max-width: 520px) {
@@ -386,9 +387,7 @@ p {
     bottom: 35%;
     margin-left: 3%;
   }
-   .sort_list {
-       width: 188px;
-   }
+  
 }
 
 @media (max-width: 490px) {
@@ -399,6 +398,7 @@ p {
   
 .sort_by {
     width: 50%;
+    left: -51%;
 }
 
 .sort_list {
@@ -414,5 +414,6 @@ p {
   }
   .sort_by {
       width: 50%;
+    left: -52%;
   }
 }
