@@ -393,9 +393,15 @@ p {
     bottom: 30%;
     margin-left: 3%;
   }
-   .sort_list {
-       width: 188px;
-   }
+  
+.sort_by {
+    width: 40%;
+}
+
+.sort_list {
+    width: 100%;
+}
+
 }
 
 @media (max-width: 320px) {
