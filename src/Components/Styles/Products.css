@@ -398,7 +398,6 @@ p {
   
 .sort_by {
     width: 50%;
-    left: -51%;
 }
 
 .sort_list {
@@ -414,6 +413,5 @@ p {
   }
   .sort_by {
       width: 50%;
-    left: -52%;
   }
 }
