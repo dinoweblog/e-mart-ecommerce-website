@@ -6,11 +6,33 @@ import styled from "styled-components";
 
 const SliderDiv = styled(Slider)`
   margin: auto;
-  margin-top: 7%;
+  margin-top: 5%;
   width: 90%;
   div {
-    height: 390px;
+    height: 360px;
   }
+
+  @media (min-width: 1300px) and (max-width: 1597px) {
+    div {
+      height: 400px;
+    }
+  }
+  @media (max-width: 998px) {
+    div {
+      height: 300px;
+    }
+  }
+  @media (max-width: 798px) {
+    div {
+      height: 250px;
+    }
+  }
+  @media (max-width: 520px) {
+    div {
+      height: 200px;
+    }
+  }
+
   img {
     /* width: 100%; */
     height: 100%;

@@ -8,7 +8,7 @@ button{
 .outer_container{
     width: 90%;
     margin: auto;
-    margin-top: 8%;
+    margin-top: 5%;
 }
 .inner_container{
     display: grid;
@@ -174,7 +174,7 @@ border: 1px solid #bfc0c6;
 }
 
 .small_img>div{
-    
+    cursor: pointer;
     margin-bottom: 3px;
 }
 
@@ -211,5 +211,7 @@ border: 1px solid #bfc0c6;
         width: 40px;
         height: 40px;
     }
+
+   
 }
 

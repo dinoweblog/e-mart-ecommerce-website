@@ -23,3 +23,38 @@
 .massage_card p{
     font-size: 20px;
 }
+
+
+/* -------------------------------------- */
+.big_card_container{
+    display: grid;
+    width: 90%;
+    margin: auto;
+    grid-template-columns: 47% 47%;
+    justify-content: space-between;
+    margin-top: 10%;
+    color: #282c3f;
+    
+}
+
+.big_card_container img{
+    width: 100%;
+    /* height: 50%; */
+    transition: transform .5s ease;
+}
+
+.big_card_container :hover img {
+    transform: scale(1.3);
+}
+
+/* ------------------------------- */
+@media (max-width: 798px) {
+    .big_card_container {
+            display: block;
+            
+    }
+
+        .big_card_container>div{
+            margin-bottom: 20px;
+        }
+}

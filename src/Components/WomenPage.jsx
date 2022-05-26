@@ -9,6 +9,7 @@ import { Footer } from "./Footer";
 export const WomenPage = () => {
   const dispatch = useDispatch();
   const [clearFilter, setClearFilter] = useState(false);
+  const [filterHide, setfilterHide] = useState(false);
   const [sortVal, setSortVal] = useState("");
   const [filterCatVal, setFilterCatVal] = useState("");
   const [filterDisVal, setFilterDisVal] = useState();
@@ -62,10 +63,13 @@ export const WomenPage = () => {
 
   return (
     <div>
-      <Navbar />
+      <Navbar active_menu={"#ff3e6c"} />
 
       <div className="products_container">
-        <div className="filter_section">
+        <div
+          style={filterHide ? { left: "0px" } : {}}
+          className="filter_section"
+        >
           <div className="top_title">
             <p>FILTERS</p>
             <span
@@ -79,6 +83,16 @@ export const WomenPage = () => {
             >
               CLEAR ALL
             </span>
+            {filterHide ? (
+              <button
+                className="hide_btn"
+                onClick={() => {
+                  setfilterHide(!filterHide);
+                }}
+              >
+                <i class="bx bx-x"></i>
+              </button>
+            ) : null}
           </div>
           <div className="filter_by">
             <div className="filter_types categories_container">
@@ -174,8 +188,20 @@ export const WomenPage = () => {
         </div>
         <div className="products_section">
           <div className="top_title">
+            <div className="filter_toggle_btn">
+              <button
+                onClick={() => {
+                  setfilterHide(!filterHide);
+                }}
+              >
+                <i class="bx bx-filter-alt"></i> FILTER
+              </button>
+            </div>
             <div className="sort_by">
-              Sort by : <span>Recommended</span>
+              <span>
+                <i class="bx bx-sort-alt-2"></i>Sort by :{" "}
+                <span>Recommended</span>
+              </span>
               <ul className="sort_list">
                 <li>
                   <label className="sort_label ">

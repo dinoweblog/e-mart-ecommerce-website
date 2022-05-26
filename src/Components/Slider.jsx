@@ -14,8 +14,19 @@ const SliderDiv = styled(Slider)`
   margin: auto;
   width: 90%;
   .product_card {
-    width: 300px;
+    width: 260px;
   }
+  @media (max-width: 798px) {
+    .product_card {
+      width: 220px;
+    }
+  }
+  @media (max-width: 520px) {
+    .product_card {
+      width: 180px;
+    }
+  }
+
   img {
     width: 100%;
   }
@@ -26,7 +37,7 @@ const SliderDiv = styled(Slider)`
     margin: 0 -0px;
     padding: 0 20% 0 0 !important;
   }
-  .slick-slide > div {
+  .slick-slide {
     padding: 0 10px;
   }
   .slick-list {
@@ -34,8 +45,7 @@ const SliderDiv = styled(Slider)`
   }
 `;
 
-export const WomenSlider = () => {
-  const { products } = useSelector((state) => state.products);
+export const WomenSlider = ({ products }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProductsData());

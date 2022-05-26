@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCartProductsData } from "../Redux/Cart/action";
 import { getLogout } from "../Redux/Login/action";
 
-export const Navbar = () => {
+export const Navbar = ({ active_menu }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [showProDrop, setShowProDrop] = useState(false);
 
@@ -36,7 +36,7 @@ export const Navbar = () => {
             <li>
               <Link to={"/"}>Men</Link>
             </li>
-            <li>
+            <li style={{ borderBottomColor: `${active_menu}` }}>
               <Link to={"/shop/women"}>Women</Link>
             </li>
             <li>

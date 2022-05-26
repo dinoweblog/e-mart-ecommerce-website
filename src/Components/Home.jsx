@@ -7,6 +7,7 @@ import { Carousel } from "./Carousel";
 import { Footer } from "./Footer";
 import "./Styles/Home.css";
 import { getCartProductsData } from "../Redux/Cart/action";
+import { BigCard } from "./BigCard";
 
 let count = 1;
 
@@ -33,11 +34,26 @@ export const Home = () => {
     <div>
       <Navbar />
       <Carousel />
+
+      <div className="big_card_container">
+        <BigCard
+          img={
+            "https://ik.imagekit.io/thestylist/rba/pub/media_rb/HOMEPAGE_IMAGES/05_Apr_22/1_(1).jpg"
+          }
+          txt={"Women Clothes"}
+        />
+        <BigCard
+          img={
+            "https://ik.imagekit.io/thestylist/rba/pub/media_rb/HOMEPAGE_IMAGES/07_Dec_21/Rohit_Bal.png"
+          }
+          txt={"Men Clothes"}
+        />
+      </div>
       <div className="section">
         <div className="section_title">
           <h3>Exclusive collections to explore now</h3>
         </div>
-        <WomenSlider />
+        <WomenSlider products={products} />
       </div>
 
       {show ? (

@@ -20,6 +20,7 @@ export const ProductDetailsPage = () => {
   const { id } = useParams();
 
   const { cart_products } = useSelector((state) => state.cart_products);
+  const { products } = useSelector((state) => state.products);
   const { userId, token, isAuthenticated } = useSelector(
     (state) => state.login
   );
@@ -180,7 +181,7 @@ export const ProductDetailsPage = () => {
       <div className="similar">
         <h2>SIMILAR PRODUCTS</h2>
       </div>
-      <WomenSlider />
+      <WomenSlider products={products} />
       <Footer />
     </div>
   );
