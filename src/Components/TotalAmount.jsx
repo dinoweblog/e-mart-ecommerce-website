@@ -52,7 +52,7 @@ export const TotalAmount = ({
           <span>Total Amount</span>
           <span>
             <i className="bx bx-rupee"></i>
-            {Intl.NumberFormat("en-IN").format(oldTotal - dis - coupon)}
+            {Intl.NumberFormat("en-IN").format(oldTotal - dis)}
           </span>
         </div>
       </div>
