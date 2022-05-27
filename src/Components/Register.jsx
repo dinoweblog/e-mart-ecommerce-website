@@ -82,7 +82,7 @@ export const Register = () => {
           </span>
           <input
             required
-            type="password"
+            type={showPass ? `password` : "text"}
             placeholder="Confirm Password"
             value={repassword}
             onChange={(e) => setRepassword(e.target.value)}
