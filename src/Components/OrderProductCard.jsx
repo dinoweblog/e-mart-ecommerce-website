@@ -5,6 +5,7 @@ export const OrderProductCard = ({
   off,
   category,
   description,
+  itemQty,
 }) => {
   return (
     <div className="checkout_div cart_items order_product">
@@ -14,12 +15,13 @@ export const OrderProductCard = ({
       <div className="product_title_sec">
         <h2 className="">{name}</h2>
         <p className="product_desc product_desc_card">{description}</p>
-        <p className="product_price">
+        <div className="product_price">
           <span className="new_price">
             Rs. {Intl.NumberFormat("en-IN").format(newPrice)}
           </span>
-        </p>
-        <button className="order_cancel_btn">Order Cancel</button>
+          <p> ({itemQty} items)</p>
+        </div>
+        {/* <button className="order_cancel_btn">Order Cancel</button> */}
       </div>
     </div>
   );

@@ -27,7 +27,6 @@ export const getCartProductsData = (userId, token) => (dispatch) => {
   })
     .then((res) => res.json())
     .then((res) => {
-      console.log("empRes", res);
       dispatch(getCartProductsSuccess(res));
     })
     .catch((error) => dispatch(getCartProductsError()));

@@ -8,6 +8,10 @@ const initialState = {
   loading: false,
   error: false,
   order_products: [],
+  order: [],
+  quantity: 0,
+  itemQty: [],
+  totalAmount:0
 };
 
 export const orderProductsReducer = (
@@ -23,7 +27,11 @@ export const orderProductsReducer = (
         ...store,
         loading: false,
         error: false,
-        order_products: [...payload.cartitems],
+        order_products: [...payload.orderitems],
+        order: [...payload.order],
+        quantity: payload.qty,
+        itemQty: [...payload.itemQty],
+        totalAmount: payload.totalAmount,
       };
 
     case ORDER_PRODUCTS_ERROR:

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { getCartProductsData } from "../Redux/Cart/action";
 import PaymentsOutlinedIcon from "@mui/icons-material/PaymentsOutlined";
 import AccountBalanceOutlinedIcon from "@mui/icons-material/AccountBalanceOutlined";
 import CreditCardOutlinedIcon from "@mui/icons-material/CreditCardOutlined";
@@ -9,6 +8,14 @@ import { Navbar2 } from "./Navbar2";
 import "./Styles/Checkout.css";
 import { TotalAmount } from "./TotalAmount";
 import { Footer2 } from "./Footer2";
+
+import {
+  getCartProductsData,
+  getCartProductsError,
+  getCartProductsLoading,
+  getCartProductsSuccess,
+} from "../Redux/Cart/action";
+import { getOrderProductsData } from "../Redux/YourOrder/action";
 
 export const Payment = () => {
   const dispatch = useDispatch();
@@ -22,13 +29,13 @@ export const Payment = () => {
   const { cart_products, quantity, itemQty, cart } = useSelector(
     (state) => state.cart_products
   );
+  const { userId, token } = useSelector((state) => state.login);
   const [oldTotal, setoldTotal] = useState(0);
   const [dis, setdis] = useState(0);
 
-
-   useEffect(() => {
-     document.title = "Payment | e-mart shopping platform";
-   }, []);
+  useEffect(() => {
+    document.title = "Payment | e-mart shopping platform";
+  }, []);
 
   useEffect(() => {
     let x = 0;
@@ -40,6 +47,45 @@ export const Payment = () => {
     setdis(x - d);
     setoldTotal(x);
   }, []);
+
+  const removeAllCartItems = () => {
+    dispatch(getCartProductsLoading());
+
+    fetch(
+      `https://emart-server.herokuapp.com/cart/items/delete-all/${userId}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "Application/json",
+          Authorization: "Bearer " + token,
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        placeOrder();
+        dispatch(getCartProductsData(userId, token));
+      })
+      .catch((error) => dispatch(getCartProductsError()));
+  };
+ 
+  const placeOrder = () => {
+    fetch(`https://emart-server.herokuapp.com/product-order/your-order`, {
+      method: "POST",
+      body: JSON.stringify(cart),
+      headers: {
+        "Content-Type": "Application/json",
+        Authorization: "Bearer " + token,
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        dispatch(getOrderProductsData(userId, token));
+        navigate("/checkout/confirm");
+      })
+
+      .catch((error) => console.log(error));
+  };
 
   return (
     <div>
@@ -138,7 +184,7 @@ export const Payment = () => {
                     id="action_cod"
                     className="chashon_btn"
                     onClick={() => {
-                      navigate("/checkout/confirm");
+                      removeAllCartItems();
                     }}
                   >
                     PLACE ORDER

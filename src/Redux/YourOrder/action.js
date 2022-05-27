@@ -18,16 +18,18 @@ export const getOrderProductsError = () => ({
 export const getOrderProductsData = (userId, token) => (dispatch) => {
   dispatch(getOrderProductsLoading());
 
-  fetch(`https://emart-server.herokuapp.com/your-order/items/${userId}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "Application/json",
-      Authorization: "Bearer " + token,
-    },
-  })
+  fetch(
+    `https://emart-server.herokuapp.com/product-order/your-order/${userId}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "Application/json",
+        Authorization: "Bearer " + token,
+      },
+    }
+  )
     .then((res) => res.json())
     .then((res) => {
-      console.log("empRes", res);
       dispatch(getOrderProductsSuccess(res));
     })
     .catch((error) => dispatch(getOrderProductsError()));
