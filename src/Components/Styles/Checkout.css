@@ -518,6 +518,12 @@ color: #03a685;
     margin-top: 10px;
 }
 
+.confirm_page_btn{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
 
 /* ------------------Apply Coupon CSS--------------------- */
 .coupon_section{
@@ -644,4 +650,17 @@ color: #03a685;
    }
 }
 
-@media (max-width: 520px) {}
+@media (max-width: 520px) {
+    .confirm_page_btn {
+            display: flex;
+            flex-direction: column;
+        }
+
+                .order_confirm_container button {
+                    
+                    width: 60%;
+                    margin: auto;
+                    margin-top: 20px;
+                    padding: 8px 10px;
+                }
+}

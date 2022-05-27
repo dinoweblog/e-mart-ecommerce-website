@@ -32,14 +32,24 @@ export const OrderConfirm = () => {
             Your order is confirmed. You will receive an order confirmation
             email/SMS shortly with the expected delivery date for your items.
           </div>
-          <button
-            className="continue_shopping"
-            onClick={() => {
-              navigate("/");
-            }}
-          >
-            CONTINUE SHOPPING
-          </button>
+          <div className="confirm_page_btn">
+            <button
+              className="continue_shopping"
+              onClick={() => {
+                navigate("/");
+              }}
+            >
+              CONTINUE SHOPPING
+            </button>
+            <button
+              className="continue_shopping"
+              onClick={() => {
+                navigate("/YourOrder");
+              }}
+            >
+              YOUR ORDER
+            </button>
+          </div>
         </div>
       </div>
       <Footer2 />
