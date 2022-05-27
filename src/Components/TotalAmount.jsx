@@ -8,6 +8,7 @@ export const TotalAmount = ({
   totalQty,
   btnText,
   btn,
+  coupon,
 }) => {
   const navigate = useNavigate();
   return (
@@ -51,7 +52,7 @@ export const TotalAmount = ({
           <span>Total Amount</span>
           <span>
             <i className="bx bx-rupee"></i>
-            {Intl.NumberFormat("en-IN").format(oldTotal - dis)}
+            {Intl.NumberFormat("en-IN").format(oldTotal - dis - coupon)}
           </span>
         </div>
       </div>

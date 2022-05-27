@@ -18,6 +18,7 @@ export const Checkout = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+  const [applyCoupon, setApplyCoupon] = useState(false);
 
   const { address } = useSelector((state) => state.address);
 
@@ -27,6 +28,8 @@ export const Checkout = () => {
   const { userId, token } = useSelector((state) => state.login);
   const [oldTotal, setoldTotal] = useState(0);
   const [dis, setdis] = useState(0);
+
+  let coupon_price = 200;
 
   useEffect(() => {
     // dispatch(getCartProductsData(userId, token));
@@ -157,6 +160,8 @@ export const Checkout = () => {
                       token={token}
                       userId={userId}
                       setIsOpen={setIsOpen}
+                      coupon_price={coupon_price}
+                      setApplyCoupon={setApplyCoupon}
                     />
                   )}
                 </div>
@@ -166,6 +171,7 @@ export const Checkout = () => {
                 totalQty={quantity}
                 oldTotal={oldTotal}
                 dis={dis}
+                coupon={applyCoupon ? coupon_price : 0}
                 redirectLink={"/checkout/address"}
                 btnText={"CONTINUE"}
                 btn={true}

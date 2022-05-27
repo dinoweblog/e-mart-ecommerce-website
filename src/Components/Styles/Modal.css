@@ -133,7 +133,7 @@ padding-bottom: 70px;
         border: 1px dashed var(--theme-color);
         font-size: 20px;
         border-radius: 4px;
-        margin-left: 6%;
+        margin-left: 3%;
         margin-top: 10px;
 }
 
@@ -150,7 +150,7 @@ padding-bottom: 70px;
 }
 
 .coupon_info_container{
-    margin-left: 6%;
+    margin-left: 3%;
     margin-top: 10px;
 }
 

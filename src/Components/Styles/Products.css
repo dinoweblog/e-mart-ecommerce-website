@@ -413,6 +413,9 @@ font-weight: 600;
        width: 55%;
     left: -56%;
    }
+         .filter_section .top_title span {
+             font-size: 14px;
+         }
 }
 @media (max-width: 520px) {
   .product_category {
@@ -435,6 +438,15 @@ font-weight: 600;
 .sort_list {
     width: 100%;
 }
+.filter_section .top_title span {
+    font-size: 13px;
+}
+
+.filter_section {
+    width: 58%;
+    left: -59%;
+}
+
 
 }
 
@@ -446,4 +458,11 @@ font-weight: 600;
   .sort_by {
       width: 50%;
   }
+}
+.loading_gif{
+    display: flex;
+    justify-content: center;
+}
+.loading_gif>img{
+    width: 50%;
 }

@@ -9,6 +9,7 @@ import { Footer } from "./Footer";
 export const WomenPage = () => {
   const dispatch = useDispatch();
   const [clearFilter, setClearFilter] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [filterHide, setfilterHide] = useState(false);
   const [sortVal, setSortVal] = useState("");
   const [filterCatVal, setFilterCatVal] = useState("");
@@ -16,7 +17,7 @@ export const WomenPage = () => {
   const [womenProduct, setWomenProduct] = useState([]);
   const [page, setPage] = useState(1);
   const [size, setSize] = useState(20);
-  const [isActive, setActive] = useState({ isVisible: false });
+  const [isShowing, setShowing] = useState(true);
   const [sizeSelect, setSizeSelect] = useState(true);
   const [selectClass, setSelectClass] = useState(0);
 
@@ -25,11 +26,11 @@ export const WomenPage = () => {
   const [btn, setBtn] = useState(new Array(totalPages).fill("a"));
 
   useEffect(() => {
-    dispatch(getProductsData(page, size));
+    dispatch(getProductsData(page, size, setLoading));
   }, [page]);
 
   useEffect(() => {
-    dispatch(getProductsData());
+    dispatch(getProductsData(page, size, setLoading));
   }, []);
 
   useEffect(() => {
@@ -44,6 +45,8 @@ export const WomenPage = () => {
     const type = e.target.value;
     setFilterCatVal(type);
     setClearFilter(true);
+    setShowing(false);
+    setLoading(true);
 
     fetch(
       `https://emart-server.herokuapp.com/products/women/filter?category=${type}`
@@ -51,6 +54,7 @@ export const WomenPage = () => {
       .then((res) => res.json())
       .then((res) => {
         setWomenProduct([...res.products]);
+        setLoading(false);
       })
       .catch((error) => console.log(error));
   };
@@ -59,6 +63,8 @@ export const WomenPage = () => {
     const type = e.target.value;
     setFilterDisVal(type);
     setClearFilter(true);
+    setShowing(false);
+    setLoading(true);
     console.log(type);
     // const items = products.filter((el) => Number(el.off) >= type);
 
@@ -68,6 +74,7 @@ export const WomenPage = () => {
       .then((res) => res.json())
       .then((res) => {
         setWomenProduct([...res.products]);
+        setLoading(false);
       })
       .catch((error) => console.log(error));
   };
@@ -100,10 +107,11 @@ export const WomenPage = () => {
             <p>FILTERS</p>
             <span
               onClick={() => {
-                dispatch(getProductsData());
+                dispatch(getProductsData(page, size, setLoading));
                 setClearFilter(false);
                 setFilterCatVal("");
                 setFilterDisVal("");
+                setShowing(true);
               }}
               className={!clearFilter ? "clear_btn" : ""}
             >
@@ -308,64 +316,74 @@ export const WomenPage = () => {
               </ul>
             </div>
           </div>
-
-          <div className="all_products">
-            {womenProduct.map((e) => (
-              <ProductCard
-                key={e._id}
-                id={e._id}
-                imageURL={e.imageURL}
-                name={e.name}
-                oldPrice={e.oldPrice}
-                newPrice={e.newPrice}
-                off={e.off}
-                category={e.category}
-                color={e.color}
-                size={e.size}
+          {loading ? (
+            <div className="all_products loading_gif">
+              <img
+                src="https://flevix.com/wp-content/uploads/2020/01/Preloader.gif"
+                alt=""
               />
-            ))}
-          </div>
+            </div>
+          ) : (
+            <div className="all_products">
+              {womenProduct.map((e) => (
+                <ProductCard
+                  key={e._id}
+                  id={e._id}
+                  imageURL={e.imageURL}
+                  name={e.name}
+                  oldPrice={e.oldPrice}
+                  newPrice={e.newPrice}
+                  off={e.off}
+                  category={e.category}
+                  color={e.color}
+                  size={e.size}
+                />
+              ))}
+            </div>
+          )}
 
-          <div className="pagination">
-            {page === 1 ? (
-              <button disabled>Prev</button>
-            ) : (
-              <button
-                onClick={() => {
-                  setPage(page - 1);
-                  setSelectClass(selectClass - 1);
-                }}
-              >
-                Prev
-              </button>
-            )}
+          {isShowing ? (
+            <div className="pagination">
+              {page === 1 ? (
+                <button disabled>Prev</button>
+              ) : (
+                <button
+                  onClick={() => {
+                    setPage(page - 1);
+                    setSelectClass(selectClass - 1);
+                  }}
+                >
+                  Prev
+                </button>
+              )}
 
-            {btn.map((e, index) => (
-              <button
-                key={index}
-                className={` ${selectClass === index ? "active" : ""}`}
-                onClick={() => {
-                  setSizeSelect(true);
-                  setSelectClass(index);
-                  setPage(index + 1);
-                }}
-              >
-                {index + 1}
-              </button>
-            ))}
-            {page === totalPages ? (
-              <button disabled>Next</button>
-            ) : (
-              <button
-                onClick={() => {
-                  setPage(page + 1);
-                  setSelectClass(selectClass + 1);
-                }}
-              >
-                Next
-              </button>
-            )}
-          </div>
+              {btn.map((e, index) => (
+                <button
+                  key={index}
+                  className={` ${selectClass === index ? "active" : ""}`}
+                  onClick={() => {
+                    setSizeSelect(true);
+                    setSelectClass(index);
+                    setPage(index + 1);
+                  }}
+                >
+                  {index + 1}
+                </button>
+              ))}
+              {page === totalPages ? (
+                <button disabled>Next</button>
+              ) : (
+                <button
+                  onClick={() => {
+                    setPage(page + 1);
+                    setSelectClass(selectClass + 1);
+                  }}
+                >
+                  Next
+                </button>
+              )}
+            </div>
+          ) : null}
         </div>
       </div>
       <Footer />
