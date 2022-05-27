@@ -9,7 +9,6 @@ import { Footer } from "./Footer";
 export const WomenPage = () => {
   const dispatch = useDispatch();
   const [clearFilter, setClearFilter] = useState(false);
-  const [loading, setLoading] = useState(true);
   const [filterHide, setfilterHide] = useState(false);
   const [sortVal, setSortVal] = useState("");
   const [filterCatVal, setFilterCatVal] = useState("");
@@ -21,16 +20,22 @@ export const WomenPage = () => {
   const [sizeSelect, setSizeSelect] = useState(true);
   const [selectClass, setSelectClass] = useState(0);
 
-  const { products, totalPages } = useSelector((state) => state.products);
+  const { products, totalPages, loading } = useSelector(
+    (state) => state.products
+  );
 
   const [btn, setBtn] = useState(new Array(totalPages).fill("a"));
 
   useEffect(() => {
-    dispatch(getProductsData(page, size, setLoading));
+    document.title = "Women Products | e-mart shopping platform";
+  }, []);
+
+  useEffect(() => {
+    dispatch(getProductsData(page, size));
   }, [page]);
 
   useEffect(() => {
-    dispatch(getProductsData(page, size, setLoading));
+    dispatch(getProductsData(page, size));
   }, []);
 
   useEffect(() => {
@@ -46,7 +51,6 @@ export const WomenPage = () => {
     setFilterCatVal(type);
     setClearFilter(true);
     setShowing(false);
-    setLoading(true);
 
     fetch(
       `https://emart-server.herokuapp.com/products/women/filter?category=${type}`
@@ -54,7 +58,6 @@ export const WomenPage = () => {
       .then((res) => res.json())
       .then((res) => {
         setWomenProduct([...res.products]);
-        setLoading(false);
       })
       .catch((error) => console.log(error));
   };
@@ -64,7 +67,6 @@ export const WomenPage = () => {
     setFilterDisVal(type);
     setClearFilter(true);
     setShowing(false);
-    setLoading(true);
     console.log(type);
     // const items = products.filter((el) => Number(el.off) >= type);
 
@@ -74,7 +76,6 @@ export const WomenPage = () => {
       .then((res) => res.json())
       .then((res) => {
         setWomenProduct([...res.products]);
-        setLoading(false);
       })
       .catch((error) => console.log(error));
   };
@@ -107,7 +108,7 @@ export const WomenPage = () => {
             <p>FILTERS</p>
             <span
               onClick={() => {
-                dispatch(getProductsData(page, size, setLoading));
+                dispatch(getProductsData(page, size));
                 setClearFilter(false);
                 setFilterCatVal("");
                 setFilterDisVal("");

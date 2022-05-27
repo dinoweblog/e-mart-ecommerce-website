@@ -23,6 +23,10 @@ export const Login = () => {
     password,
   };
 
+  useEffect(() => {
+    document.title = "Login | e-mart shopping platform";
+  }, []);
+
   const getLogedin = (event) => {
     event.preventDefault();
     dispatch(loginLoading());

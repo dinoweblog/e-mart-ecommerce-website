@@ -38,6 +38,10 @@ export const Address = () => {
     dispatch(getAddressData(userId, token));
   }, []);
 
+   useEffect(() => {
+     document.title = "Your Address | e-mart shopping platform";
+   }, []);
+
   useEffect(() => {
     let x = 0;
     let d = 0;

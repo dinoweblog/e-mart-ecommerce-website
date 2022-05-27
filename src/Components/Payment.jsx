@@ -25,6 +25,11 @@ export const Payment = () => {
   const [oldTotal, setoldTotal] = useState(0);
   const [dis, setdis] = useState(0);
 
+
+   useEffect(() => {
+     document.title = "Payment | e-mart shopping platform";
+   }, []);
+
   useEffect(() => {
     let x = 0;
     let d = 0;

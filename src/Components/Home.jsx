@@ -18,6 +18,10 @@ export const Home = () => {
   const { user, isAuthenticated } = useSelector((state) => state.login);
 
   useEffect(() => {
+    document.title = "Home | e-mart shopping platform";
+  }, []);
+
+  useEffect(() => {
     dispatch(getProductsData());
     if (isAuthenticated === "true" && count === 1) {
       setShow(true);

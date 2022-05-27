@@ -11,6 +11,10 @@ export const OrderConfirm = () => {
   const navigate = useNavigate();
   const { cart_products } = useSelector((state) => state.cart_products);
 
+  useEffect(() => {
+    document.title = "Confirm Order | e-mart shopping platform";
+  }, []);
+
   return (
     <div>
       <Navbar2 />

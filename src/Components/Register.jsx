@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Navbar } from "./Navbar";
 import "./Styles/RegisterLogin.css";
@@ -11,6 +11,11 @@ export const Register = () => {
   const [password, setPassword] = useState("");
   const [repassword, setRepassword] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.title = "Register | e-mart shopping platform";
+  }, []);
+
   const userDetails = {
     name,
     email,

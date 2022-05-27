@@ -32,7 +32,7 @@ export const Checkout = () => {
   let coupon_price = 200;
 
   useEffect(() => {
-    // dispatch(getCartProductsData(userId, token));
+    document.title = "Checkout | e-mart shopping platform";
   }, []);
 
   useEffect(() => {
@@ -194,7 +194,7 @@ export const Checkout = () => {
           </div>
         )}
       </div>
-      <Footer2 />
+      {cart_products.length != 0 ? <Footer2 /> : null}
     </div>
   );
 };

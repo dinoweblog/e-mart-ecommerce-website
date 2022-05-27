@@ -25,6 +25,11 @@ export const ProductDetailsPage = () => {
     (state) => state.login
   );
 
+
+   useEffect(() => {
+     document.title = `${data.name} | e-mart`;
+   }, []);
+
   useEffect(() => {
     findData();
   }, [id]);
