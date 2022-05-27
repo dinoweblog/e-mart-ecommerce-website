@@ -12,6 +12,7 @@ import { Register } from "./Components/Register";
 import { Login } from "./Components/Login";
 import { useSelector } from "react-redux";
 import { PrivateRoute } from "./Components/Private/PrivateRoute";
+import { OrderPage } from "./Components/OrderPage";
 
 function App() {
   const { isAuthenticated } = useSelector((state) => state.login);
@@ -28,6 +29,7 @@ function App() {
       <Route path="/checkout/confirm" element={<OrderConfirm />}></Route>
       <Route path="/user/register" element={<Register />}></Route>
       <Route path="/user/login" element={<Login />}></Route>
+      <Route path="/YourOrder" element={<OrderPage />}></Route>
     </Routes>
   );
 }

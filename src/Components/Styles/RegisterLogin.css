@@ -1,114 +1,118 @@
-
 :root {
-    --theme_bg: #fdefe8;
-    --font_size: 17px;
-    --font_color: #282c3f;
-    --border-color: #e9e9ed;
-    --hover-color: #f0f0f0;
-    --theme-color: #ff3e6c;
+  --theme_bg: #fdefe8;
+  --font_size: 17px;
+  --font_color: #282c3f;
+  --border-color: #e9e9ed;
+  --hover-color: #f0f0f0;
+  --theme-color: #ff3e6c;
 }
-input{
-    outline: none;
-    font-size: 14px;
+input {
+  outline: none;
+  font-size: 14px;
 }
-.register_container{
-    width: 100%;
-    height: auto;
-    background-color: var(--theme_bg);
-    padding-bottom: 5%;
+.register_container {
+  width: 100%;
+  height: auto;
+  background-color: var(--theme_bg);
+  padding-bottom: 5%;
 }
-.login_container{
-    height: 100vh;
+.login_container {
+  height: 100vh;
 }
-.register_container form{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 31%;
-    margin: auto;
-    padding: 2% 4%;
-    box-sizing: border-box;
-    background-color: white;
-    margin-top: 3%;
-    
-}
-
-.register_container .form>h2{
-    font-size: 20px;
-        font-weight: 500;
+.register_container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 31%;
+  margin: auto;
+  padding: 2% 4%;
+  box-sizing: border-box;
+  background-color: white;
+  margin-top: 3%;
 }
 
-.register_container input[type=number]::-webkit-inner-spin-button,
+.register_container .form > h2 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.register_container input[type="number"]::-webkit-inner-spin-button,
 .no-spin::-webkit-outer-spin-button {
-    -webkit-appearance: none !important;
-    margin: 0 !important;
+  -webkit-appearance: none !important;
+  margin: 0 !important;
 }
-.register_container input[type=number] {
-    -moz-appearance: textfield !important;
+.register_container input[type="number"] {
+  -moz-appearance: textfield !important;
 }
 
- .register_container input[type=submit] {
-    border: 1px solid var(--border-color);
-    background-color: var(--theme-color);
-    color: white;
-    padding: 10px 0;
+.register_container input[type="submit"] {
+  border: 1px solid var(--border-color);
+  background-color: var(--theme-color);
+  color: white;
+  padding: 10px 0;
 }
 
 .register_container input {
-    width: 100%;
-        padding: 10px 20px;
-        box-sizing: border-box;
-        border: 1px solid #ccc;
-        -webkit-transition: 0.5s;
-        transition: 0.5s;
-        outline: none;
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
 }
 
-input[type=checkbox]{
-    width: auto;
+input[type="checkbox"] {
+  width: auto;
 }
 
-.form>span{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-   
+.form > span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-.form>span span{
-    font-size: 12px;
+.form > span span {
+  font-size: 12px;
 }
-.term_privacy, .login_redirect_link{
-    font-size: 14px;
+.term_privacy,
+.login_redirect_link {
+  font-size: 14px;
 }
-.term_privacy a{
-    color: var(--theme-color);
-}
-
-.login_redirect_link a{
-    color: var(--theme-color);
+.term_privacy a {
+  color: var(--theme-color);
 }
 
+.login_redirect_link a {
+  color: var(--theme-color);
+}
 
 @media (max-width: 998px) {
-    .register_container form {
-            width: 50%;
-    
-        }
-    
+  .register_container form {
+    width: 50%;
+    padding: 8%;
+    margin-top: 4%;
+  }
 }
 
 @media (max-width: 835px) and (min-width: 798px) {
-    .register_container form {
-        width: 70%;
-
-        }
-    }
+  .register_container form {
+    width: 70%;
+    padding: 8%;
+    margin-top: 6%;
+  }
+}
 @media (max-width: 798px) {
+  .register_container form {
+    width: 60%;
+    padding: 8%;
+    margin-top: 7%;
+  }
+}
+@media (max-width: 520px) {
     .register_container form {
             width: 80%;
-    
+            padding: 8%;
+            margin-top: 10%;
         }
-    }
-@media (max-width: 520px) {}
-
+}

@@ -6,7 +6,6 @@
     --nav_color: #282c3f;
     --theme-color: #ff3e6c;
     --border-color: #d1d1d1;
-
 }
 
 * {
@@ -163,13 +162,13 @@ display: flex;
   text-align: left;
    position: absolute;
    width: 25rem;
-   height: 15rem;
+   height: 16rem;
    margin-top: 30px;
    margin-left: -10rem;
    z-index: 99;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-color: white;
-  padding: 10px;
+  padding: 15px;
  }
   #profile_drop_down>a{
    
@@ -195,9 +194,16 @@ font-weight: bold;
 
  #profile_drop_down>div{
    border-top: 1px solid var(--border-color);
+    border-bottom:1px solid var(--border-color);
    margin-top: 20px;
    padding-top: 10px;
+   padding-bottom: 10px;
+   font-weight: 500;
  }
+
+    #profile_drop_down>div>a:hover {
+      color: var(--theme-color);
+    }
 
  .your_order_btn{
    margin-bottom: 10px;
@@ -257,9 +263,10 @@ font-weight: bold;
   .mobile_menu_link{
     display: flex;
     position: absolute;
-    width: 98%;
+    width: 90%;
     box-sizing: border-box;
-    top: 11rem;
+    top: 10.1rem;
+    /* left: 0px; */
     z-index: 99;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -268,8 +275,8 @@ font-weight: bold;
     display: flex;
     flex-direction: column;
     padding: 15px;
-    gap: 10px;
-    
+    padding-left: 5%;
+    gap: 13px;
     text-align: left;
     font-size: var(--nav_menu_font);
     border: none;
@@ -301,6 +308,15 @@ font-weight: bold;
 }
 
 @media (max-width: 798px) {
+  .mobile_menu_link {
+    width: 94%;
+  }
+
+#profile_drop_down {
+  width: 22rem;
+    height: 18rem;
+}
+
   .main_nav {
       display: grid;
         grid-template-columns: 12% 33% 38% 7%;
@@ -340,6 +356,14 @@ font-weight: bold;
       grid-template-columns: 16% 32% 38% 7%;
       padding: 0 3%;
     }
+
+        #profile_drop_down {
+          width: 18rem;
+          height: 18rem;
+          margin-left: -8rem;
+        }
+
+
   .main_nav .logo a {
       font-size: 1.7rem;
     }

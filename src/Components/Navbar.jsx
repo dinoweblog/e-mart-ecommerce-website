@@ -94,14 +94,14 @@ export const Navbar = ({ active_menu }) => {
               {showProDrop && isAuthenticated === "false" ? (
                 <div id="profile_drop_down">
                   <p>
-                    <span>Welcome</span> <br /> To access account and manage
-                    orders
+                    <span style={{ marginBottom: "7px" }}>Welcome</span> <br />{" "}
+                    To access account and manage orders
                   </p>
                   <Link to={"/user/register"}>Signup</Link>
 
                   <Link to={"/user/login"}>Login</Link>
                   <div>
-                    <Link to={""}>Your Order</Link>
+                    <Link to={"/YourOrder"}>Your Order</Link>
                   </div>
                 </div>
               ) : null}
@@ -113,7 +113,7 @@ export const Navbar = ({ active_menu }) => {
                     orders
                   </p>
                   <div className="your_order_btn">
-                    <Link to={""}>Your Order</Link>
+                    <Link to={"/YourOrder"}>Your Order</Link>
                   </div>
                   <Link
                     to={""}
