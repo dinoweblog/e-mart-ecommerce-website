@@ -355,7 +355,7 @@ li {
     display: grid;
     grid:
       "nav_logo nav_logo search_field search_field"
-      "second_menu second_menu responsive_btn responsive_btn";
+      "second_menu second_menu second_menu responsive_btn";
   }
 
   #second_menu_section > ul {
@@ -373,14 +373,20 @@ li {
     margin-top: 10px;
     margin-left: 0rem;
   }
+
+  .apps_link>ul{
+    display: flex;
+    margin-top: 5px;
+    gap: 10px;
+  }
 }
 
 @media (max-width: 520px) {
   .main_nav {
     display: grid;
     grid:
-      "nav_logo nav_logo search_field search_field"
-      "second_menu second_menu second_menu responsive_btn";
+      "nav_logo nav_logo search_field search_field search_field"
+      "second_menu second_menu second_menu responsive_btn responsive_btn";
   }
   .responsive_btn {
     margin-left: 10px;
@@ -412,4 +418,19 @@ li {
     display: flex;
     flex-direction: column;
   }
+}
+
+@media (max-width: 420px){
+.main_nav {
+    display: grid;
+    grid:
+      "nav_logo nav_logo nav_logo search_field search_field search_field search_field"
+      "second_menu second_menu second_menu second_menu responsive_btn responsive_btn responsive_btn";
+
+      
+  }
+
+     #second_menu_section>ul{
+padding-right: 10%;
+     }
 }

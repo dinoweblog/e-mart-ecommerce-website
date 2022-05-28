@@ -394,6 +394,12 @@ font-weight: 600;
     width: 100%;
   }
 }
+
+@media (max-width: 660px){
+  .sort_by {
+      width: 36%;
+    }
+}
 @media (max-width: 550px) {
   .product_category {
     bottom: 30%;
@@ -432,7 +438,7 @@ font-weight: 600;
   }
   
 .sort_by {
-    width: 50%;
+    width: 58%;
 }
 
 .sort_list {
@@ -450,13 +456,24 @@ font-weight: 600;
 
 }
 
-@media (max-width: 320px) {
+@media (max-width: 490px) {
+  .sort_by {
+      width: 55%;
+    }
+}
+@media (max-width: 375px) {
+  .sort_by {
+    width: 62%;
+  }
+}
+
+@media (max-width: 310px) {
   .product_category {
     bottom: 40%;
     margin-left: 3%;
   }
   .sort_by {
-      width: 50%;
+      width: 65%;
   }
 }
 .loading_gif{
