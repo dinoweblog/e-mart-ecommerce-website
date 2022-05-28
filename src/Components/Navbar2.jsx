@@ -6,7 +6,7 @@ export const Navbar2 = ({ ctc, atc, paytc }) => {
     <header className="checkout_header">
       <div>
         <div>
-          <div className="logo">
+          <div className="logo2">
             <Link to={"/"}>e-Mart</Link>
           </div>
         </div>

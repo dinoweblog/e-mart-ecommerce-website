@@ -1,11 +1,11 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100&display=swap"); */
 
 :root {
-    --nav_menu_font: 1.5rem;
-      --res_nav_menu_font:  1.5rem;
-    --nav_color: #282c3f;
-    --theme-color: #ff3e6c;
-    --border-color: #d1d1d1;
+  --nav_menu_font: 1.5rem;
+  --res_nav_menu_font: 1.5rem;
+  --nav_color: #282c3f;
+  --theme-color: #ff3e6c;
+  --border-color: #d1d1d1;
 }
 
 * {
@@ -39,57 +39,56 @@ li {
   grid-template-columns: 10% 35% 25% 20%;
   justify-content: space-between;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 20px -10px;
-    background-color: white;
+  background-color: white;
 }
 
 .main_nav .logo {
-display: flex;
+  display: flex;
   justify-content: start;
   align-items: center;
   border-bottom: white 3px solid;
-  
 }
 
-.main_nav .logo a{
+.main_nav .logo a {
   font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--theme-color);
 }
 
 /* -------------Desktop menu----------------- */
-.menu_link>ul{
+.menu_link > ul {
   display: flex;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    text-align: center;
-    justify-content: space-between;
-    font-size: var(--nav_menu_font);
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  font-size: var(--nav_menu_font);
 }
 
-.mobile_menu_link{
+.mobile_menu_link {
   display: none;
   width: 80%;
 }
 
- .menu_link>ul>li {
-   border-bottom: white 3px solid;
+.menu_link > ul > li {
+  border-bottom: white 3px solid;
+}
 
- }
-
- .menu_link>ul>li  :hover {
-   border-bottom: var(--theme-color) 3px solid;
-
- }
+.menu_link > ul > li :hover {
+  border-bottom: var(--theme-color) 3px solid;
+}
 
 /* search box css ------------------ */
 
-.search_field{
+.search_field {
   /* position: relative; */
   display: flex;
   align-items: center;
   width: 100%;
 }
 
-#search_input  {
+#search_input {
   width: 100%;
   padding: 5px;
   padding-left: 10px;
@@ -106,7 +105,6 @@ display: flex;
   border: 1px solid #e4e4e4;
   border-right: none;
   background: #ffffff;
-
 }
 
 #search_btn:focus {
@@ -120,7 +118,7 @@ display: flex;
   height: 42px;
   text-align: center;
   vertical-align: middle;
-  padding: 2px  2px;
+  padding: 2px 2px;
   background: #f5f5f6;
   border: 1px solid #f5f5f6;
   font-size: 26px;
@@ -128,7 +126,7 @@ display: flex;
 }
 
 /* -------------------------- */
-#second_menu_section>ul{
+#second_menu_section > ul {
   display: flex;
   width: 100%;
   height: 100%;
@@ -137,80 +135,79 @@ display: flex;
   justify-content: space-between;
   font-size: var(--nav_menu_font);
 }
-#second_menu_section>ul #cart_btn{
+#second_menu_section > ul #cart_btn {
   display: flex;
   align-items: center;
 }
 
-#second_menu_section>ul>li {
+#second_menu_section > ul > li {
   border-bottom: white 3px solid;
 }
 
-#second_menu_section>ul>li:hover{
+#second_menu_section > ul > li:hover {
   border-bottom: var(--theme-color) 3px solid;
 }
 
- #second_menu_section>ul li i {
-   font-size: 20px;
- }
+#second_menu_section > ul li i {
+  font-size: 20px;
+}
 
- .profile_btn{
-   position: relative;
- }
+.profile_btn {
+  position: relative;
+}
 
-#profile_drop_down{
+#profile_drop_down {
   text-align: left;
-   position: absolute;
-   width: 25rem;
-   height: 16rem;
-   margin-top: 30px;
-   margin-left: -10rem;
-   z-index: 99;
+  position: absolute;
+  width: 25rem;
+  height: 16rem;
+  margin-top: 30px;
+  margin-left: -10rem;
+  z-index: 99;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-color: white;
   padding: 15px;
- }
-  #profile_drop_down>a{
-   
-    margin-right: 10px;
-    padding: 3px 15px;
-    width: 80%;
-    
-    border: 1px solid var(--border-color);
-    margin-bottom: 10px;
- }
+}
+#profile_drop_down > a {
+  margin-right: 10px;
+  padding: 3px 15px;
+  width: 80%;
 
- #profile_drop_down>a:hover {
-   border: 1px solid var(--theme-color);
- }
-#profile_drop_down>p{
+  border: 1px solid var(--border-color);
+  margin-bottom: 10px;
+}
+
+#profile_drop_down > a:hover {
+  border: 1px solid var(--theme-color);
+}
+#profile_drop_down > p {
   font-size: 13px;
   margin-bottom: 15px;
 }
 
-#profile_drop_down>p span{
-font-weight: bold;
+#profile_drop_down > p span {
+  font-weight: bold;
 }
 
- #profile_drop_down>div{
-   border-top: 1px solid var(--border-color);
-    border-bottom:1px solid var(--border-color);
-   margin-top: 20px;
-   padding-top: 10px;
-   padding-bottom: 10px;
-   font-weight: 500;
- }
+#profile_drop_down > div {
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 500;
+}
 
-    #profile_drop_down>div>a:hover {
-      color: var(--theme-color);
-    }
+#profile_drop_down > div > a:hover {
+  color: var(--theme-color);
+}
 
- .your_order_btn{
-   margin-bottom: 10px;
-   padding-bottom: 10px;
- }
+.your_order_btn {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
 
- .cart_count {
+.cart_count {
   /* position: absolute; */
   text-align: center;
   display: flex;
@@ -223,44 +220,39 @@ font-weight: bold;
   font-size: 10px;
   color: #ffffff;
   margin-top: -40px;
-    margin-left: -8px;
+  margin-left: -8px;
   font-weight: 700;
   z-index: 3;
 }
 
-
-
-.responsive_btn{
+.responsive_btn {
   display: none;
 }
 
-
-
 /* responsive css style  */
 @media (max-width: 1080px) {
- 
 }
 
 /* responsive css style  */
 @media (max-width: 998px) {
   .main_nav .logo a {
-      font-size: 2.5rem;
-    }
-    .main_nav .menu_link {
-        display: none;
-      }
+    font-size: 2.5rem;
+  }
+  .main_nav .menu_link {
+    display: none;
+  }
   .main_nav {
-      width: 100%;
-      padding: 0 1%;
-      height: 10rem;
-      display: grid;
-      grid-template-columns: 14% 38% 33% 6%;
-      padding: 0 5%;
-      justify-content: space-between;
-      box-sizing: border-box;
-    }
+    width: 100%;
+    padding: 0 1%;
+    height: 10rem;
+    display: grid;
+    grid-template-columns: 14% 38% 33% 6%;
+    padding: 0 5%;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
 
-  .mobile_menu_link{
+  .mobile_menu_link {
     display: flex;
     position: absolute;
     width: 90%;
@@ -271,7 +263,7 @@ font-weight: bold;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
-  .mobile_menu_link ul{
+  .mobile_menu_link ul {
     display: flex;
     flex-direction: column;
     padding: 15px;
@@ -280,31 +272,27 @@ font-weight: bold;
     text-align: left;
     font-size: var(--nav_menu_font);
     border: none;
-
   }
-   .mobile_menu_link>ul>li {
-      border-bottom: white 3px solid;
-  
-    }
-     .mobile_menu_link>ul>li :hover {
-       border-bottom: var(--theme-color) 3px solid;
-  
-     }
+  .mobile_menu_link > ul > li {
+    border-bottom: white 3px solid;
+  }
+  .mobile_menu_link > ul > li :hover {
+    border-bottom: var(--theme-color) 3px solid;
+  }
 
-    .responsive_btn {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-    }
-    
-    #second_menu_section>ul{
-      font-size: var(--res_nav_menu_font);
-    }
+  .responsive_btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
 
-    #second_menu_section>ul li i{
-      font-size: 20px;
-    }
+  #second_menu_section > ul {
+    font-size: var(--res_nav_menu_font);
+  }
 
+  #second_menu_section > ul li i {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 798px) {
@@ -312,82 +300,116 @@ font-weight: bold;
     width: 94%;
   }
 
-#profile_drop_down {
-  width: 22rem;
+  #profile_drop_down {
+    width: 22rem;
     height: 18rem;
-}
+  }
 
   .main_nav {
-      display: grid;
-        grid-template-columns: 12% 33% 38% 7%;
-      padding: 0 3%;
-    }
+    display: grid;
+    grid-template-columns: 12% 33% 38% 7%;
+    padding: 0 3%;
+  }
   .main_nav .logo a {
-      font-size: 2.4rem;
-    }
+    font-size: 2.1rem;
+  }
 
-        #search_input{
-          height: 33px;
-        }
+  #search_input {
+    height: 33px;
+  }
 
-        #search_btn{
-          height: 33px;
-          font-size: 20px;
-          width: 42px;
-        }
+  #search_btn {
+    height: 33px;
+    font-size: 20px;
+    width: 42px;
+  }
 
-        #second_menu_section ul {
-          font-size: 1.7rem;
-        }
-    
-        #second_menu_section>ul li i {
-          font-size: 16px;
-        }
+  #second_menu_section ul {
+    font-size: 1.7rem;
+  }
+
+  #second_menu_section > ul li i {
+    font-size: 16px;
+  }
   .menu_link {
-      display: flex;
-      flex-direction: column;
-  
-    }
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 620px) {
+  .logo {
+    grid-area: nav_logo;
+  }
+  .search_field {
+    grid-area: search_field;
+  }
+  #second_menu_section {
+    grid-area: second_menu;
+  }
+  .responsive_btn {
+    grid-area: responsive_btn;
+  }
+
+  .main_nav {
+    display: grid;
+    grid:
+      "nav_logo nav_logo search_field search_field"
+      "second_menu second_menu responsive_btn responsive_btn";
+  }
+
+  #second_menu_section > ul {
+    font-size: 1.5rem;
+  }
+
+  .main_nav .logo a {
+    font-size: 2rem;
+    margin-right: 10px;
+  }
+
+  #profile_drop_down {
+    width: 22rem;
+    height: 18rem;
+    margin-top: 10px;
+    margin-left: 0rem;
+  }
 }
 
 @media (max-width: 520px) {
   .main_nav {
-      display: grid;
-      grid-template-columns: 16% 32% 38% 7%;
-      padding: 0 3%;
-    }
+    display: grid;
+    grid:
+      "nav_logo nav_logo search_field search_field"
+      "second_menu second_menu second_menu responsive_btn";
+  }
+  .responsive_btn {
+    margin-left: 10px;
+  }
 
-        #profile_drop_down {
-          width: 18rem;
-          height: 18rem;
-          margin-left: -8rem;
-        }
+  #profile_drop_down {
+    width: 18rem;
+    height: 18rem;
+  }
 
+  #search_input {
+    height: 30px;
+  }
 
-  .main_nav .logo a {
-      font-size: 1.7rem;
-    }
-    
-        #search_input {
-          height: 30px;
-        }
-    
-        #search_btn {
-          height: 30px;
-          font-size: 18px;
-          width: 40px;
-        }
-    
-    #second_menu_section ul {
-       font-size: 1.2rem;
-     }
-    
-     #second_menu_section>ul li i {
-       font-size: 15px;
-     }
-.menu_link {
+  #search_btn {
+    height: 30px;
+    font-size: 18px;
+    width: 40px;
+  }
+
+  #second_menu_section ul {
+    font-size: 1.4rem;
+  }
+
+  #second_menu_section > ul li i {
+    font-size: 15px;
+  }
+  .menu_link {
     display: flex;
     flex-direction: column;
-
   }
 }
