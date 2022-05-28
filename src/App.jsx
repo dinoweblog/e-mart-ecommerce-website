@@ -29,7 +29,14 @@ function App() {
       <Route path="/checkout/confirm" element={<OrderConfirm />}></Route>
       <Route path="/user/register" element={<Register />}></Route>
       <Route path="/user/login" element={<Login />}></Route>
-      <Route path="/YourOrder" element={<OrderPage />}></Route>
+      <Route
+        path="/YourOrder"
+        element={
+          <PrivateRoute isAuthenticated={isAuthenticated}>
+            <OrderPage />
+          </PrivateRoute>
+        }
+      ></Route>
     </Routes>
   );
 }

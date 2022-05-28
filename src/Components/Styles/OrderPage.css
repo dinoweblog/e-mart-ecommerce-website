@@ -56,18 +56,21 @@
 .order_product .product_title_sec {
   width: 84%;
 }
-.order_cancel_btn {
+.order_cancel_btn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.order_cancel_btn>button {
   color: var(--theme-color);
   border: none;
   background-color: transparent;
-  padding-bottom: 1px;
-  margin-left: 75%;
   font-size: 1.2rem;
   font-weight: 600;
 }
 
-.order_cancel_btn:hover {
-  border-bottom: 2px solid var(--theme-color);
+.order_cancel_btn>button:hover {
+  border-bottom: 1px solid var(--theme-color);
 }
 
 .user_profile_details {
@@ -123,7 +126,7 @@
   .order_right > div > div {
     height: 100px;
     width: 90%;
-    line-height: 125%;
+    line-height: 165%;
   }
   .order_product .order_img_div {
     width: 17%;
@@ -132,14 +135,22 @@
   .order_product .product_title_sec {
     width: 80%;
   }
+       
 }
 
 @media (max-width: 640px) {
+  .order_container {
+    width: 90%;
+    grid-template-columns: 30% 70%;
+  }
+
   .order_product .order_img_div {
     width: 20%;
   }
+
   .order_right > div > div {
-    line-height: 132%;
+    line-height: 142%;
+    
   }
 
   .order_product .product_title_sec {
@@ -150,18 +161,37 @@
     display: block;
     line-height: 250%;
   }
+    .order_cancel_btn {
+      margin-top: 10px;
+    }
 }
 
 @media (max-width: 530px) {
+  .sidebar_menu_div>ul>li {
+      font-size: 14px;
+    }
   .order_product .order_img_div {
     width: 23%;
   }
   .order_right > div > div {
     height: 90px;
+    line-height: 122%;
+    
   }
+
+  .order_cancel_btn {
+    display: block;
+    font-size: 12px;
+    margin-top: 0px;
+  }
+
+    .order_cancel_btn>button {
+      font-size: 12px;
+    }
 
   .order_product .product_title_sec {
     width: 74%;
+    margin-top: -4px;
   }
 
   .order_product .product_title_sec h2 {
