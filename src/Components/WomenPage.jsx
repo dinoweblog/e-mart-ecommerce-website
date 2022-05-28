@@ -2,7 +2,11 @@ import "./Styles/Products.css";
 import { Navbar } from "./Navbar";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { getProductsData } from "../Redux/Products/action";
+import {
+  getProductsData,
+  getProductsLoading,
+  getProductsSuccess,
+} from "../Redux/Products/action";
 import { ProductCard } from "./ProductCard";
 import { Footer } from "./Footer";
 
@@ -47,6 +51,7 @@ export const WomenPage = () => {
   }, [totalPages, dispatch]);
 
   const filterByCategory = (e) => {
+    // dispatch(getProductsLoading());
     const type = e.target.value;
     setFilterCatVal(type);
     setClearFilter(true);
@@ -63,12 +68,11 @@ export const WomenPage = () => {
   };
 
   const filterByDiscount = (e) => {
+    // dispatch(getProductsLoading());
     const type = e.target.value;
     setFilterDisVal(type);
     setClearFilter(true);
     setShowing(false);
-    console.log(type);
-    // const items = products.filter((el) => Number(el.off) >= type);
 
     fetch(
       `https://emart-server.herokuapp.com/products/women/filter?discount=${type}`

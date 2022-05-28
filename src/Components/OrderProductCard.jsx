@@ -1,5 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { getOrderProductsData } from "../Redux/YourOrder/action";
+import {
+  getOrderProductsData,
+  getOrderProductsLoading,
+} from "../Redux/YourOrder/action";
 
 export const OrderProductCard = ({
   imageURL,
@@ -13,6 +16,7 @@ export const OrderProductCard = ({
   const { token, userId } = useSelector((state) => state.login);
 
   const cancelHandle = () => {
+    dispatch(getOrderProductsLoading());
     fetch(
       `https://emart-server.herokuapp.com/product-order/your-order/cancel/${proId}`,
       {
