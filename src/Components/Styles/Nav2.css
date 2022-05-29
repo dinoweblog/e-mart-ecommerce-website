@@ -315,12 +315,13 @@ li {
   }
 
   #search_input {
-    height: 33px;
+    height: 35px;
+    font-size: 13px;
   }
 
   #search_btn {
-    height: 33px;
-    font-size: 20px;
+    height: 35px;
+    font-size: 16px;
     width: 42px;
   }
 
@@ -363,7 +364,7 @@ li {
   }
 
   .main_nav .logo a {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-right: 10px;
   }
 

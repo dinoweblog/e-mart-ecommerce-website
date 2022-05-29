@@ -25,11 +25,6 @@ export const ProductDetailsPage = () => {
     (state) => state.login
   );
 
-
-   useEffect(() => {
-     document.title = `${data.name} | e-mart`;
-   }, []);
-
   useEffect(() => {
     findData();
   }, [id]);
@@ -63,7 +58,12 @@ export const ProductDetailsPage = () => {
     }
   };
 
-  console.log(selectClass);
+  useEffect(() => {
+    document.title = `${data.name} | e-mart`;
+  }, [data]);
+
+  const wishlistHandle = () => {};
+  const how = () => {};
 
   return (
     <div>
@@ -148,7 +148,7 @@ export const ProductDetailsPage = () => {
               )}
             </div>
 
-            <div>
+            <div className="cart_btn_container">
               <button
                 className="add_to_cart_btn"
                 onClick={() => {
@@ -157,7 +157,16 @@ export const ProductDetailsPage = () => {
                     : navigate("/user/login");
                 }}
               >
-                Add to cart
+                <i class="bx bx-cart-add"></i> ADD TO CART
+              </button>
+
+              <button
+                className="add_to_cart_btn wishlist_btn"
+                onClick={() => {
+                  isAuthenticated === "true" ? wishlistHandle() : how();
+                }}
+              >
+                <i class="bx bx-heart"></i> WISHLIST
               </button>
             </div>
             <div>

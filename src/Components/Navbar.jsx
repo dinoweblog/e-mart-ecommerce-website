@@ -135,7 +135,7 @@ export const Navbar = ({ active_menu }) => {
             </li>
             <li id="cart_btn">
               <Link to={"/checkout/cart"}>
-                <i className="bx bx-cart-add"></i>
+                <i className="bx bx-cart"></i>
                 <p>Cart</p>
               </Link>
               {quantity > 0 ? (
