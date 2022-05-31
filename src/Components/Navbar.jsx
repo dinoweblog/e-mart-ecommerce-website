@@ -16,6 +16,8 @@ export const Navbar = ({ active_menu }) => {
   const { userId, token, isAuthenticated } = useSelector(
     (state) => state.login
   );
+
+  const { wishlist_products } = useSelector((state) => state.wishlistProducts);
   const { quantity } = useSelector((state) => state.cart_products);
 
   useEffect(() => {
@@ -128,8 +130,12 @@ export const Navbar = ({ active_menu }) => {
               ) : null}
             </li>
             <li>
-              <Link to={"/"}>
-                <i className="bx bx-heart"></i>
+              <Link to={"/wishlist"}>
+                {wishlist_products.length === 0 ? (
+                  <i className="bx bx-heart"></i>
+                ) : (
+                  <i className="bx bxs-heart"></i>
+                )}
                 <p>Wishlist</p>
               </Link>
             </li>

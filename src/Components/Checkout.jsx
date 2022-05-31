@@ -19,6 +19,7 @@ export const Checkout = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [applyCoupon, setApplyCoupon] = useState(false);
+  const [loading, setLoading] = useState(false)
 
   const { address } = useSelector((state) => state.address);
 
@@ -57,7 +58,7 @@ export const Checkout = () => {
 
   const removeAllCartItems = () => {
     dispatch(getCartProductsLoading());
-
+setLoading(true);
     fetch(
       `https://emart-server.herokuapp.com/cart/items/delete-all/${userId}`,
       {
@@ -71,6 +72,7 @@ export const Checkout = () => {
       .then((res) => res.json())
       .then((res) => {
         dispatch(getCartProductsData(userId, token));
+        setLoading(false)
       })
       .catch((error) => dispatch(getCartProductsError()));
   };
@@ -121,25 +123,38 @@ export const Checkout = () => {
                   ALL REMOVE
                 </button>
               </div>
-              {cart_products.map((e, index) => (
-                <CartPageCard
-                  key={index}
-                  imageURL={e.imageURL}
-                  name={e.name}
-                  description={e.desc}
-                  oldPrice={e.oldPrice}
-                  newPrice={e.newPrice}
-                  off={e.off}
-                  category={e.category}
-                  color={e.color}
-                  size={e.size}
-                  itemQty={itemQty[index]}
-                  cartId={
-                    cart_products.length === 1 ? cart[0]._id : cart[index]._id
-                  }
-                  index={index}
-                />
-              ))}
+              {loading ? (
+                <div className="all_products loading_gif">
+                  <img
+                    src="https://flevix.com/wp-content/uploads/2020/01/Preloader.gif"
+                    alt=""
+                  />
+                </div>
+              ) : (
+                <div>
+                  {cart_products.map((e, index) => (
+                    <CartPageCard
+                      key={index}
+                      imageURL={e.imageURL}
+                      name={e.name}
+                      description={e.desc}
+                      oldPrice={e.oldPrice}
+                      newPrice={e.newPrice}
+                      off={e.off}
+                      category={e.category}
+                      color={e.color}
+                      size={e.size}
+                      itemQty={itemQty[index]}
+                      cartId={
+                        cart_products.length === 1
+                          ? cart[0]._id
+                          : cart[index]._id
+                      }
+                      index={index}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
             <div className="checkout_div_right">
               <div className="coupon_section">

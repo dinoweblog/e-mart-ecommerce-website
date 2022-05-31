@@ -1,0 +1,131 @@
+:root {
+  --font_size: 17px;
+  --font_color: #282c3f;
+  --border-color: #e9e9ed;
+  --hover-color: #f0f0f0;
+  --theme-color: #ff3e6c;
+}
+
+.wishlist_container {
+  width: 90%;
+  min-height: 80vh;
+  margin: auto;
+}
+.wishlist_container .all_products .product_card img {
+  width: 100%;
+}
+
+.empty_wishlist {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 10%;
+}
+
+.empty_wishlist button {
+  margin-top: 20px;
+  border: 1px solid rgb(77, 77, 245);
+  padding: 6px 15px;
+  color: rgb(77, 77, 245);
+  background-color: transparent;
+}
+
+.empty_wishlist img {
+  width: 10%;
+}
+
+.empty_wishlist P {
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.wishlist_products {
+  display: grid;
+  grid-template-columns: repeat(5, 18%);
+  justify-content: space-between;
+  padding-top: 2%;
+}
+
+.wishlist_card {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.move_to_cart {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: var(--theme-color);
+  color: white;
+z-index: 99;
+}
+
+.move_to_cart:hover{
+    background-color: #fa2355;
+}
+
+.wishlist_card .product_img_sec{
+    position: relative;
+}
+
+.wishlist_close_btn{
+    position: absolute;
+    top: 4%;
+    right: 7%;
+    border: none;
+    border-radius: 50%;
+    padding:  4px;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--border-color);
+    opacity: .9;
+    z-index: 99;
+}
+
+.wishlist_close_btn:hover{
+    opacity: 1;
+    background-color: white;
+}
+
+/* -------------Responsive Css---------------- */
+
+@media (max-width: 998px) {
+  .wishlist_products {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    justify-content: space-around;
+    padding-top: 2%;
+  }
+  .empty_wishlist img {
+    width: 20%;
+  }
+
+  .empty_wishlist {
+    padding-top: 15%;
+  }
+}
+
+@media (max-width: 608px) {
+  .wishlist_products {
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+    justify-content: space-around;
+    padding-top: 2%;
+  }
+}
+
+@media (max-width: 550px) {
+  .empty_wishlist img {
+    width: 25%;
+  }
+
+  .empty_wishlist {
+    padding-top: 20%;
+  }
+}
+
+@media (max-width: 350px) {
+}

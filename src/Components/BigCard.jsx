@@ -20,10 +20,10 @@ const MainDiv = styled.div`
   }
 `;
 
-export const BigCard = ({ img, txt }) => {
+export const BigCard = ({ img, txt, link }) => {
   return (
     <MainDiv className="big_card">
-      <Link to={"/shop/women"}>
+      <Link to={link}>
         <div className="big_img">
           <img src={img} alt="" />
         </div>

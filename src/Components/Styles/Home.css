@@ -30,7 +30,7 @@
     display: grid;
     width: 90%;
     margin: auto;
-    grid-template-columns: 47% 47%;
+    grid-template-columns: repeat(3, 32%) ;
     justify-content: space-between;
     margin-top: 10%;
     color: #282c3f;

@@ -13,6 +13,7 @@ import { Login } from "./Components/Login";
 import { useSelector } from "react-redux";
 import { PrivateRoute } from "./Components/Private/PrivateRoute";
 import { OrderPage } from "./Components/OrderPage";
+import { WishlistPage } from "./Components/WishlistPage";
 
 function App() {
   const { isAuthenticated } = useSelector((state) => state.login);
@@ -37,6 +38,7 @@ function App() {
           </PrivateRoute>
         }
       ></Route>
+      <Route path="/wishlist" element={<WishlistPage />}></Route>
     </Routes>
   );
 }

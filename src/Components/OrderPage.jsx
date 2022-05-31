@@ -8,8 +8,15 @@ import { OrderProductCard } from "./OrderProductCard";
 import "./Styles/OrderPage.css";
 export const OrderPage = () => {
   const dispatch = useDispatch();
-  const { order_products, quantity, itemQty, totalAmount, loading , order} =
-    useSelector((state) => state.orderProducts);
+  const {
+    order_products,
+    quantity,
+    itemQty,
+    totalAmount,
+    date,
+    loading,
+    order,
+  } = useSelector((state) => state.orderProducts);
   const { user, token, isAuthenticated, userId } = useSelector(
     (state) => state.login
   );
@@ -21,6 +28,8 @@ export const OrderPage = () => {
   useEffect(() => {
     dispatch(getOrderProductsData(userId, token));
   }, []);
+
+  
 
   return (
     <div>
@@ -78,6 +87,7 @@ export const OrderPage = () => {
                   category={e.category}
                   itemQty={itemQty[index]}
                   proId={order[index]._id}
+                  date={date[index]}
                 />
               ))}
             </div>

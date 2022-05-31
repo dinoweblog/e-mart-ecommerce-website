@@ -134,11 +134,30 @@ button {
   font-weight: bold;
 }
 
+.cart_btn_container>button[disabled]{
+  cursor: not-allowed;
+}
+
+
+
+
 .wishlist_btn {
   background-color: white;
   color: var(--font_color);
   border: 1px solid var(--gray-font-color);
   width: 31%;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wishlist_btn2 {
+  background-color: #293462;
+  color: white;
+  border:1px solid #293462;
+  width: 31%;
+  border-radius: 3px;
+  font-size: 16px;
 }
 
 .add_to_cart_btn:hover {
@@ -150,7 +169,17 @@ button {
   background-color: white;
 }
 
+.wishlist_btn2:hover {
+  border: 1px solid #293462;
+  background-color: #293462;
+}
+
 .add_to_cart_btn i {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.wishlist_btn2 i {
   font-size: 18px;
   margin-right: 10px;
 }

@@ -156,6 +156,11 @@ li {
   position: relative;
 }
 
+.bxs-heart{
+  color: var(--theme-color);
+}
+
+
 #profile_drop_down {
   text-align: left;
   position: absolute;

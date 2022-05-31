@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCartProductsData } from "../Redux/Cart/action";
 import { WomenSlider } from "./Slider";
 import { SizeDiv } from "./StyleComponent";
+import { getWishlistProductsData } from "../Redux/Wishlist/action";
 
 export const ProductDetailsPage = () => {
   const [img, setImg] = useState();
@@ -15,6 +16,8 @@ export const ProductDetailsPage = () => {
   const [selectClass, setSelectClass] = useState("");
   const [cartAdd, setCartAdd] = useState(false);
   const [data, setData] = useState({});
+  const [check, setCheck] = useState(true);
+  const [wishCheck, setWishCheck] = useState(true);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { id } = useParams();
@@ -26,8 +29,16 @@ export const ProductDetailsPage = () => {
   );
 
   useEffect(() => {
+    checkingCartItem();
+    checkingWishlistItem();
+  });
+  useEffect(() => {
     findData();
   }, [id]);
+
+  useEffect(() => {
+    document.title = `${data.name} | e-mart`;
+  }, [data]);
 
   const findData = () => {
     fetch(`https://emart-server.herokuapp.com/products/${id}`)
@@ -58,13 +69,62 @@ export const ProductDetailsPage = () => {
     }
   };
 
-  useEffect(() => {
-    document.title = `${data.name} | e-mart`;
-  }, [data]);
+  ///items/find/:userId/:id
+  const checkingCartItem = () => {
+    fetch(
+      `https://emart-server.herokuapp.com/cart/items/find/${userId}/${id}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "Application/json",
+          Authorization: "Bearer " + token,
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        setCheck(res);
+      })
+      .catch((error) => console.log(error));
+  };
 
-  const wishlistHandle = () => {};
+  const checkingWishlistItem = () => {
+    fetch(
+      `https://emart-server.herokuapp.com/wishlist/items/find/${userId}/${id}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "Application/json",
+          Authorization: "Bearer " + token,
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        setWishCheck(res);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  const wishlistHandle = () => {
+    fetch(`https://emart-server.herokuapp.com/wishlist/items`, {
+      method: "POST",
+      body: JSON.stringify({ productId: id, userId }),
+      headers: {
+        "Content-Type": "Application/json",
+        Authorization: "Bearer " + token,
+      },
+    })
+      .then((res) => {
+        dispatch(getWishlistProductsData(userId, token));
+        checkingWishlistItem();
+      })
+
+      .catch((error) => console.log(error));
+  };
   const how = () => {};
 
+  console.log("check", check);
   return (
     <div>
       <Navbar />
@@ -149,25 +209,43 @@ export const ProductDetailsPage = () => {
             </div>
 
             <div className="cart_btn_container">
-              <button
-                className="add_to_cart_btn"
-                onClick={() => {
-                  isAuthenticated === "true"
-                    ? cartHandle()
-                    : navigate("/user/login");
-                }}
-              >
-                <i class="bx bx-cart-add"></i> ADD TO CART
-              </button>
+              {check ? (
+                <button
+                  className="add_to_cart_btn"
+                  onClick={() => {
+                    isAuthenticated === "true"
+                      ? cartHandle()
+                      : navigate("/user/login");
 
-              <button
-                className="add_to_cart_btn wishlist_btn"
-                onClick={() => {
-                  isAuthenticated === "true" ? wishlistHandle() : how();
-                }}
-              >
-                <i class="bx bx-heart"></i> WISHLIST
-              </button>
+                    isAuthenticated === "true"
+                      ? checkingCartItem()
+                      : navigate("/user/login");
+                  }}
+                >
+                  <i class="bx bx-cart-add"></i> ADD TO CART
+                </button>
+              ) : (
+                <button disabled className="add_to_cart_btn">
+                  <i class="bx bx-cart-add"></i> ALREADY ADDED
+                </button>
+              )}
+
+              {wishCheck && check ? (
+                <button
+                  className="add_to_cart_btn wishlist_btn"
+                  onClick={() => {
+                    isAuthenticated === "true"
+                      ? wishlistHandle()
+                      : navigate("/user/login");
+                  }}
+                >
+                  <i class="bx bx-heart"></i> WISHLIST
+                </button>
+              ) : (
+                <button disabled className="wishlist_btn wishlist_btn2">
+                  <i class="bx bxs-heart"></i> WISHLIST
+                </button>
+              )}
             </div>
             <div>
               <h3>DELIVERY OPTIONS</h3>

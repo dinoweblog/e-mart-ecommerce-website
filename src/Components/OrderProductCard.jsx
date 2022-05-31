@@ -10,6 +10,7 @@ export const OrderProductCard = ({
   newPrice,
   itemQty,
   proId,
+  date,
 }) => {
   const dispatch = useDispatch();
   const { loading } = useSelector((state) => state.orderProducts);
@@ -48,7 +49,7 @@ export const OrderProductCard = ({
           <p> ({itemQty} items)</p>
         </div>
         <div className="order_cancel_btn">
-          <p>Date</p>
+          <p>Date: {date.slice(0, 10)}</p>
           <button
             onClick={() => {
               cancelHandle();

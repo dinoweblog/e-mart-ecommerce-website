@@ -11,7 +11,8 @@ const initialState = {
   order: [],
   quantity: 0,
   itemQty: [],
-  totalAmount:0
+  totalAmount: 0,
+  date: [],
 };
 
 export const orderProductsReducer = (
@@ -32,6 +33,7 @@ export const orderProductsReducer = (
         quantity: payload.qty,
         itemQty: [...payload.itemQty],
         totalAmount: payload.totalAmount,
+        date: [...payload.date],
       };
 
     case ORDER_PRODUCTS_ERROR:

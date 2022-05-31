@@ -64,6 +64,12 @@ export const Carousel = () => {
         <div>
           <img src={image1} alt="" />
         </div>
+        <div>
+          <img
+            src="https://ik.imagekit.io/thestylist/rba/pub/media_rb/HOMEPAGE_IMAGES/19_Mar_22/Desktop-Banner-Banner.jpg"
+            alt=""
+          />
+        </div>
       </SliderDiv>
     </div>
   );
