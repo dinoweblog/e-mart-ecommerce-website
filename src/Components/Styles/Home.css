@@ -32,7 +32,7 @@
     margin: auto;
     grid-template-columns: repeat(3, 32%) ;
     justify-content: space-between;
-    margin-top: 10%;
+    margin-top: 20px;
     color: #282c3f;
     
 }
@@ -48,7 +48,7 @@
 }
 
 /* ------------------------------- */
-@media (max-width: 798px) {
+@media (max-width: 620px) {
     .big_card_container {
             display: block;
             

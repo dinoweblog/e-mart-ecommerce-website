@@ -3,16 +3,20 @@ import "./Styles/Nav2.css";
 
 import { GiHamburgerMenu } from "react-icons/gi";
 
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartProductsData } from "../Redux/Cart/action";
 import { getLogout } from "../Redux/Login/action";
+import { getSearchProductsData } from "../Redux/Search/action";
 
 export const Navbar = ({ active_menu }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [showProDrop, setShowProDrop] = useState(false);
 
+  const [productName, setProducctName] = useState("");
+
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { userId, token, isAuthenticated } = useSelector(
     (state) => state.login
   );
@@ -23,6 +27,11 @@ export const Navbar = ({ active_menu }) => {
   useEffect(() => {
     dispatch(getCartProductsData(userId, token));
   }, []);
+
+  const getProductsData = () => {
+    dispatch(getSearchProductsData(productName));
+    navigate("/search");
+  };
 
   return (
     <>
@@ -73,9 +82,17 @@ export const Navbar = ({ active_menu }) => {
           <input
             id="search_input"
             type="text"
+            autoComplete="on"
             placeholder="Search for products"
+            onChange={(e) => setProducctName(e.target.value)}
           />
-          <button id="search_btn">
+          <button
+            className={productName === "" ? "search_btn_disable" : null}
+            id="search_btn"
+            onClick={() => {
+              getProductsData();
+            }}
+          >
             <i className="bx bx-search"></i>
           </button>
         </div>

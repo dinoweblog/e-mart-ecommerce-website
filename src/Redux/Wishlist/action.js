@@ -28,7 +28,6 @@ export const getWishlistProductsData = (userId, token) => (dispatch) => {
     .then((res) => res.json())
     .then((res) => {
       dispatch(getWishlistProductsSuccess(res));
-      console.log(res);
     })
-    .catch((error) => dispatch(getWishlistProductsError()));
+    .catch((error) => dispatch(getWishlistProductsError(error)));
 };

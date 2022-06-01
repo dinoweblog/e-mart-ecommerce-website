@@ -90,6 +90,30 @@ z-index: 99;
     background-color: white;
 }
 
+
+/* --------------Search Page CSS---------------- */
+
+.search_products>div{
+  border: 1px solid var(--border-color);
+}
+
+.search_products>div:hover {
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.search_container{
+  padding-top: 5%;
+
+}
+
+.search_container>h1 {
+  text-align: center;
+
+}
+
+
+
+
 /* -------------Responsive Css---------------- */
 
 @media (max-width: 998px) {

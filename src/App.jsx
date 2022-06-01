@@ -14,6 +14,7 @@ import { useSelector } from "react-redux";
 import { PrivateRoute } from "./Components/Private/PrivateRoute";
 import { OrderPage } from "./Components/OrderPage";
 import { WishlistPage } from "./Components/WishlistPage";
+import { SearchPage } from "./Components/SearchPage";
 
 function App() {
   const { isAuthenticated } = useSelector((state) => state.login);
@@ -39,6 +40,7 @@ function App() {
         }
       ></Route>
       <Route path="/wishlist" element={<WishlistPage />}></Route>
+      <Route path="/search" element={<SearchPage />}></Route>
     </Routes>
   );
 }

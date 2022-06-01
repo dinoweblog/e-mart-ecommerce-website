@@ -10,11 +10,13 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    box-shadow: 0px 16px 32px 0px rgba(233, 238, 242, 0.4);
-    border: 1px solid var(--border-color);
+   
+    border: 1px solid #dbdbdb;
     z-index: 2;
-
+   
 }
+
+
 
 .slick-prev{
     left: 15px;
@@ -24,16 +26,14 @@
 right: 5px;
 }
 
-.slick-prev:hover,
-.slick-next:hover {
-    background-color: white;
-}
+
+
 
 .slick-prev:before,
 .slick-next:before {
     font-family: "FontAwesome";
     font-size: 20px;
-    color: black;
+    color: var(--font_color);
     line-height: 1;
     opacity: 0.75;
     -webkit-font-smoothing: antialiased;
@@ -41,12 +41,22 @@ right: 5px;
     font-weight: 900;
 }
 
+
+.slick-prev:hover ,
+.slick-next:hover {
+    background-color: white;
+    color: var(--font_color);
+    box-shadow: 0px 16px 32px 0px rgba(233, 238, 242, 0.4);
+    
+}
+
+
 .slick-prev:before {
-    content: "\f053";
+    content: "\f104";
 }
 
 [dir="rtl"] .slick-prev:before {
-    content: "\f054";
+    content: "\f104";
 }
 
 [dir="rtl"] .slick-next {
@@ -56,18 +66,35 @@ right: 5px;
 }
 
 .slick-next:before {
-    content: "\f054";
+    content: "\f105";
 }
 
 [dir="rtl"] .slick-next:before {
-    content: "\f053";
+    content: "\f105";
 }
 
 .slider img {
     width: 100%;
-    border: 1px solid red;
 }
 
 .slick-list {
     padding-left: 0px !important;
 }
+
+
+.slick-prev:hover .slick-prev:before,
+.slick-next:hover .slick-next:before {
+    color: var(--font_color);
+}
+
+/* .slick-prev:before {
+    content: "<";
+    color: red;
+    font-size: 30px;
+}
+
+.slick-next:before {
+    content: ">";
+    color: red;
+    font-size: 30px;
+} */

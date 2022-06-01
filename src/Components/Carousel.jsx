@@ -12,7 +12,7 @@ const SliderDiv = styled(Slider)`
     height: 360px;
   }
 
-  @media (min-width: 1300px) and (max-width: 1597px) {
+  @media (min-width: 1400px) and (max-width: 1597px) {
     div {
       height: 400px;
     }
@@ -34,7 +34,7 @@ const SliderDiv = styled(Slider)`
   }
 
   img {
-    /* width: 100%; */
+    width: 100%;
     height: 100%;
   }
 `;
@@ -63,12 +63,6 @@ export const Carousel = () => {
         </div>
         <div>
           <img src={image1} alt="" />
-        </div>
-        <div>
-          <img
-            src="https://ik.imagekit.io/thestylist/rba/pub/media_rb/HOMEPAGE_IMAGES/19_Mar_22/Desktop-Banner-Banner.jpg"
-            alt=""
-          />
         </div>
       </SliderDiv>
     </div>

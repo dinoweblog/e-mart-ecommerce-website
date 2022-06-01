@@ -58,9 +58,11 @@ export const WomenSlider = ({ products }) => {
     lazyLoad: true,
     slidesToShow: 4.2,
     slidesToScroll: 4,
-    initialSlide: 0,
+    initialSlide: 4,
     variableWidth: true,
     adaptiveHeight: true,
+    infinite: true,
+
     responsive: [
       {
         breakpoint: 1024,
@@ -76,7 +78,7 @@ export const WomenSlider = ({ products }) => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2,
+          infinite: true,
         },
       },
       {
@@ -84,6 +86,7 @@ export const WomenSlider = ({ products }) => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          infinite: true,
         },
       },
     ],
