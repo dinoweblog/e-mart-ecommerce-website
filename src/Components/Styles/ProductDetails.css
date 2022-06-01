@@ -136,8 +136,14 @@ button {
 
 .cart_btn_container>button[disabled]{
   cursor: not-allowed;
+  pointer-events: none;
 }
 
+.disabled_btn{
+  pointer-events: none;
+cursor: not-allowed;
+
+}
 
 
 

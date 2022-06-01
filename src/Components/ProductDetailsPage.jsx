@@ -230,9 +230,11 @@ export const ProductDetailsPage = () => {
                 </button>
               )}
 
-              {wishCheck && check ? (
+              {wishCheck ? (
                 <button
-                  className="add_to_cart_btn wishlist_btn"
+                  className={`add_to_cart_btn wishlist_btn ${
+                    !check ? "disabled_btn" : null
+                  }`}
                   onClick={() => {
                     isAuthenticated === "true"
                       ? wishlistHandle()
