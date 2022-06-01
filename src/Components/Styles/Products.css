@@ -270,7 +270,7 @@ font-weight: 600;
 /* ---------------Responsive All Product page--------------- */
 @media (max-width: 1200px) and (min-width: 998px) {
   .product_category {
-    bottom: 28%;
+    bottom: 24%;
     margin-left: 3%;
   }
 }
