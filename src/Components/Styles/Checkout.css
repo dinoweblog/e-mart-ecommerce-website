@@ -40,15 +40,26 @@ h5 {
 
 .steps > ul {
   display: flex;
-  gap: 10px;
   justify-content: center;
 }
-.steps > ul li {
+.steps > ul li>span {
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 4px;
   padding-bottom: 3px;
   border-bottom: 3px solid white;
+}
+.step_li:after {
+  content: "-----";
+  color: #03a685;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.step_l:after {
+  content: "";
+  color: #03a685;
+  font-size: 16px;
 }
 .secureContainer {
   display: flex;
@@ -565,11 +576,10 @@ h5 {
 
   .steps > ul {
     display: flex;
-    gap: 15px;
     justify-content: center;
   }
 
-  .steps > ul li {
+  .steps > ul li>span {
     font-weight: 500;
     font-size: 12px;
     letter-spacing: 3px;

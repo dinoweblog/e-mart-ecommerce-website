@@ -92,7 +92,7 @@ li {
   width: 100%;
   padding: 5px;
   padding-left: 10px;
-  height: 42px;
+  height: 38px;
   font-size: 14px;
   outline: none;
   border: 1px solid #f1f1f1;
@@ -110,13 +110,13 @@ li {
 
 #search_btn {
   width: 55px;
-  height: 42px;
+  height: 38px;
   text-align: center;
   vertical-align: middle;
-  padding: 2px 2px;
+  padding: 2px 0px;
   background: #f5f5f6;
   border: 1px solid #f5f5f6;
-  font-size: 24px;
+  font-size: 22px;
   border-radius: 0 4px 4px 0;
 }
 

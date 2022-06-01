@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import {
   getProductsData,
+  getProductsError,
   getProductsLoading,
   getProductsSuccess,
 } from "../Redux/Products/action";
@@ -51,7 +52,7 @@ export const WomenPage = () => {
   }, [totalPages, dispatch]);
 
   const filterByCategory = (e) => {
-    // dispatch(getProductsLoading());
+    dispatch(getProductsLoading());
     const type = e.target.value;
     setFilterCatVal(type);
     setClearFilter(true);
@@ -62,13 +63,13 @@ export const WomenPage = () => {
     )
       .then((res) => res.json())
       .then((res) => {
-        setWomenProduct([...res.products]);
+        dispatch(getProductsSuccess(res));
       })
-      .catch((error) => console.log(error));
+      .catch((error) => dispatch(getProductsError(error)));
   };
 
   const filterByDiscount = (e) => {
-    // dispatch(getProductsLoading());
+    dispatch(getProductsLoading());
     const type = e.target.value;
     setFilterDisVal(type);
     setClearFilter(true);
@@ -79,9 +80,9 @@ export const WomenPage = () => {
     )
       .then((res) => res.json())
       .then((res) => {
-        setWomenProduct([...res.products]);
+        dispatch(getProductsSuccess(res));
       })
-      .catch((error) => console.log(error));
+      .catch((error) => dispatch(getProductsError(error)));
   };
 
   const SortByCost = (e) => {
@@ -347,48 +348,46 @@ export const WomenPage = () => {
             </div>
           )}
 
-          {isShowing ? (
-            <div className="pagination">
-              {page === 1 ? (
-                <button disabled>Prev</button>
-              ) : (
-                <button
-                  onClick={() => {
-                    setPage(page - 1);
-                    setSelectClass(selectClass - 1);
-                  }}
-                >
-                  Prev
-                </button>
-              )}
+          <div className="pagination">
+            {page === 1 ? (
+              <button disabled>Prev</button>
+            ) : (
+              <button
+                onClick={() => {
+                  setPage(page - 1);
+                  setSelectClass(selectClass - 1);
+                }}
+              >
+                Prev
+              </button>
+            )}
 
-              {btn.map((e, index) => (
-                <button
-                  key={index}
-                  className={` ${selectClass === index ? "active" : ""}`}
-                  onClick={() => {
-                    setSizeSelect(true);
-                    setSelectClass(index);
-                    setPage(index + 1);
-                  }}
-                >
-                  {index + 1}
-                </button>
-              ))}
-              {page === totalPages ? (
-                <button disabled>Next</button>
-              ) : (
-                <button
-                  onClick={() => {
-                    setPage(page + 1);
-                    setSelectClass(selectClass + 1);
-                  }}
-                >
-                  Next
-                </button>
-              )}
-            </div>
-          ) : null}
+            {btn.map((e, index) => (
+              <button
+                key={index}
+                className={` ${selectClass === index ? "active" : ""}`}
+                onClick={() => {
+                  setSizeSelect(true);
+                  setSelectClass(index);
+                  setPage(index + 1);
+                }}
+              >
+                {index + 1}
+              </button>
+            ))}
+            {page === totalPages ? (
+              <button disabled>Next</button>
+            ) : (
+              <button
+                onClick={() => {
+                  setPage(page + 1);
+                  setSelectClass(selectClass + 1);
+                }}
+              >
+                Next
+              </button>
+            )}
+          </div>
         </div>
       </div>
       <Footer />

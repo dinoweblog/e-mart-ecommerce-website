@@ -12,10 +12,20 @@ export const Navbar2 = ({ ctc, atc, paytc }) => {
         </div>
         <div className="steps">
           <ul>
-            <li style={{ color: `${ctc}`, borderColor: `${ctc}` }}>CART</li>
-            <li style={{ color: `${atc}`, borderColor: `${atc}` }}>ADDRESS</li>
-            <li style={{ color: `${paytc}`, borderColor: `${paytc}` }}>
-              PAYMENT
+            <li className="step_li">
+              <span style={{ color: `${ctc}`, borderColor: `${ctc}` }}>
+                CART
+              </span>
+            </li>
+            <li className="step_li">
+              <span style={{ color: `${atc}`, borderColor: `${atc}` }}>
+                ADDRESS
+              </span>
+            </li>
+            <li className="step_l">
+              <span style={{ color: `${paytc}`, borderColor: `${paytc}` }}>
+                PAYMENT
+              </span>
             </li>
           </ul>
         </div>
