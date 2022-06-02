@@ -40,6 +40,8 @@ export const ProductDetailsPage = () => {
     document.title = `${data.name} | e-mart`;
   }, [data]);
 
+
+
   const findData = () => {
     fetch(`https://emart-server.herokuapp.com/products/${id}`)
       .then((res) => res.json())

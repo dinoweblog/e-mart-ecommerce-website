@@ -12,6 +12,8 @@ export const WishlistProductCard = ({
   removeProduct,
   moveToCart,
 }) => {
+  const urlRegex = /\s/g;
+  const url_title = name.toLowerCase().replace(urlRegex, "-");
   return (
     <div className="product_card wishlist_card">
       <button
@@ -22,7 +24,7 @@ export const WishlistProductCard = ({
       >
         <i class="bx bx-x"></i>
       </button>
-      <Link to={`/product/${id}`}>
+      <Link to={`/product/${id}/${url_title}`}>
         <div className="product_img_sec">
           <img src={imageURL} alt="" />
         </div>

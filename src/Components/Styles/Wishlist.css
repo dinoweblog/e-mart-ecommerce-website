@@ -82,7 +82,7 @@ z-index: 99;
     justify-content: center;
     background-color: var(--border-color);
     opacity: .9;
-    z-index: 99;
+    z-index: 11;
 }
 
 .wishlist_close_btn:hover{

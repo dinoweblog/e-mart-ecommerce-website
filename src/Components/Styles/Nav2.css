@@ -109,7 +109,7 @@ li {
 }
 
 #search_btn {
-  width: 55px;
+  width: 45px;
   height: 38px;
   text-align: center;
   vertical-align: middle;
@@ -118,6 +118,10 @@ li {
   border: 1px solid #f5f5f6;
   font-size: 22px;
   border-radius: 0 4px 4px 0;
+}
+
+#search_btn:hover{
+  background-color: #edf0f5;
 }
 
 .search_btn_disable{
@@ -171,6 +175,7 @@ li {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-color: white;
   padding: 15px;
+  z-index: 100;
 }
 #profile_drop_down > a {
   margin-right: 10px;
@@ -233,6 +238,24 @@ li {
   display: none;
 }
 
+.responsive_btn>a {
+  padding: 2px 5px;
+  padding-top: 3.5px;
+  border-radius: 4px;
+}
+
+.responsive_btn>a:hover{
+  background-color: #edf0f5;
+  padding: 2px 5px;
+  padding-top: 3.5px;
+  border-radius: 4px;
+}
+
+.responsive_btn>a:focus {
+  background-color: #edf0f5;
+}
+
+
 /* responsive css style  */
 @media (max-width: 1080px) {
 }
@@ -266,6 +289,7 @@ li {
     z-index: 99;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    z-index: 100;
   }
   .mobile_menu_link ul {
     display: flex;
@@ -326,15 +350,16 @@ li {
   #search_btn {
     height: 35px;
     font-size: 16px;
-    width: 42px;
+    width: 40px;
   }
 
+    
   #second_menu_section ul {
-    font-size: 1.7rem;
+    font-size: 1.4rem;
   }
 
   #second_menu_section > ul li i {
-    font-size: 16px;
+    font-size: 15px;
   }
   .menu_link {
     display: flex;
@@ -407,9 +432,9 @@ li {
   }
 
   #search_btn {
-    height: 30px;
+    height: 35px;
     font-size: 18px;
-    width: 40px;
+    width: 38px;
   }
 
   #second_menu_section ul {

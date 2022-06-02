@@ -5,6 +5,7 @@
   --font_color: #282c3f;
   --border-color: #e9e9ed;
   --hover-color: #f0f0f0;
+  --hover-btn-bc: #f82556;
 }
 button {
   cursor: pointer;
@@ -94,6 +95,7 @@ button {
   text-align: center;
   font-weight: bold;
   border: 1px solid var(--theme-color);
+  pointer-events: none;
 }
 .product_quantity button {
   width: 23px;

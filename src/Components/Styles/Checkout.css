@@ -4,6 +4,7 @@
   --font_color: #282c3f;
   --border-color: #e9e9ed;
   --hover-color: #f0f0f0;
+  --hover-btn-bc: #f82556;
 }
 
 h1,
@@ -217,6 +218,7 @@ h5 {
 }
 .product_title {
   margin-bottom: 0px;
+  font-size: 16px;
 }
 .product_title_sec p {
   margin-top: 5px;
@@ -286,7 +288,7 @@ h5 {
 }
 
 .place_order_btn button:hover {
-  background-color: #e71244;
+  background-color: var(--hover-btn-bc);
 }
 
 /* for address page css ------------------- */
@@ -477,6 +479,10 @@ h5 {
   margin-bottom: 20px;
 }
 
+.chashon_btn:hover {
+  background-color: var(--hover-btn-bc);
+}
+
 /* order_confirm page --------- */
 .order_confirm_container {
   width: 70%;
@@ -660,6 +666,12 @@ h5 {
         grid: "logo secureTxt" 
                "steps steps";
     }
+
+        .chashon_btn {
+          padding: 9px 12px;
+          width: 55%;
+          font-size: 14px;
+        }
 }
 
 @media (max-width: 520px) {
@@ -674,4 +686,13 @@ h5 {
     margin-top: 20px;
     padding: 8px 10px;
   }
+
+    .cart_items .product_img_sec {
+      width: 30%;
+    }
+
+        .product_title_sec {
+          padding: 0;
+          width: 68%;
+        }
 }

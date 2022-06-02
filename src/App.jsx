@@ -24,7 +24,10 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/shop/women" element={<WomenPage />} />
-      <Route path="/product/:id" element={<ProductDetailsPage />}></Route>
+      <Route
+        path="/product/:id/:url_title"
+        element={<ProductDetailsPage />}
+      ></Route>
       <Route path="/checkout/cart" element={<Checkout />}></Route>
       <Route path="/checkout/address" element={<Address />}></Route>
       <Route path="/checkout/payment" element={<Payment />}></Route>
@@ -40,7 +43,7 @@ function App() {
         }
       ></Route>
       <Route path="/wishlist" element={<WishlistPage />}></Route>
-      <Route path="/search" element={<SearchPage />}></Route>
+      <Route path="/search=:search_text" element={<SearchPage />}></Route>
     </Routes>
   );
 }

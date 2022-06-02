@@ -78,7 +78,8 @@ export const OrderPage = () => {
             <div>
               {order_products.map((e, index) => (
                 <OrderProductCard
-                  key={index}
+                  key={e._id}
+                  id={e._id}
                   imageURL={e.imageURL}
                   name={e.name}
                   description={e.desc}

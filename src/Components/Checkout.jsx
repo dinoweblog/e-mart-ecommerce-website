@@ -134,7 +134,8 @@ setLoading(true);
                 <div>
                   {cart_products.map((e, index) => (
                     <CartPageCard
-                      key={index}
+                      key={e._id}
+                      id={e._id}
                       imageURL={e.imageURL}
                       name={e.name}
                       description={e.desc}

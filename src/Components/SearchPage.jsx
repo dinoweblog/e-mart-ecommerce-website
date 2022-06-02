@@ -40,7 +40,7 @@ export const SearchPage = () => {
                 </div>
 
                 <div>
-                  <p>Empty Search Result!</p>
+                  <h2>Empty Search Result!</h2>
                 </div>
               </div>
             </div>

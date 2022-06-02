@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./Styles/Nav2.css";
 
-import { GiHamburgerMenu } from "react-icons/gi";
+import { FiMenu } from "react-icons/fi";
+import { FiX } from "react-icons/fi";
 
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -28,9 +29,12 @@ export const Navbar = ({ active_menu }) => {
     dispatch(getCartProductsData(userId, token));
   }, []);
 
+  const urlRegex = /\s/g;
+  const search_text = productName.toLowerCase().replace(urlRegex, "-");
+
   const getProductsData = () => {
     dispatch(getSearchProductsData(productName));
-    navigate("/search");
+    navigate(`/search=${search_text}`);
   };
 
   return (
@@ -45,16 +49,16 @@ export const Navbar = ({ active_menu }) => {
         <div className="menu_link">
           <ul className="navbar_menu">
             <li>
-              <Link to={"/"}>Men</Link>
+              <Link to={"/shop/women"}>Men</Link>
             </li>
             <li style={{ borderBottomColor: `${active_menu}` }}>
               <Link to={"/shop/women"}>Women</Link>
             </li>
             <li>
-              <Link to={"/"}>Kids</Link>
+              <Link to={"/shop/women"}>Kids</Link>
             </li>
             <li>
-              <Link to={"/"}>Best Collection</Link>
+              <Link to={"/shop/women"}>Best Collection</Link>
             </li>
           </ul>
         </div>
@@ -63,16 +67,16 @@ export const Navbar = ({ active_menu }) => {
           <div className=" mobile_menu_link">
             <ul className="mobile_navbar_menu">
               <li>
-                <Link to={"/"}>Men</Link>
+                <Link to={"/shop/women"}>Men</Link>
               </li>
               <li>
                 <Link to={"/shop/women"}>Women</Link>
               </li>
               <li>
-                <Link to={"/"}>Kids</Link>
+                <Link to={"/shop/women"}>Kids</Link>
               </li>
               <li>
-                <Link to={"/"}>Best Collection</Link>
+                <Link to={"/shop/women"}>Best Collection</Link>
               </li>
             </ul>
           </div>
@@ -170,7 +174,11 @@ export const Navbar = ({ active_menu }) => {
         {/* hamburget menu start  */}
         <div className="responsive_btn">
           <a href="#" onClick={() => setShowMenu(!showMenu)}>
-            <GiHamburgerMenu style={{ fontSize: "2.3rem", color: "#282c3f" }} />
+            {showMenu ? (
+              <FiX style={{ fontSize: "2.3rem", color: "#282c3f" }} />
+            ) : (
+              <FiMenu style={{ fontSize: "2.3rem", color: "#282c3f" }} />
+            )}
           </a>
         </div>
       </nav>

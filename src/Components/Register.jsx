@@ -96,7 +96,7 @@ export const Register = () => {
             value={mobile}
             onChange={(e) => setMobile(e.target.value)}
           />
-          <input type="submit" />
+          <input type="submit" value="Signup" />
 
           <div className="term_privacy">
             By continuing, I agree to the <a href="#">Terms of Use</a> &amp;{" "}

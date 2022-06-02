@@ -142,7 +142,8 @@ font-weight: 600;
   margin: 0 16px 0 0;
 }
  input[type=checkbox]:checked {
-     background-color: var(--theme-color);
+   accent-color: var(--theme-color);
+    
  }
 
 .filter_by ul li {

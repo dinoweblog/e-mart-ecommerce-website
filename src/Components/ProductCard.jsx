@@ -12,9 +12,12 @@ export const ProductCard = ({
   color,
   size,
 }) => {
+  const urlRegex = /\s/g;
+  const url_title = name.toLowerCase().replace(urlRegex, "-");
+
   return (
     <div className="product_card">
-      <Link to={`/product/${id}`}>
+      <Link to={`/product/${id}/${url_title}`}>
         <div className="product_img_sec">
           <img src={imageURL} alt="" />
         </div>

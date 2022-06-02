@@ -61,6 +61,12 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.order_cancel_btn>p {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
 .order_cancel_btn>button {
   color: var(--theme-color);
   border: none;

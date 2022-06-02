@@ -4,7 +4,11 @@ import {
   getOrderProductsLoading,
 } from "../Redux/YourOrder/action";
 
+import { FcCalendar } from "react-icons/fc";
+import { Link } from "react-router-dom";
+
 export const OrderProductCard = ({
+  id,
   imageURL,
   name,
   newPrice,
@@ -34,13 +38,18 @@ export const OrderProductCard = ({
       .catch((error) => console.log(error));
   };
 
+  const urlRegex = /\s/g;
+  const url_title = name.toLowerCase().replace(urlRegex, "-");
+
   return (
     <div className="checkout_div cart_items order_product">
       <div className="order_img_div">
         <img src={imageURL} alt="" />
       </div>
       <div className="product_title_sec">
-        <h2 className="">{name}</h2>
+        <Link to={`/product/${id}/${url_title}`}>
+          <h2 className="">{name}</h2>
+        </Link>
 
         <div className="product_price">
           <span className="new_price">
@@ -49,7 +58,9 @@ export const OrderProductCard = ({
           <p> ({itemQty} items)</p>
         </div>
         <div className="order_cancel_btn">
-          <p>Date: {date.slice(0, 10)}</p>
+          <p>
+            <FcCalendar style={{ fontSize: "1.7rem" }} /> {date.slice(0, 10)}
+          </p>
           <button
             onClick={() => {
               cancelHandle();

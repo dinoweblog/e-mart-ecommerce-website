@@ -90,7 +90,7 @@ export const Login = () => {
             <span>Show Password</span>
           </span>
 
-          <input type="submit" />
+          <input type="submit" value="Login" />
 
           <div className="term_privacy">
             By continuing, I agree to the <a href="#">Terms of Use</a> &amp;{" "}

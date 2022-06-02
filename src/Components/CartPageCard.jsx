@@ -62,6 +62,9 @@ export const CartPageCard = ({
       .catch((error) => console.log(error));
   };
 
+  const urlRegex = /\s/g;
+  const url_title = name.toLowerCase().replace(urlRegex, "-");
+
   return (
     <div className="checkout_div cart_items">
       <div className="product_img_sec">
@@ -81,7 +84,7 @@ export const CartPageCard = ({
         </p>
 
         <div>
-          <h5 className="select_text">SELECT QUANTITY</h5>
+          <h5 className="select_text">CHANGE QUANTITY</h5>
           <div className="product_quantity">
             <button
               className="quantity_dec"
@@ -91,7 +94,7 @@ export const CartPageCard = ({
             >
               <i className="bx bx-minus"></i>
             </button>
-            <input type="text" value={itemQty} />
+            <input className="qty_box" type="text" value={itemQty} />
             <button
               className="quantity_inc"
               onClick={() => {
@@ -102,11 +105,6 @@ export const CartPageCard = ({
             </button>
           </div>
         </div>
-
-        <p>
-          Category :{" "}
-          <span style={{ textTransform: "capitalize" }}>{category}</span>
-        </p>
       </div>
       <div className="item_delete_btn">
         <button
