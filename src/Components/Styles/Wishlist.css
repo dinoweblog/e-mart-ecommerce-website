@@ -131,6 +131,13 @@ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding-top: 15%;
   }
 }
+@media (max-width: 790px) {
+.search_products .product_category {
+    bottom: 28%;
+    margin-left: 3%;
+  }
+}
+
 
 @media (max-width: 608px) {
   .wishlist_products {
@@ -139,6 +146,10 @@ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     justify-content: space-around;
     padding-top: 2%;
   }
+    .search_products .product_category {
+      bottom: 22%;
+      margin-left: 3%;
+    }
 }
 
 @media (max-width: 550px) {
@@ -151,5 +162,16 @@ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 500px) {
+  .search_products .product_category {
+      bottom: 28%;
+      margin-left: 3%;
+    }
+}
+
+@media (max-width: 400px) {
+  .search_products .product_category {
+    bottom: 32%;
+    margin-left: 3%;
+  }
 }

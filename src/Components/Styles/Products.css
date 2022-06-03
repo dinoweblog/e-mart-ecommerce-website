@@ -410,6 +410,9 @@ font-weight: 600;
       width: 36%;
     }
 }
+
+
+
 @media (max-width: 550px) {
   .product_category {
     bottom: 26%;
