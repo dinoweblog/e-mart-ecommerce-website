@@ -19,7 +19,7 @@ export const Checkout = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [applyCoupon, setApplyCoupon] = useState(false);
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
 
   const { address } = useSelector((state) => state.address);
 
@@ -35,6 +35,11 @@ export const Checkout = () => {
   useEffect(() => {
     document.title = "Checkout | e-mart shopping platform";
   }, []);
+
+  useEffect(() => {
+    const body = document.querySelector("body");
+    body.style.overflow = isOpen ? "hidden" : "auto";
+  }, [isOpen]);
 
   useEffect(() => {
     if (quantity > 0) {
@@ -58,7 +63,7 @@ export const Checkout = () => {
 
   const removeAllCartItems = () => {
     dispatch(getCartProductsLoading());
-setLoading(true);
+    setLoading(true);
     fetch(
       `https://emart-server.herokuapp.com/cart/items/delete-all/${userId}`,
       {
@@ -72,7 +77,7 @@ setLoading(true);
       .then((res) => res.json())
       .then((res) => {
         dispatch(getCartProductsData(userId, token));
-        setLoading(false)
+        setLoading(false);
       })
       .catch((error) => dispatch(getCartProductsError()));
   };

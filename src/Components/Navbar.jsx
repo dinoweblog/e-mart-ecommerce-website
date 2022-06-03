@@ -111,7 +111,12 @@ export const Navbar = ({ active_menu }) => {
                   setShowProDrop(!showProDrop);
                 }}
               >
-                <i className="bx bx-user"></i>
+                {isAuthenticated === "false" ? (
+                  <i className="bx bx-user"></i>
+                ) : (
+                  <i className="bx bx-user-circle"></i>
+                )}
+
                 <p>Profile</p>
               </Link>
               {showProDrop && isAuthenticated === "false" ? (

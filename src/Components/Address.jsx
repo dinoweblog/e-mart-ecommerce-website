@@ -39,6 +39,11 @@ export const Address = () => {
   }, []);
 
   useEffect(() => {
+    const body = document.querySelector("body");
+    body.style.overflow = isOpen ? "hidden" : "auto";
+  }, [isOpen]);
+
+  useEffect(() => {
     document.title = "Your Address | e-mart shopping platform";
   }, []);
 
