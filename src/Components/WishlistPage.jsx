@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { getCartProductsData } from "../Redux/Cart/action";
+import { getVisitURL } from "../Redux/VisitURL/action";
 import {
   getWishlistProductsData,
   getWishlistProductsError,
@@ -24,6 +25,8 @@ export const WishlistPage = () => {
 
   useEffect(() => {
     document.title = "Wishlist | e-mart shopping platform";
+
+    dispatch(getVisitURL("/wishlist"));
   }, []);
 
   useEffect(() => {

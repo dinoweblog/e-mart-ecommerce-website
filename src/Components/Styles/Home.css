@@ -8,21 +8,6 @@
     font-size: 30px;
 }
 
-.massage_card{
-    width: auto;
-    position: absolute;
-    top: 18%;
-    left: 43%;
-    background-color: white;
-    color: green;
-    padding: 10px 30px;
-    border-radius: 5px;
-    z-index: 20;
-}
-
-.massage_card p{
-    font-size: 20px;
-}
 
 
 /* -------------------------------------- */

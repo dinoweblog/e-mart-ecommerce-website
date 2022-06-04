@@ -8,6 +8,7 @@ import { getCartProductsData } from "../Redux/Cart/action";
 import { WomenSlider } from "./Slider";
 import { SizeDiv } from "./StyleComponent";
 import { getWishlistProductsData } from "../Redux/Wishlist/action";
+import { getVisitURL } from "../Redux/VisitURL/action";
 
 export const ProductDetailsPage = () => {
   const [img, setImg] = useState();
@@ -38,9 +39,8 @@ export const ProductDetailsPage = () => {
 
   useEffect(() => {
     document.title = `${data.name} | e-mart`;
+    dispatch(getVisitURL(`/product/${id}/${data.name}`));
   }, [data]);
-
-
 
   const findData = () => {
     fetch(`https://emart-server.herokuapp.com/products/${id}`)

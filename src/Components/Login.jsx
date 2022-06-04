@@ -18,6 +18,7 @@ export const Login = () => {
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { URL } = useSelector((state) => state.visitURL);
   const userDetails = {
     email,
     password,
@@ -51,7 +52,7 @@ export const Login = () => {
         dispatch(getCartProductsData(res.user._id, res.token));
       })
       .then((res) => {
-        navigate("/");
+        navigate(URL);
       })
       .catch((error) => dispatch(loginError()));
   };

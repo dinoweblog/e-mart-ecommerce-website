@@ -8,6 +8,8 @@ import { Footer } from "./Footer";
 import "./Styles/Home.css";
 import { getCartProductsData } from "../Redux/Cart/action";
 import { BigCard } from "./BigCard";
+import { UserNameShow } from "./UserNameShow";
+import { getVisitURL } from "../Redux/VisitURL/action";
 
 let count = 1;
 
@@ -19,6 +21,7 @@ export const Home = () => {
 
   useEffect(() => {
     document.title = "Home | e-mart shopping platform";
+    dispatch(getVisitURL("/"));
   }, []);
 
   useEffect(() => {
@@ -76,11 +79,7 @@ export const Home = () => {
         <WomenSlider products={products} />
       </div>
 
-      {show ? (
-        <div className="massage_card">
-          <p>Welcome {user.name}</p>
-        </div>
-      ) : null}
+      {show ? <UserNameShow name={user.name} /> : null}
 
       <Footer />
     </div>

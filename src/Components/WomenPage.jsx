@@ -10,6 +10,7 @@ import {
 } from "../Redux/Products/action";
 import { ProductCard } from "./ProductCard";
 import { Footer } from "./Footer";
+import { getVisitURL } from "../Redux/VisitURL/action";
 
 export const WomenPage = () => {
   const dispatch = useDispatch();
@@ -33,6 +34,7 @@ export const WomenPage = () => {
 
   useEffect(() => {
     document.title = "Women Products | e-mart shopping platform";
+    dispatch(getVisitURL("/shop/women"));
   }, []);
 
   useEffect(() => {
