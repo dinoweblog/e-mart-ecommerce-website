@@ -134,19 +134,17 @@ p {
 
 .filters_types_header {
   font-size: var(--font_size);
-font-weight: 600;
+  font-weight: 600;
 }
 
 .common_customCheckbox input {
   padding: 0;
   margin: 0 16px 0 0;
 }
- 
 
- input[type=checkbox]:checked {
-   accent-color: var(--theme-color);
-    
- }
+input[type="checkbox"]:checked {
+  accent-color: var(--theme-color);
+}
 
 .filter_by ul li {
   margin-top: 10px;
@@ -180,8 +178,6 @@ font-weight: 600;
 .product_card img {
   width: 100%;
 }
-
-
 
 .product_card a {
   text-decoration: none;
@@ -225,10 +221,6 @@ font-weight: 600;
   margin-left: 5px;
 }
 
-
-
-
-
 /* .product_card .product_catagory {} */
 
 .product_category {
@@ -243,32 +235,27 @@ font-weight: 600;
   font-size: 12px;
 }
 
-
 /* ------------pagination css------------ */
 
-.pagination{
-    margin-top: 50px;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
+.pagination {
+  margin-top: 50px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
 }
 
-.pagination button{
-    padding: 8px 14px;
-    border: 1px solid #707070;
+.pagination button {
+  padding: 8px 14px;
+  border: 1px solid #707070;
 }
 
-.pagination .active{
-    border: 1px solid var(--theme-color);
-    background-color: var(--theme-color);
-    color: white;
-    font-size: 15px;
-    pointer-events: none;
+.pagination .active {
+  border: 1px solid var(--theme-color);
+  background-color: var(--theme-color);
+  color: white;
+  font-size: 15px;
+  pointer-events: none;
 }
-
-
-
-
 
 /* ---------------Responsive All Product page--------------- */
 @media (max-width: 1200px) and (min-width: 998px) {
@@ -279,7 +266,6 @@ font-weight: 600;
 }
 
 @media (max-width: 998px) {
-
   .products_container {
     display: grid;
     grid-template-columns: 18% 82%;
@@ -405,17 +391,15 @@ font-weight: 600;
   }
 }
 
-@media (max-width: 660px){
+@media (max-width: 660px) {
   .sort_by {
-      width: 36%;
-    }
+    width: 36%;
+  }
 }
-
-
 
 @media (max-width: 550px) {
   .product_category {
-    bottom: 26%;
+    bottom: 23%;
     margin-left: 3%;
   }
   .sort_by {
@@ -426,73 +410,98 @@ font-weight: 600;
     /* right: -58%; */
   }
   .sort_list {
-    width: 100%
+    width: 100%;
   }
-   .filter_section {
-       width: 55%;
+  .filter_section {
+    width: 55%;
     left: -56%;
-   }
-         .filter_section .top_title span {
-             font-size: 14px;
-         }
+  }
+  .filter_section .top_title span {
+    font-size: 14px;
+  }
 }
 @media (max-width: 520px) {
   .product_category {
-    bottom: 25%;
+    bottom: 22%;
     margin-left: 3%;
   }
-  
 }
 
 @media (max-width: 490px) {
+  .sort_by {
+    width: 58%;
+  }
+
+  .sort_list {
+    width: 100%;
+  }
+  .filter_section .top_title span {
+    font-size: 13px;
+  }
+
+  .filter_section {
+    width: 58%;
+    left: -59%;
+  }
+}
+
+@media (max-width: 490px) {
+  .sort_by {
+    width: 55%;
+  }
+
+  .product_card .product_title {
+    font-size: 14px;
+  }
+
+  .product_price .old_price {
+    font-size: 12px;
+  }
+
+  .product_price .new_price {
+    font-size: 14px;
+  }
+
+  .product_card .off {
+    font-size: 12px;
+  }
+
+  .product_category {
+    bottom: 21%;
+    margin-left: 3%;
+    padding: 1px 4px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 410px) {
+  .sort_by {
+    width: 62%;
+  }
   .product_category {
     bottom: 30%;
     margin-left: 3%;
   }
-  
-.sort_by {
-    width: 58%;
-}
 
-.sort_list {
-    width: 100%;
-}
-.filter_section .top_title span {
-    font-size: 13px;
-}
-
-.filter_section {
-    width: 58%;
-    left: -59%;
-}
-
-
-}
-
-@media (max-width: 490px) {
-  .sort_by {
-      width: 55%;
-    }
-}
-@media (max-width: 375px) {
-  .sort_by {
-    width: 62%;
+  .slick-slide .product_category {
+    bottom: 21%;
+    margin-left: 3%;
   }
 }
 
 @media (max-width: 310px) {
   .product_category {
-    bottom: 40%;
+    bottom: 30%;
     margin-left: 3%;
   }
   .sort_by {
-      width: 65%;
+    width: 65%;
   }
 }
-.loading_gif{
-    display: flex;
-    justify-content: center;
+.loading_gif {
+  display: flex;
+  justify-content: center;
 }
-.loading_gif>img{
-    width: 30%;
+.loading_gif > img {
+  width: 30%;
 }

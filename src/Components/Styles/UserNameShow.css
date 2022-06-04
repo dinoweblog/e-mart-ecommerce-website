@@ -1,0 +1,32 @@
+.massage_card{
+    display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+    width: auto;
+        position: absolute;
+        top: -13%;
+        left: 43%;
+        background-color: rgb(250, 250, 250);
+        color: green;
+        padding: 10px 20px;
+        border-radius: 5px;
+        z-index: 20;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+transition: 1s;
+       
+}
+
+ .massage_card>p {
+     font-size: 20px;
+ }
+
+ .massage_card>button{
+     border: none;
+     background-color: transparent;
+
+ }
+
+ .sticker{
+    top: 13%;
+ }

@@ -11,8 +11,6 @@ import { BigCard } from "./BigCard";
 import { UserNameShow } from "./UserNameShow";
 import { getVisitURL } from "../Redux/VisitURL/action";
 
-let count = 1;
-
 export const Home = () => {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
@@ -26,17 +24,8 @@ export const Home = () => {
 
   useEffect(() => {
     dispatch(getProductsData());
-    if (isAuthenticated === "true" && count === 1) {
-      setShow(true);
-    }
   }, []);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setShow(false);
-      count = 2;
-    }, 3000);
-  }, []);
   return (
     <div>
       <Navbar />
@@ -79,7 +68,7 @@ export const Home = () => {
         <WomenSlider products={products} />
       </div>
 
-      {show ? <UserNameShow name={user.name} /> : null}
+      {/* <UserNameShow name={user.name} /> */}
 
       <Footer />
     </div>

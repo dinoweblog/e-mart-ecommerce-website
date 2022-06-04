@@ -1,23 +1,36 @@
-import styled from "styled-components";
+import "./Styles/UserNameShow.css";
+import { FiX } from "react-icons/fi";
+import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 
-const Div = styled.div`
-  width: auto;
-  position: absolute;
-  top: 18%;
-  left: 43%;
-  background-color: white;
-  color: green;
-  padding: 10px 30px;
-  border-radius: 5px;
-  z-index: 20;
-
-  p {
-    font-size: 20px;
-  }
-`;
-
+let count = 1;
 export const UserNameShow = ({ name }) => {
-  <Div className="massage_card">
-    <p>Welcome {name}</p>
-  </Div>;
+  const [show, setShow] = useState(false);
+  const { user, isAuthenticated } = useSelector((state) => state.login);
+
+  useEffect(() => {
+    if (isAuthenticated === "true" && count === 1) {
+      setShow(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShow(false);
+      count = 2;
+    }, 3000);
+  }, []);
+
+  if (!show) {
+    return <div>Hello</div>;
+  }
+
+  return (
+    <div className="massage_card sticker">
+      <p>Welcome {name}</p>
+      <button>
+        <FiX style={{ fontSize: "2rem", color: "#282c3f" }} />
+      </button>
+    </div>
+  );
 };
