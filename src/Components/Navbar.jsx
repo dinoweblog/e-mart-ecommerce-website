@@ -10,6 +10,7 @@ import { getCartProductsData } from "../Redux/Cart/action";
 import { getLogout } from "../Redux/Login/action";
 import { getSearchProductsData } from "../Redux/Search/action";
 import { getVisitURL } from "../Redux/VisitURL/action";
+import { getWishlistProductsData } from "../Redux/Wishlist/action";
 
 export const Navbar = ({ active_menu }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -28,6 +29,7 @@ export const Navbar = ({ active_menu }) => {
 
   useEffect(() => {
     dispatch(getCartProductsData(userId, token));
+    dispatch(getWishlistProductsData(userId, token));
   }, []);
 
   const urlRegex = /\s/g;
