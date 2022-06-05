@@ -31,7 +31,7 @@ p {
 }
 .all_products {
   display: grid;
-  grid-template-columns: 21% 21% 21% 21%;
+  grid-template-columns: repeat(4, 21%);
   justify-content: space-around;
 }
 .filter_section {
@@ -150,21 +150,8 @@ input[type="checkbox"]:checked {
   margin-top: 10px;
   font-size: 16px;
 }
-/* .common_checkboxIndicator{
-    box-sizing: border-box;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 16px;
-    height: 16px;
-    border: 1px solid #c3c2c9;
-    background: #fff;
-    border-radius: 2px;
-}
-.common_customCheckbox input:checked~ .common_checkboxIndicator {
-    border: none;
-    background: #ff3f6c;
-} */
+
+
 
 /* Product Card css --------------------> */
 
@@ -246,7 +233,15 @@ input[type="checkbox"]:checked {
 
 .pagination button {
   padding: 8px 14px;
-  border: 1px solid #707070;
+  border: 1px solid #9b9b9b;
+  font-size: 15px;
+}
+
+.pagination button:hover{
+  border: 1px solid var(--theme-color);
+    background-color: var(--theme-color);
+    color: white;
+     
 }
 
 .pagination .active {
@@ -257,12 +252,24 @@ input[type="checkbox"]:checked {
   pointer-events: none;
 }
 
+.pagination .next_prev_btn{
+  pointer-events: none;
+  opacity: .7;
+}
+
 /* ---------------Responsive All Product page--------------- */
 @media (max-width: 1200px) and (min-width: 998px) {
   .product_category {
     bottom: 28%;
     margin-left: 3%;
   }
+    .filter_section .top_title{
+      font-size: 17px;
+    }
+
+    .filter_section .top_title span{
+      font-size: 17px;
+    }
 }
 
 @media (max-width: 998px) {
@@ -286,6 +293,7 @@ input[type="checkbox"]:checked {
     font-size: 14px;
   }
 
+  
   .filters_types_header {
     font-size: 14px;
     font-weight: 600;
@@ -301,6 +309,7 @@ input[type="checkbox"]:checked {
     font-size: 14px;
   }
 }
+
 @media (max-width: 835px) and (min-width: 799px) {
   .product_category {
     bottom: 28%;
@@ -370,6 +379,7 @@ input[type="checkbox"]:checked {
     color: var(--theme-color);
     cursor: pointer;
     margin-right: 5px;
+    
   }
 
   .filter_section .top_title .clear_btn {

@@ -95,12 +95,12 @@ li {
   height: 38px;
   font-size: 14px;
   outline: none;
-  border: 1px solid #f1f1f1;
+  border: 1px solid #dddddd;
   border-radius: 4px 0 0 4px;
 }
 
 #search_input:focus {
-  border-color: rgb(99, 99, 99);
+  border-color: rgb(170, 170, 170);
 }
 
 #search_btn:focus {
@@ -115,13 +115,16 @@ li {
   vertical-align: middle;
   padding: 2px 0px;
   background: #f5f5f6;
-  border: 1px solid #f5f5f6;
+  border: 1px solid #dddddd;
   font-size: 22px;
+  border-left: none;
   border-radius: 0 4px 4px 0;
 }
 
 #search_btn:hover{
-  background-color: #edf0f5;
+  background-color: #e6edf8;
+  border: 1px solid rgb(170, 170, 170);
+  border-left: none;
 }
 
 .search_btn_disable{
