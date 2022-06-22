@@ -36,6 +36,14 @@ input {
   font-weight: 500;
 }
 
+.register_container form p, .login_container form p{
+  color: red;
+  font-size: 12px;
+  margin-top: -12px;
+}
+
+
+
 .register_container input[type="number"]::-webkit-inner-spin-button,
 .no-spin::-webkit-outer-spin-button {
   -webkit-appearance: none !important;
@@ -85,6 +93,11 @@ input[type="checkbox"] {
 
 .login_redirect_link a {
   color: var(--theme-color);
+}
+
+/* Error border color  */
+.register_container .border_color, .login_container .border_color {
+  border: 1px solid red;
 }
 
 @media (max-width: 998px) {

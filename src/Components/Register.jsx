@@ -10,11 +10,22 @@ export const Register = () => {
   const [mobile, setMobile] = useState("");
   const [password, setPassword] = useState("");
   const [repassword, setRepassword] = useState("");
+  const [errorMsg, setErrorMsg] = useState([]);
+  const [msg, setMsg] = useState("");
+  const [nameE, setnameE] = useState("");
+  const [emailE, setemailE] = useState("");
+  const [passE, setpassE] = useState("");
+  const [repassE, setrepassE] = useState("");
+  const [mobE, setmobE] = useState("");
+
   const navigate = useNavigate();
 
   useEffect(() => {
     document.title = "Register | e-mart shopping platform";
   }, []);
+  useEffect(() => {
+    allErrorHandler();
+  }, [msg, errorMsg]);
 
   const userDetails = {
     name,
@@ -36,11 +47,34 @@ export const Register = () => {
     })
       .then((res) => res.json())
       .then((res) => {
-        navigate("/user/login");
+        setErrorMsg(res.error);
+        setMsg(res.message);
+        setrepassE(res.re_message);
+        allErrorHandler();
+        !res.error && !res.message && !res.re_message
+          ? navigate("/user/login")
+          : navigate("/user/register");
       })
 
       .catch((error) => console.log(error));
   };
+
+  const allErrorHandler = () => {
+    setnameE("");
+    setemailE("");
+    setmobE("");
+    setpassE("");
+    if (errorMsg) {
+      errorMsg.map((e) => {
+        if (e.field == "name") setnameE(e.message);
+        if (e.field == "email") setemailE(e.message);
+        if (e.field == "mobile") setmobE(e.message);
+        if (e.field == "password") setpassE(e.message);
+      });
+    }
+  };
+  console.log("Error", mobile);
+  console.log("message", mobile + 1);
 
   return (
     <div className="register_container">
@@ -49,28 +83,30 @@ export const Register = () => {
         <form onSubmit={getRegister} className="form" action="">
           <h2>Signup</h2>
           <input
-            required
+            className={nameE ? "border_color" : ""}
             type="text"
             placeholder="Full Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
+          <p>{nameE}</p>
           <input
-            required
-            type="email"
+            className={emailE || msg ? "border_color" : ""}
+            type="text"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-
+          <p>{emailE}</p>
           <input
-            required
+            className={passE ? "border_color" : ""}
             type={showPass ? `password` : "text"}
             placeholder="Password"
-            autocomplete="new-password"
+            autoComplete="new-password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          <p>{passE}</p>
           <span>
             <input
               type="checkbox"
@@ -81,21 +117,25 @@ export const Register = () => {
             <span>Show Password</span>
           </span>
           <input
-            required
+            className={repassE ? "border_color" : ""}
             type={showPass ? `password` : "text"}
             placeholder="Confirm Password"
             value={repassword}
             onChange={(e) => setRepassword(e.target.value)}
           />
-
+          <p>{repassE}</p>
           <input
-            className="mobile_input_feild"
-            required
-            type="number"
+            className={mobE ? "border_color" : ""}
+            id="mobile_input_feild"
+            type="text"
+            size="10"
+            maxLength="10"
             placeholder="+91 | Mobile Number"
             value={mobile}
-            onChange={(e) => setMobile(e.target.value)}
+            onChange={(e) => setMobile(Number(e.target.value))}
           />
+
+          {mobE ? <p>{mobE}</p> : <p>{msg}</p>}
           <input type="submit" value="Signup" />
 
           <div className="term_privacy">
@@ -103,9 +143,9 @@ export const Register = () => {
             <a href="#">Privacy Policy</a>
           </div>
 
-          <p className="login_redirect_link">
+          <div className="login_redirect_link">
             Already have an account? <Link to={"/user/login"}>Sign in</Link>{" "}
-          </p>
+          </div>
         </form>
       </div>
     </div>

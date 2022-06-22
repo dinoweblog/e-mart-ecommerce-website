@@ -32,10 +32,11 @@ export const ProductDetailsPage = () => {
   useEffect(() => {
     checkingCartItem();
     checkingWishlistItem();
-  });
+  }, []);
+
   useEffect(() => {
     findData();
-  }, [id]);
+  }, []);
 
   useEffect(() => {
     document.title = `${data.name} | e-mart`;
@@ -126,7 +127,6 @@ export const ProductDetailsPage = () => {
   };
   const how = () => {};
 
-  console.log("check", check);
   return (
     <div>
       <Navbar />
@@ -192,7 +192,7 @@ export const ProductDetailsPage = () => {
                     className={`single_size_class ${
                       selectClass === i ? "active" : ""
                     }`}
-                    eachDiv={selectClass}
+                    eachdiv={selectClass}
                     onClick={() => {
                       setSizeSelect(true);
                       setCartAdd(true);
@@ -224,11 +224,11 @@ export const ProductDetailsPage = () => {
                       : navigate("/user/login");
                   }}
                 >
-                  <i class="bx bx-cart-add"></i> ADD TO CART
+                  <i className="bx bx-cart-add"></i> ADD TO CART
                 </button>
               ) : (
                 <button disabled className="add_to_cart_btn">
-                  <i class="bx bx-cart-add"></i> ALREADY ADDED
+                  <i className="bx bx-cart-add"></i> ALREADY ADDED
                 </button>
               )}
 
@@ -243,11 +243,11 @@ export const ProductDetailsPage = () => {
                       : navigate("/user/login");
                   }}
                 >
-                  <i class="bx bx-heart"></i> WISHLIST
+                  <i className="bx bx-heart"></i> WISHLIST
                 </button>
               ) : (
                 <button disabled className="wishlist_btn wishlist_btn2">
-                  <i class="bx bxs-heart"></i> WISHLIST
+                  <i className="bx bxs-heart"></i> WISHLIST
                 </button>
               )}
             </div>

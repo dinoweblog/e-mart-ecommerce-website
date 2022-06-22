@@ -16,6 +16,7 @@ export const Login = () => {
   const [showPass, setShowPass] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [msg, setMsg] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { URL } = useSelector((state) => state.visitURL);
@@ -41,19 +42,22 @@ export const Login = () => {
     })
       .then((res) => res.json())
       .then((res) => {
-        dispatch(
-          loginSuccess({
-            token: res.token,
-            user: res.user,
-            userId: res.user._id,
-          })
-        );
-        dispatch(loginAuthenticated("true"));
-        dispatch(getCartProductsData(res.user._id, res.token));
+        if (res.message) {
+          setMsg(res.message);
+        } else {
+          dispatch(
+            loginSuccess({
+              token: res.token,
+              user: res.user,
+              userId: res.user._id,
+            })
+          );
+          dispatch(loginAuthenticated("true"));
+          dispatch(getCartProductsData(res.user._id, res.token));
+          navigate(URL);
+        }
       })
-      .then((res) => {
-        navigate(URL);
-      })
+
       .catch((error) => dispatch(loginError()));
   };
 
@@ -65,21 +69,23 @@ export const Login = () => {
           <h2>Login</h2>
 
           <input
-            required
-            type="email"
+            className={msg ? "border_color" : ""}
+            type="text"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
 
           <input
-            required
+            className={msg ? "border_color" : ""}
             type={showPass ? `password` : "text"}
             placeholder="Password"
             autoComplete="new-password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+
+          <p>{msg}</p>
 
           <span>
             <input
@@ -98,9 +104,9 @@ export const Login = () => {
             <a href="#">Privacy Policy</a>
           </div>
 
-          <p className="login_redirect_link">
+          <div className="login_redirect_link">
             Are you a new user? <Link to={"/user/register"}>Sign up</Link>{" "}
-          </p>
+          </div>
         </form>
       </div>
     </div>
