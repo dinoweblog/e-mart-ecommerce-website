@@ -32,7 +32,7 @@ export const ProductDetailsPage = () => {
   useEffect(() => {
     checkingCartItem();
     checkingWishlistItem();
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     findData();
