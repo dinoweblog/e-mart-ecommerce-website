@@ -36,7 +36,7 @@ export const ProductDetailsPage = () => {
 
   useEffect(() => {
     findData();
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     document.title = `${data.name} | e-mart`;
