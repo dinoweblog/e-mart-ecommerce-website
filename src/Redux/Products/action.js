@@ -1,3 +1,5 @@
+import { API_URL } from "../../API";
+
 export const PRODUCTS_LOADING = "PRODUCTS_LOADING";
 export const PRODUCTS_SUCCESS = "PRODUCTS_SUCCESS";
 export const PRODUCTS_ERROR = "PRODUCTS_ERROR";
@@ -18,7 +20,7 @@ export const getProductsError = () => ({
 export const getProductsData = (page, size) => (dispatch) => {
   dispatch(getProductsLoading());
   fetch(
-    `https://emart-server.herokuapp.com/products/women?page=${page}&size=${size}`
+    `${API_URL}/products/women?page=${page}&size=${size}`
   )
     .then((res) => res.json())
     .then((res) => {

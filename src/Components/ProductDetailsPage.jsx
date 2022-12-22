@@ -9,6 +9,7 @@ import { WomenSlider } from "./Slider";
 import { SizeDiv } from "./StyleComponent";
 import { getWishlistProductsData } from "../Redux/Wishlist/action";
 import { getVisitURL } from "../Redux/VisitURL/action";
+import { API_URL } from "../API";
 
 export const ProductDetailsPage = () => {
   const [img, setImg] = useState();
@@ -44,7 +45,7 @@ export const ProductDetailsPage = () => {
   }, [data]);
 
   const findData = () => {
-    fetch(`https://emart-server.herokuapp.com/products/${id}`)
+    fetch(`${API_URL}/products/${id}`)
       .then((res) => res.json())
       .then((res) => {
         setData({ ...res.product });
@@ -56,7 +57,7 @@ export const ProductDetailsPage = () => {
 
   const cartHandle = () => {
     if (cartAdd) {
-      fetch(`https://emart-server.herokuapp.com/cart/items`, {
+      fetch(`${API_URL}/cart/items`, {
         method: "POST",
         body: JSON.stringify({ productId: id, userId, quantity: 1 }),
         headers: {
@@ -75,7 +76,7 @@ export const ProductDetailsPage = () => {
   ///items/find/:userId/:id
   const checkingCartItem = () => {
     fetch(
-      `https://emart-server.herokuapp.com/cart/items/find/${userId}/${id}`,
+      `${API_URL}/cart/items/find/${userId}/${id}`,
       {
         method: "GET",
         headers: {
@@ -93,7 +94,7 @@ export const ProductDetailsPage = () => {
 
   const checkingWishlistItem = () => {
     fetch(
-      `https://emart-server.herokuapp.com/wishlist/items/find/${userId}/${id}`,
+      `${API_URL}/wishlist/items/find/${userId}/${id}`,
       {
         method: "GET",
         headers: {
@@ -110,7 +111,7 @@ export const ProductDetailsPage = () => {
   };
 
   const wishlistHandle = () => {
-    fetch(`https://emart-server.herokuapp.com/wishlist/items`, {
+    fetch(`${API_URL}/wishlist/items`, {
       method: "POST",
       body: JSON.stringify({ productId: id, userId }),
       headers: {

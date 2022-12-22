@@ -1,3 +1,5 @@
+import { API_URL } from "../../API";
+
 export const SEARCH_PRODUCTS_LOADING = "SEARCH_PRODUCTS_LOADING";
 export const SEARCH_PRODUCTS_SUCCESS = "SEARCH_PRODUCTS_SUCCESS";
 export const SEARCH_PRODUCTS_ERROR = "SEARCH_PRODUCTS_ERROR";
@@ -19,7 +21,7 @@ export const getSearchProductsData = (productName) => (dispatch) => {
   dispatch(getSearchProductsLoading());
 
   fetch(
-    `https://emart-server.herokuapp.com/products/search?search=${productName}`
+    `${API_URL}/products/search?search=${productName}`
   )
     .then((res) => res.json())
     .then((res) => {

@@ -11,6 +11,7 @@ import {
 import { ProductCard } from "./ProductCard";
 import { Footer } from "./Footer";
 import { getVisitURL } from "../Redux/VisitURL/action";
+import { API_URL } from "../API";
 
 export const WomenPage = () => {
   const dispatch = useDispatch();
@@ -57,7 +58,7 @@ export const WomenPage = () => {
     setClearFilter(true);
 
     fetch(
-      `https://emart-server.herokuapp.com/products/women/filter?category=${type}`
+      `${API_URL}/products/women/filter?category=${type}`
     )
       .then((res) => res.json())
       .then((res) => {
@@ -73,7 +74,7 @@ export const WomenPage = () => {
     setClearFilter(true);
 
     fetch(
-      `https://emart-server.herokuapp.com/products/women/filter?discount=${type}`
+      `${API_URL}/products/women/filter?discount=${type}`
     )
       .then((res) => res.json())
       .then((res) => {

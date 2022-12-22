@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { API_URL } from "../API";
 import {
   getCartProductsData,
   getCartProductsError,
@@ -65,7 +66,7 @@ export const Checkout = () => {
     dispatch(getCartProductsLoading());
     setLoading(true);
     fetch(
-      `https://emart-server.herokuapp.com/cart/items/delete-all/${userId}`,
+      `${API_URL}/cart/items/delete-all/${userId}`,
       {
         method: "DELETE",
         headers: {

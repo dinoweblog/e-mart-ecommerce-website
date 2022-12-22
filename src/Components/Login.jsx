@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { API_URL } from "../API";
 import { getCartProductsData } from "../Redux/Cart/action";
 import {
   getLogedin,
@@ -33,7 +34,7 @@ export const Login = () => {
     event.preventDefault();
     dispatch(loginLoading());
 
-    fetch(`https://emart-server.herokuapp.com/login`, {
+    fetch(`${API_URL}/login`, {
       method: "POST",
       body: JSON.stringify(userDetails),
       headers: {

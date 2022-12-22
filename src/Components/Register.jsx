@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { API_URL } from "../API";
 import { Navbar } from "./Navbar";
 import "./Styles/RegisterLogin.css";
 
@@ -38,7 +39,7 @@ export const Register = () => {
   const getRegister = (event) => {
     event.preventDefault();
 
-    fetch(`https://emart-server.herokuapp.com/register`, {
+    fetch(`${API_URL}/register`, {
       method: "POST",
       body: JSON.stringify(userDetails),
       headers: {

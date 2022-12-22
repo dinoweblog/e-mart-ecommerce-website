@@ -1,3 +1,5 @@
+import { API_URL } from "../../API";
+
 export const USER_ADDRESS_LOADING = "USER_ADDRESS_LOADING";
 export const USER_ADDRESS_SUCCESS = "USER_ADDRESS_SUCCESS";
 export const USER_ADDRESS_ERROR = "USER_ADDRESS_ERROR";
@@ -18,7 +20,7 @@ export const getAddressError = () => ({
 export const getAddressData = (userId, token) => (dispatch) => {
   dispatch(getAddressLoading());
 
-  fetch(`https://emart-server.herokuapp.com/user/address/${userId}`, {
+  fetch(`${API_URL}/user/address/${userId}`, {
     method: "GET",
     headers: {
       "Content-Type": "Application/json",

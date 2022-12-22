@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { API_URL } from "../API";
 import {
   getAddressData,
   getAddressError,
@@ -68,7 +69,7 @@ export const Address = () => {
     userId,
   };
   const addressSubmit = () => {
-    fetch(`https://emart-server.herokuapp.com/user/address`, {
+    fetch(`${API_URL}/user/address`, {
       method: "POST",
       body: JSON.stringify(addressData),
       headers: {
@@ -88,7 +89,7 @@ export const Address = () => {
   const removeAddress = () => {
     dispatch(getAddressLoading());
 
-    fetch(`https://emart-server.herokuapp.com/user/address/delete/${userId}`, {
+    fetch(`${API_URL}/user/address/delete/${userId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "Application/json",

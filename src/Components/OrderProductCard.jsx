@@ -6,6 +6,7 @@ import {
 
 import { FcCalendar } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import { API_URL } from "../API";
 
 export const OrderProductCard = ({
   id,
@@ -23,7 +24,7 @@ export const OrderProductCard = ({
   const cancelHandle = () => {
     dispatch(getOrderProductsLoading());
     fetch(
-      `https://emart-server.herokuapp.com/product-order/your-order/cancel/${proId}`,
+      `${API_URL}/product-order/your-order/cancel/${proId}`,
       {
         method: "DELETE",
         headers: {

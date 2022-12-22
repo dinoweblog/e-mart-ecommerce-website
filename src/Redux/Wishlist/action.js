@@ -1,3 +1,5 @@
+import { API_URL } from "../../API";
+
 export const WISHLIST_PRODUCTS_LOADING = "WISHLIST_PRODUCTS_LOADING";
 export const WISHLIST_PRODUCTS_SUCCESS = "WISHLIST_PRODUCTS_SUCCESS";
 export const WISHLIST_PRODUCTS_ERROR = "WISHLIST_PRODUCTS_ERROR";
@@ -18,7 +20,7 @@ export const getWishlistProductsError = () => ({
 export const getWishlistProductsData = (userId, token) => (dispatch) => {
   dispatch(getWishlistProductsLoading());
 
-  fetch(`https://emart-server.herokuapp.com/wishlist/items/${userId}`, {
+  fetch(`${API_URL}/wishlist/items/${userId}`, {
     method: "GET",
     headers: {
       "Content-Type": "Application/json",

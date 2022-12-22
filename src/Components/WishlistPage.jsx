@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { API_URL } from "../API";
 import { getCartProductsData } from "../Redux/Cart/action";
 import { getVisitURL } from "../Redux/VisitURL/action";
 import {
@@ -37,7 +38,7 @@ export const WishlistPage = () => {
     dispatch(getWishlistProductsLoading());
 
     fetch(
-      `https://emart-server.herokuapp.com/wishlist/items/delete/${wishId}`,
+      `${API_URL}/wishlist/items/delete/${wishId}`,
       {
         method: "DELETE",
         headers: {
@@ -54,7 +55,7 @@ export const WishlistPage = () => {
   };
 
   const moveToCart = (id) => {
-    fetch(`https://emart-server.herokuapp.com/cart/items`, {
+    fetch(`${API_URL}/cart/items`, {
       method: "POST",
       body: JSON.stringify({ productId: id, userId, quantity: 1 }),
       headers: {

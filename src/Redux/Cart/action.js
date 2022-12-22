@@ -1,3 +1,5 @@
+import { API_URL } from "../../API";
+
 export const CART_PRODUCTS_LOADING = "CART_PRODUCTS_LOADING";
 export const CART_PRODUCTS_SUCCESS = "CART_PRODUCTS_SUCCESS";
 export const CART_PRODUCTS_ERROR = "CART_PRODUCTS_ERROR";
@@ -18,7 +20,7 @@ export const getCartProductsError = () => ({
 export const getCartProductsData = (userId, token) => (dispatch) => {
   dispatch(getCartProductsLoading());
 
-  fetch(`https://emart-server.herokuapp.com/cart/items/${userId}`, {
+  fetch(`${API_URL}/cart/items/${userId}`, {
     method: "GET",
     headers: {
       "Content-Type": "Application/json",

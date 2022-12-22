@@ -16,6 +16,7 @@ import {
   getCartProductsSuccess,
 } from "../Redux/Cart/action";
 import { getOrderProductsData } from "../Redux/YourOrder/action";
+import { API_URL } from "../API";
 
 export const Payment = () => {
   const dispatch = useDispatch();
@@ -52,7 +53,7 @@ export const Payment = () => {
     dispatch(getCartProductsLoading());
 
     fetch(
-      `https://emart-server.herokuapp.com/cart/items/delete-all/${userId}`,
+      `${API_URL}/cart/items/delete-all/${userId}`,
       {
         method: "DELETE",
         headers: {
@@ -70,7 +71,7 @@ export const Payment = () => {
   };
  
   const placeOrder = () => {
-    fetch(`https://emart-server.herokuapp.com/product-order/your-order`, {
+    fetch(`${API_URL}/product-order/your-order`, {
       method: "POST",
       body: JSON.stringify(cart),
       headers: {

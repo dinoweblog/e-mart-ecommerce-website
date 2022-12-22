@@ -10,6 +10,7 @@ import {
   getAddressSuccess,
 } from "../Redux/Address/action";
 import { useDispatch } from "react-redux";
+import { API_URL } from "../API";
 
 const Modal = ({ address, userId, token, setIsOpen, deleteData }) => {
   const dispatch = useDispatch();
@@ -32,7 +33,7 @@ const Modal = ({ address, userId, token, setIsOpen, deleteData }) => {
     };
     dispatch(getAddressLoading());
 
-    fetch(`https://emart-server.herokuapp.com/user/address/update/${userId}`, {
+    fetch(`${API_URL}/user/address/update/${userId}`, {
       method: "PATCH",
       body: JSON.stringify(addressData),
       headers: {
