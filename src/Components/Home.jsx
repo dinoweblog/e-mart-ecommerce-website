@@ -6,9 +6,7 @@ import { WomenSlider } from "./Slider";
 import { Carousel } from "./Carousel";
 import { Footer } from "./Footer";
 import "./Styles/Home.css";
-import { getCartProductsData } from "../Redux/Cart/action";
 import { BigCard } from "./BigCard";
-import { UserNameShow } from "./UserNameShow";
 import { getVisitURL } from "../Redux/VisitURL/action";
 
 export const Home = () => {
@@ -35,26 +33,20 @@ export const Home = () => {
         <div className="section_title">
           <h3>Product Category</h3>
         </div>
-        <div className="big_card_container">
+        <div className="big_card_container" >
           <BigCard
-            img={
-              "https://ik.imagekit.io/thestylist/rba/pub/media_rb/HOMEPAGE_IMAGES/05_Apr_22/1_(1).jpg"
-            }
+            img="./assets/women.png"
             txt={"Women Clothes"}
             link={"/shop/women"}
           />
           <BigCard
-            img={
-              "https://ik.imagekit.io/thestylist/rba/pub/media_rb/HOMEPAGE_IMAGES/07_Dec_21/Rohit_Bal.png"
-            }
+            img="./assets/men.jpg"
             txt={"Men Clothes"}
             link={"/"}
           />
 
           <BigCard
-            img={
-              "https://static.hopscotch.in/fstatic/product/202112/09d53750-b439-436b-9375-69497e509349_full.jpg?version=1639389051489&tr=w-1080,c-at_max,n-medium"
-            }
+           img="./assets/kids.jpg"
             txt={"Kids Clothes"}
             link={"/"}
           />
