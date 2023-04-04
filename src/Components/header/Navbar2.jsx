@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./Styles/Checkout.css";
+import "../Styles/Checkout.css";
 
 export const Navbar2 = ({ ctc, atc, paytc }) => {
   return (

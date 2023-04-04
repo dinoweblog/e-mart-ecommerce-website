@@ -1,23 +1,21 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import { API_URL } from "../API";
+import { Link } from "react-router-dom";
+import { API_URL } from "../../API";
 import {
   getCartProductsData,
   getCartProductsError,
   getCartProductsLoading,
-  getCartProductsSuccess,
-} from "../Redux/Cart/action";
-import ApplyCouponModal from "./ApplyCouponModal";
+} from "../../Redux/Cart/action";
+import ApplyCouponModal from "../ApplyCouponModal";
 import { CartPageCard } from "./CartPageCard";
-import { Footer2 } from "./Footer2";
-import { Navbar2 } from "./Navbar2";
-import "./Styles/Checkout.css";
-import { TotalAmount } from "./TotalAmount";
+import { Footer2 } from "../footer/Footer2";
+import { Navbar2 } from "../header/Navbar2";
+import "../Styles/Checkout.css";
+import { TotalAmount } from "../TotalAmount";
 
 export const Checkout = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [applyCoupon, setApplyCoupon] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -65,16 +63,13 @@ export const Checkout = () => {
   const removeAllCartItems = () => {
     dispatch(getCartProductsLoading());
     setLoading(true);
-    fetch(
-      `${API_URL}/cart/items/delete-all/${userId}`,
-      {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "Application/json",
-          Authorization: "Bearer " + token,
-        },
-      }
-    )
+    fetch(`${API_URL}/cart/items/delete-all/${userId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "Application/json",
+        Authorization: "Bearer " + token,
+      },
+    })
       .then((res) => res.json())
       .then((res) => {
         dispatch(getCartProductsData(userId, token));

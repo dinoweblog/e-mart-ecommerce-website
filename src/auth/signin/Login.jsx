@@ -1,17 +1,16 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { API_URL } from "../API";
-import { getCartProductsData } from "../Redux/Cart/action";
+import { API_URL } from "../../API";
+import { getCartProductsData } from "../../Redux/Cart/action";
 import {
-  getLogedin,
   loginAuthenticated,
   loginError,
   loginLoading,
   loginSuccess,
-} from "../Redux/Login/action";
-import { Navbar } from "./Navbar";
-import "./Styles/RegisterLogin.css";
+} from "../../Redux/Login/action";
+import "../Styles/RegisterLogin.css";
+import { Navbar } from "../../Components/header/Navbar";
 
 export const Login = () => {
   const [showPass, setShowPass] = useState(true);

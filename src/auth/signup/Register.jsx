@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { API_URL } from "../API";
-import { Navbar } from "./Navbar";
-import "./Styles/RegisterLogin.css";
+import { API_URL } from "../../API";
+import "../Styles/RegisterLogin.css";
+import { Navbar } from "../../Components/header/Navbar";
 
 export const Register = () => {
   const [showPass, setShowPass] = useState(true);

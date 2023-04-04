@@ -3,29 +3,27 @@
   --res_nav_menu_font: 1.5rem;
   --nav_color: #282c3f;
   --theme-color: #ff3e6c;
-
 }
 
 html,
 body,
 #app,
-#app>div {
-  height: 100%
+#app > div {
+  height: 100%;
 }
-html{
+html {
   overflow-x: hidden;
 }
-a{
+a {
   color: #282c3f;
 }
 .App {
   text-align: center;
 }
-button{
+button {
   cursor: pointer;
 }
 
-input[type=submit]{
+input[type="submit"] {
   cursor: pointer;
 }
-

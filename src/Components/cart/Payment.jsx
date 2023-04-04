@@ -4,19 +4,19 @@ import { Link, useNavigate } from "react-router-dom";
 import PaymentsOutlinedIcon from "@mui/icons-material/PaymentsOutlined";
 import AccountBalanceOutlinedIcon from "@mui/icons-material/AccountBalanceOutlined";
 import CreditCardOutlinedIcon from "@mui/icons-material/CreditCardOutlined";
-import { Navbar2 } from "./Navbar2";
-import "./Styles/Checkout.css";
-import { TotalAmount } from "./TotalAmount";
-import { Footer2 } from "./Footer2";
+import { Navbar2 } from "../header/Navbar2";
+import "../Styles/Checkout.css";
+import { TotalAmount } from "../TotalAmount";
+import { Footer2 } from "../footer/Footer2";
 
 import {
   getCartProductsData,
   getCartProductsError,
   getCartProductsLoading,
   getCartProductsSuccess,
-} from "../Redux/Cart/action";
-import { getOrderProductsData } from "../Redux/YourOrder/action";
-import { API_URL } from "../API";
+} from "../../Redux/Cart/action";
+import { getOrderProductsData } from "../../Redux/YourOrder/action";
+import { API_URL } from "../../API";
 
 export const Payment = () => {
   const dispatch = useDispatch();
@@ -52,16 +52,13 @@ export const Payment = () => {
   const removeAllCartItems = () => {
     dispatch(getCartProductsLoading());
 
-    fetch(
-      `${API_URL}/cart/items/delete-all/${userId}`,
-      {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "Application/json",
-          Authorization: "Bearer " + token,
-        },
-      }
-    )
+    fetch(`${API_URL}/cart/items/delete-all/${userId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "Application/json",
+        Authorization: "Bearer " + token,
+      },
+    })
       .then((res) => res.json())
       .then((res) => {
         placeOrder();
@@ -69,7 +66,7 @@ export const Payment = () => {
       })
       .catch((error) => dispatch(getCartProductsError()));
   };
- 
+
   const placeOrder = () => {
     fetch(`${API_URL}/product-order/your-order`, {
       method: "POST",

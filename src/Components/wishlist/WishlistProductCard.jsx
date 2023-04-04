@@ -1,4 +1,4 @@
-import "./Styles/Products.css";
+import "../Styles/Products.css";
 import { Link } from "react-router-dom";
 
 export const WishlistProductCard = ({

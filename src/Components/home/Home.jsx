@@ -1,13 +1,13 @@
-import { Navbar } from "./Navbar";
+import { Navbar } from "../header/Navbar";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { getProductsData } from "../Redux/Products/action";
-import { WomenSlider } from "./Slider";
-import { Carousel } from "./Carousel";
-import { Footer } from "./Footer";
-import "./Styles/Home.css";
+import { useEffect } from "react";
+import { getProductsData } from "../../Redux/Products/action";
+import { WomenSlider } from "../sliders/Slider";
+import { Carousel } from "../sliders/Carousel";
+import { Footer } from "../footer/Footer";
+import "../Styles/Home.css";
 import { BigCard } from "./BigCard";
-import { getVisitURL } from "../Redux/VisitURL/action";
+import { getVisitURL } from "../../Redux/VisitURL/action";
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -16,12 +16,12 @@ export const Home = () => {
   useEffect(() => {
     document.title = "Home | e-mart shopping platform";
     dispatch(getVisitURL("/"));
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
-    dispatch(getProductsData());
     window.scrollTo(0, 0);
-  }, []);
+    dispatch(getProductsData());
+  }, [dispatch]);
 
   return (
     <div>

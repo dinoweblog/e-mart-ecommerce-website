@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import "./Styles/Nav2.css";
+import "../Styles/Nav2.css";
 
 import { FiMenu } from "react-icons/fi";
 import { FiX } from "react-icons/fi";
 
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getCartProductsData } from "../Redux/Cart/action";
-import { getLogout } from "../Redux/Login/action";
-import { getSearchProductsData } from "../Redux/Search/action";
-import { getVisitURL } from "../Redux/VisitURL/action";
-import { getWishlistProductsData } from "../Redux/Wishlist/action";
+import { getCartProductsData } from "../../Redux/Cart/action";
+import { getLogout } from "../../Redux/Login/action";
+import { getSearchProductsData } from "../../Redux/Search/action";
+import { getVisitURL } from "../../Redux/VisitURL/action";
+import { getWishlistProductsData } from "../../Redux/Wishlist/action";
 
 export const Navbar = ({ active_menu }) => {
   const [showMenu, setShowMenu] = useState(false);

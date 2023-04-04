@@ -1,14 +1,11 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import { Footer } from "./Footer";
-import { Navbar } from "./Navbar";
-import { ProductCard } from "./ProductCard";
+import { useSelector } from "react-redux";
+import { Footer } from "./footer/Footer";
+import { Navbar } from "./header/Navbar";
+import { ProductCard } from "./productPage/ProductCard";
 import "./Styles/Wishlist.css";
 
 export const SearchPage = () => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
   const { loading, search_products } = useSelector(
     (state) => state.searchProducts
   );

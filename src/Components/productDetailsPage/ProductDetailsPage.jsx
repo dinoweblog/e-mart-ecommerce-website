@@ -1,15 +1,15 @@
-import { Footer } from "./Footer";
-import { Navbar } from "./Navbar";
-import "./Styles/ProductDetails.css";
+import { Footer } from "../footer/Footer";
+import { Navbar } from "../header/Navbar";
+import "../Styles/ProductDetails.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCartProductsData } from "../Redux/Cart/action";
-import { WomenSlider } from "./Slider";
-import { SizeDiv } from "./StyleComponent";
-import { getWishlistProductsData } from "../Redux/Wishlist/action";
-import { getVisitURL } from "../Redux/VisitURL/action";
-import { API_URL } from "../API";
+import { getCartProductsData } from "../../Redux/Cart/action";
+import { WomenSlider } from "../sliders/Slider";
+import { SizeDiv } from "../StyleComponent";
+import { getWishlistProductsData } from "../../Redux/Wishlist/action";
+import { getVisitURL } from "../../Redux/VisitURL/action";
+import { API_URL } from "../../API";
 
 export const ProductDetailsPage = () => {
   const [img, setImg] = useState();
@@ -24,18 +24,15 @@ export const ProductDetailsPage = () => {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const { cart_products } = useSelector((state) => state.cart_products);
   const { products } = useSelector((state) => state.products);
   const { userId, token, isAuthenticated } = useSelector(
     (state) => state.login
   );
 
   useEffect(() => {
+    window.scrollTo(0, -1);
     checkingCartItem();
     checkingWishlistItem();
-  }, [id]);
-
-  useEffect(() => {
     findData();
   }, [id]);
 
@@ -75,16 +72,13 @@ export const ProductDetailsPage = () => {
 
   ///items/find/:userId/:id
   const checkingCartItem = () => {
-    fetch(
-      `${API_URL}/cart/items/find/${userId}/${id}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "Application/json",
-          Authorization: "Bearer " + token,
-        },
-      }
-    )
+    fetch(`${API_URL}/cart/items/find/${userId}/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "Application/json",
+        Authorization: "Bearer " + token,
+      },
+    })
       .then((res) => res.json())
       .then((res) => {
         setCheck(res);
@@ -93,16 +87,13 @@ export const ProductDetailsPage = () => {
   };
 
   const checkingWishlistItem = () => {
-    fetch(
-      `${API_URL}/wishlist/items/find/${userId}/${id}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "Application/json",
-          Authorization: "Bearer " + token,
-        },
-      }
-    )
+    fetch(`${API_URL}/wishlist/items/find/${userId}/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "Application/json",
+        Authorization: "Bearer " + token,
+      },
+    })
       .then((res) => res.json())
       .then((res) => {
         setWishCheck(res);

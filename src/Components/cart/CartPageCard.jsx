@@ -1,11 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
-import { API_URL } from "../API";
-import {
-  getCartProductsData,
-  getCartProductsSuccess,
-} from "../Redux/Cart/action";
+import { API_URL } from "../../API";
+import { getCartProductsData } from "../../Redux/Cart/action";
 
 export const CartPageCard = ({
   imageURL,

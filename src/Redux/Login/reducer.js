@@ -11,7 +11,7 @@ const initState = {
   isAuthenticated: "false",
   token: "",
   error: false,
-  user: {},
+  user: null,
   userId: "",
 };
 
@@ -49,7 +49,6 @@ const loginReducer = (store = initState, { type, payload }) => {
         isAuthenticated: "false",
         token: "",
         error: false,
-       
         user: null,
       };
     default:

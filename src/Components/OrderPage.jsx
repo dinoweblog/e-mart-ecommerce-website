@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getOrderProductsData } from "../Redux/YourOrder/action";
-import { Footer } from "./Footer";
-import { Navbar } from "./Navbar";
+import { Footer } from "./footer/Footer";
+import { Navbar } from "./header/Navbar";
 import { OrderProductCard } from "./OrderProductCard";
 import "./Styles/OrderPage.css";
 export const OrderPage = () => {
@@ -28,8 +28,6 @@ export const OrderPage = () => {
   useEffect(() => {
     dispatch(getOrderProductsData(userId, token));
   }, []);
-
-  
 
   return (
     <div>

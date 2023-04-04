@@ -1,18 +1,18 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import { API_URL } from "../API";
-import { getCartProductsData } from "../Redux/Cart/action";
-import { getVisitURL } from "../Redux/VisitURL/action";
+import { useNavigate } from "react-router-dom";
+import { API_URL } from "../../API";
+import { getCartProductsData } from "../../Redux/Cart/action";
+import { getVisitURL } from "../../Redux/VisitURL/action";
 import {
   getWishlistProductsData,
   getWishlistProductsError,
   getWishlistProductsLoading,
-} from "../Redux/Wishlist/action";
-import { Footer } from "./Footer";
-import { Navbar } from "./Navbar";
-import "./Styles/Wishlist.css";
+} from "../../Redux/Wishlist/action";
+import "../Styles/Wishlist.css";
 import { WishlistProductCard } from "./WishlistProductCard";
+import { Navbar } from "../header/Navbar";
+import { Footer } from "../footer/Footer";
 
 export const WishlistPage = () => {
   const dispatch = useDispatch();
@@ -37,16 +37,13 @@ export const WishlistPage = () => {
   const removeProduct = (wishId) => {
     dispatch(getWishlistProductsLoading());
 
-    fetch(
-      `${API_URL}/wishlist/items/delete/${wishId}`,
-      {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "Application/json",
-          Authorization: "Bearer " + token,
-        },
-      }
-    )
+    fetch(`${API_URL}/wishlist/items/delete/${wishId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "Application/json",
+        Authorization: "Bearer " + token,
+      },
+    })
       .then((res) => res.json())
       .then((res) => {
         dispatch(getWishlistProductsData(userId, token));

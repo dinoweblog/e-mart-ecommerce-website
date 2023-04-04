@@ -1,5 +1,5 @@
-import "./Styles/Products.css";
-import { Navbar } from "./Navbar";
+import "../Styles/Products.css";
+import { Navbar } from "../header/Navbar";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import {
@@ -7,13 +7,13 @@ import {
   getProductsError,
   getProductsLoading,
   getProductsSuccess,
-} from "../Redux/Products/action";
+} from "../../Redux/Products/action";
 import { ProductCard } from "./ProductCard";
-import { Footer } from "./Footer";
-import { getVisitURL } from "../Redux/VisitURL/action";
-import { API_URL } from "../API";
+import { Footer } from "../footer/Footer";
+import { getVisitURL } from "../../Redux/VisitURL/action";
+import { API_URL } from "../../API";
 
-export const WomenPage = () => {
+export const ProductsPage = () => {
   const dispatch = useDispatch();
   const [clearFilter, setClearFilter] = useState(false);
   const [filterHide, setfilterHide] = useState(false);
@@ -41,10 +41,10 @@ export const WomenPage = () => {
 
   useEffect(() => {
     dispatch(getProductsData(page, size));
-    window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
+    window.scrollTo(0, -1);
     setWomenProduct([...products]);
   }, [products, dispatch]);
 
