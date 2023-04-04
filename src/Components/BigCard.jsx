@@ -22,15 +22,42 @@ const MainDiv = styled.div`
 
 export const BigCard = ({ img, txt, link }) => {
   return (
-    <MainDiv className="big_card">
-      <Link to={link}>
-        <div className="big_img">
-          <img src={img} alt="" />
-        </div>
-        <div className="big_text">
-          <h3>{txt}</h3>
-        </div>
-      </Link>
-    </MainDiv>
+    <div className="section">
+      <div className="section_title">
+        <h3>Product Category</h3>
+      </div>
+      <div className="big_card_container">
+        <MainDiv className="big_card">
+          <Link to="/shop/women">
+            <div className="big_img">
+              <img src="./assets/women.png" alt="Women Clothes" />
+            </div>
+            <div className="big_text">
+              <h3>Women Clothes</h3>
+            </div>
+          </Link>
+        </MainDiv>
+        <MainDiv className="big_card">
+          <Link to="/shop/women">
+            <div className="big_img">
+              <img src="./assets/men.jpg" alt="Men Clothes" />
+            </div>
+            <div className="big_text">
+              <h3>Men Clothes</h3>
+            </div>
+          </Link>
+        </MainDiv>
+        <MainDiv className="big_card">
+          <Link to="/shop/women">
+            <div className="big_img">
+              <img src="./assets/kids.jpg" alt="Kids Clothes" />
+            </div>
+            <div className="big_text">
+              <h3>Kids Clothes</h3>
+            </div>
+          </Link>
+        </MainDiv>
+      </div>
+    </div>
   );
 };

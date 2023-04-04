@@ -11,9 +11,7 @@ import { getVisitURL } from "../Redux/VisitURL/action";
 
 export const Home = () => {
   const dispatch = useDispatch();
-  const [show, setShow] = useState(false);
   const { products } = useSelector((state) => state.products);
-  const { user, isAuthenticated } = useSelector((state) => state.login);
 
   useEffect(() => {
     document.title = "Home | e-mart shopping platform";
@@ -22,37 +20,14 @@ export const Home = () => {
 
   useEffect(() => {
     dispatch(getProductsData());
+    window.scrollTo(0, 0);
   }, []);
 
   return (
     <div>
       <Navbar />
       <Carousel />
-
-      <div className="section">
-        <div className="section_title">
-          <h3>Product Category</h3>
-        </div>
-        <div className="big_card_container" >
-          <BigCard
-            img="./assets/women.png"
-            txt={"Women Clothes"}
-            link={"/shop/women"}
-          />
-          <BigCard
-            img="./assets/men.jpg"
-            txt={"Men Clothes"}
-            link={"/"}
-          />
-
-          <BigCard
-           img="./assets/kids.jpg"
-            txt={"Kids Clothes"}
-            link={"/"}
-          />
-        </div>
-      </div>
-
+      <BigCard />
       <div className="section">
         <div className="section_title">
           <h3>Exclusive collections to explore now</h3>

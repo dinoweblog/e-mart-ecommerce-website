@@ -1,12 +1,9 @@
-import image1 from "./Images/image1.webp";
-import image2 from "./Images/image2.webp";
-import image3 from "./Images/image3.webp";
 import Slider from "react-slick";
 import styled from "styled-components";
 
 const SliderDiv = styled(Slider)`
   margin: auto;
-  margin-top: 5%;
+  margin-top: 50px;
   width: 90%;
   div {
     height: 360px;
@@ -32,7 +29,6 @@ const SliderDiv = styled(Slider)`
       height: 200px;
     }
   }
-
   img {
     width: 100%;
     height: 100%;
@@ -56,13 +52,13 @@ export const Carousel = () => {
     <div>
       <SliderDiv {...settings}>
         <div>
-          <img src={image3} alt="" />
+          <img src="./assets/img1.jpg" alt="image" />
         </div>
         <div>
-          <img src={image2} alt="" />
+          <img src="./assets/img2.jpg" alt="image" />
         </div>
         <div>
-          <img src={image1} alt="" />
+          <img src="./assets/img3.jpg" alt="image" />
         </div>
       </SliderDiv>
     </div>

@@ -41,6 +41,7 @@ export const WomenPage = () => {
 
   useEffect(() => {
     dispatch(getProductsData(page, size));
+    window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
@@ -57,9 +58,7 @@ export const WomenPage = () => {
     setFilterCatVal(type);
     setClearFilter(true);
 
-    fetch(
-      `${API_URL}/products/women/filter?category=${type}`
-    )
+    fetch(`${API_URL}/products/women/filter?category=${type}`)
       .then((res) => res.json())
       .then((res) => {
         dispatch(getProductsSuccess(res));
@@ -73,9 +72,7 @@ export const WomenPage = () => {
     setFilterDisVal(type);
     setClearFilter(true);
 
-    fetch(
-      `${API_URL}/products/women/filter?discount=${type}`
-    )
+    fetch(`${API_URL}/products/women/filter?discount=${type}`)
       .then((res) => res.json())
       .then((res) => {
         dispatch(getProductsSuccess(res));
